@@ -62,7 +62,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/monProfil", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
       .then((response) => {
         return response.json();
       })
@@ -103,7 +103,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/delete", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/delete", options)
       .then((response) => {
         return response.json();
       })
@@ -136,7 +136,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/deleteWaiter", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/deleteWaiter", options)
       .then((response) => {
         return response.json();
       })
@@ -162,7 +162,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/customerAccount", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/customerAccount", options)
       .then((response) => {
         return response.json();
       })
@@ -182,7 +182,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/restaurantList", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/restaurantList", options)
       .then((response) => {
         return response.json();
       })
@@ -236,7 +236,7 @@ class Profil extends Component {
             <Col s={6} md={12} className="colPhoto">
               <Image
                 className="photoProfil"
-                src={"http://localhost:8080" + this.state.profil.picture}
+                src={"https://back-end.osc-fr1.scalingo.io" + this.state.profil.picture}
                 roundedCircle
               />
             </Col>

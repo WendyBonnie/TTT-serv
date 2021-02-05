@@ -39,7 +39,7 @@ class modifierMonProfil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/dataProfil", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/dataProfil", options)
       .then((response) => {
         return response.json();
       })
@@ -78,7 +78,7 @@ class modifierMonProfil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/edit", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/edit", options)
       .then((response) => {
         return response.json();
       })
@@ -107,7 +107,7 @@ class modifierMonProfil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/editlogo", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/editlogo", options)
       .then((response) => {
         return response.json();
       })
@@ -212,7 +212,7 @@ class modifierMonProfil extends Component {
           <form onSubmit={this.modifProfilLogo} className="formLogo">
             <img
               className="serveurPicture"
-              src={"http://localhost:8080/" + this.state.serveur.picture}
+              src={"https://back-end.osc-fr1.scalingo.io/" + this.state.serveur.picture}
             ></img>
             <br />
             <br />

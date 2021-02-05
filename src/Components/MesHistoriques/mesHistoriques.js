@@ -48,7 +48,7 @@ class mesHistoriques extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/monProfil", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
       .then((response) => {
         return response.json();
       })
