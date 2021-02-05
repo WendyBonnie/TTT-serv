@@ -1,0 +1,7 @@
+.buttonValid {
+  background-color: #f5a624;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #f5a624 !important;
+  color: #4a4a4a;
+}

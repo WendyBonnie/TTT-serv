@@ -1,0 +1,47 @@
+.mesHisto{
+  margin-bottom: 15%;
+}
+
+
+.titreReferent {
+  margin-bottom: 5%;
+  padding-left: 2%;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+
+.commentaireHisto{
+  text-align: center;
+  justify-content: center;
+}
+
+
+.montantCo{
+  color: #f5a624 ;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.CollectButton{
+  border-radius: 52px;
+  background-color: #f5a624;
+  border-color: #f5a624;
+  margin-top: 4%;
+  margin-bottom: 10%;
+}
+
+.nameServ{
+  color: #f5a624;
+  margin-top: 14%;
+}
+
+.rowServeurCo{
+  text-align: center;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .rowServeurCo{
+    text-align: center;
+  }
+}

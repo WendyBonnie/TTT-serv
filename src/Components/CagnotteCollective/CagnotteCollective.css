@@ -1,0 +1,52 @@
+.cagnotteCont{
+    border-radius: 28px;
+    background-color: white;
+    margin-top: -10%;
+    padding-top: 10%;
+    padding-bottom: 25%;
+}
+
+.cagnotteCont button {
+    border-radius: 52px;
+    background-color:#f5a624 ;
+    border-color: #f5a624;
+    margin-top: 5%;
+}
+
+.cagnotteCont button:hover {
+    border-radius: 52px;
+    background-color:#f5a624 ;
+    border-color: #f5a624;
+    margin-top: 5%;
+
+}
+
+.rowCagn{
+    text-align: center;
+}
+
+.rowCagn h2{
+color: #f5a624;
+}
+
+.rowPasDeCagn{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.rowId{
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+.rowId h5{
+    margin-bottom: 5%;
+}
+
+
+@media only screen and (min-device-width: 1024px) {
+    .cagnotteCont{
+        margin-top: 0%;
+    }
+}

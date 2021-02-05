@@ -1,0 +1,114 @@
+body {
+  background-color: white !important;
+}
+
+.inscr {
+  background: #ffffff;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 45px;
+  border-radius: 28px;
+  border: none;
+  color: #555;
+  margin-top: -13%;
+  padding: 70px;
+}
+
+.inscr .RowInscr {
+  padding-left: 8% !important;
+  padding-right: 8% !important;
+}
+
+.titreh1 {
+  color: #f4a521;
+}
+.Titrep {
+  font-size: 14px;
+}
+
+.inscr .Bloc-principal .form-group .form-control {
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+.inscr .Bloc-principal .form-label {
+  color: #4a4a4a;
+}
+
+.inscr .Bloc-principal .submitButton {
+  background-color: #4a4a4a;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #4a4a4a !important;
+}
+.inscr .Bloc-principal .submitButton:hover,
+.inscr .Bloc-principal .submitButton:active {
+  background-color: #f4a521;
+  color: #4a4a4a;
+}
+
+.Bloc-principal a {
+  text-decoration: none !important;
+}
+.inscr .Bloc-principal .Titre {
+  text-align: left;
+  color: #4a4a4a;
+  font-size: 20px;
+}
+
+.inscr .connectServeur {
+  border-radius: 28px !important;
+  background-color: #f5a624 !important;
+  width: 100%;
+  border-color: #f5a624 !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  font-size: 23px !important;
+}
+
+.imageInscrServeur{
+  display: none;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .inscr .connectServeur {
+    background-color: #f5a624 !important;
+    width: 29%;
+    border-color: #f5a624 !important;
+    padding-top: 1% !important;
+    padding-bottom: 1% !important;
+    font-size: 23px !important;
+  }
+  .inscr {
+    background: #ffffff;
+    width: 100%;
+    margin: auto;
+    margin-right: 0%!important;
+    padding:0%!important;
+  }
+
+  .inscr .container{
+    margin-right: 0%!important;
+    
+  }
+
+  .inscr .RowInscr{
+    padding-right:0%!important;
+    padding-left:0%!important;
+   
+  }
+
+  .Titre{
+    padding-top:5%;
+    padding-bottom:5%
+  }
+
+  .tailleInscr{
+    width: 70%!important;
+  }
+
+  .imageInscrServeur{
+    display: block;
+    background-image: url("/images/drink (7).jpg");
+    background-repeat: no-repeat;
+  }
+}

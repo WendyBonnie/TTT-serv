@@ -1,0 +1,156 @@
+.connexion-container {
+  background: white;
+
+  margin-top: -10%;
+  border-radius: 28px;
+  border: none;
+  color: #ffffff;
+  box-shadow: 1px 1px 3px #999;
+  padding: 70px;
+}
+
+
+.background {
+  border-radius: 28px !important;
+  margin-top: -13% !important;
+  background-color: white !important;
+  padding-top: 15%;
+  
+}
+
+.imageDeskServeur{
+  display: none;
+}
+
+.background h1 {
+  font-size: 28px;
+  font-style: inherit;
+}
+
+.connexion-container .sign-up {
+  background-color: #ffffff;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #4a4a4a !important;
+  color: #f5a624;
+}
+.connexion-container .sign-up:hover,
+.connexion-container .sign-up:active {
+  background-color: #f5a624;
+  color: #4a4a4a;
+}
+
+.connexion-container .background {
+  background-color: #efefef;
+}
+
+.connexion-container .mdp {
+  color: #555;
+  text-decoration: #555;
+}
+
+.connexion-container .titreConnexion {
+  color: #4a4a4a;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: -5px;
+}
+
+.mb-2 {
+  color: #ffffff;
+}
+
+.mdpOublie {
+  font-size: 13px !important;
+  text-align: right;
+  padding-right: 5%;
+  color: red;
+  margin-top: 2%;
+}
+.connectServeur {
+  border-radius: 28px !important;
+  background-color: #f5a624 !important;
+  width: 100%;
+  border-color: #f5a624 !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  font-size: 23px !important;
+}
+.colMembre {
+  margin-top: 6%;
+}
+.membre {
+  font-size: 18px !important;
+}
+
+.compte {
+  color: #f5a624;
+}
+.form-control {
+  border-radius: 28px !important;
+  border-width: 0.5px !important;
+  padding: 1.5rem 5.75rem !important;
+  padding-left: 15px !important;
+  width: 100% !important;
+
+  margin-top: 3%;
+}
+.blockConnexion {
+  margin-bottom: 20%;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .connexCont{
+    margin-right:0%!important
+  }
+  .background h1 {
+    font-size: 38px;
+  }
+  .background {
+    margin-top: 0% !important;
+    padding-top: 0% !important;
+  }
+  .input-group {
+    width: 50% !important;
+  }
+
+  .imageDeskServeur{
+    display: block;
+   
+    background-image: url("/images/drink (7).jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+
+  }
+.connexPass{
+  width: 50%!important;
+}
+  .imageDeskServeur img{
+   width:100%
+  }
+
+
+  .connectServeur {
+    border-radius: 28px !important;
+    background-color: #f5a624 !important;
+   
+    border-color: #f5a624 !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    font-size: 22px !important;
+  }
+
+  .mdpOublie {
+    text-align: left;
+    padding-left: 1%;
+  }
+  .blockConnexion {
+    padding-top: 6%;
+    padding-bottom:6%;
+    margin-bottom:0%!important
+  }
+}

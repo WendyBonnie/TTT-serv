@@ -1,0 +1,249 @@
+.main-container {
+  background-color: #ffffff;
+}
+
+.contain {
+  border-radius: 28px;
+  margin-top: -8%;
+  background: #ffffff;
+  padding-top: 18%;
+  margin-bottom: 20%;
+}
+
+.contain .infoProfil {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.contain .ligne {
+  margin-bottom: 2%;
+  color: #f4a521;
+  font-size: 38px !important;
+  margin-bottom: 5%;
+}
+
+.contain .monrestaurant {
+  border-radius: 12px 9px 12px;
+  background: #ffffff;
+  border: none;
+  color: #4a4a4a;
+
+  margin-top: 5%;
+  text-align: center;
+}
+
+.contain .colPhoto {
+  text-align: center;
+}
+
+body {
+  background-color: #4a4a4a !important;
+  font-family: "Montserrat", sans-serif!important;
+}
+
+.contain .btnDelete {
+  text-align: right;
+}
+
+.contain .tips {
+  margin-top: 10%;
+}
+
+.contain .titreNice {
+  margin-bottom: 1em;
+  color: #f4a521;
+  font-style: inherit;
+}
+
+.contain a {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+.contain .btn-primary {
+  background-color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+.contain .buttonDeleteAffi {
+  font-size: 20px;
+  opacity: 0.5;
+  width: 11%;
+
+  border-radius: 11px;
+  background-color: #f4a521;
+}
+
+.contain .profilPara {
+  margin-bottom: 0%;
+  font-size: 20px;
+}
+.contain .profilParafin {
+  font-size: 20px;
+}
+
+.container .restauAffil {
+  margin-bottom: 11%;
+}
+
+p {
+  font-size: 28px;
+}
+
+.contain .photoProfil {
+  width: 63%;
+  margin-bottom: 14%;
+}
+
+.contain .buttonModifier {
+  border-radius: 28px !important;
+  background-color: #f5a624 !important;
+  width: 100%;
+  border-color: #f5a624 !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  font-size: 23px !important;
+  color: #ffffff;
+  border-width: 0px;
+}
+
+.contain .buttonAbo {
+  border-radius: 28px !important;
+  background-color: #f4a521 !important;
+  width: 100%;
+  border-color: #f5a624 !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  font-size: 23px !important;
+  color: #ffffff;
+  margin-top: 10%;
+  border-width: 0px;
+}
+
+.lienCommentaire {
+  
+    font-size: 36px;
+    background-color: #f4a521 !important;
+    color:white!important;
+    border-radius: 58px!important;
+    border-color: #f5a624!important;
+    margin-top: 5%;
+  
+  
+}
+
+@media (max-width: 800px) {
+  .contain{
+    margin-right:auto
+  }
+  .container .photoProfil {
+    margin-left: 0%;
+  }
+  .container .monrestaurant {
+    margin-top: 17%;
+    margin-bottom: 4%;
+    text-align: center;
+  }
+  .container .monrestaurant h1 {
+    font-size: 30px;
+  }
+  .container .mesdetails {
+    text-align: center;
+  }
+
+  .contain .titre {
+    font-size: 2.5rem;
+  }
+
+  .container .profilParaFin {
+    margin-bottom: 2%;
+  }
+
+  .lienCommentaire {
+    font-size: 23px!important;
+    background-color: #f4a521 !important;
+    color:white;
+    border-radius: 58px!important;
+    width: 100%;
+    padding-top: 3% !important;
+    padding-bottom: 3% !important;
+  
+  }
+
+  .container .delete {
+    margin-top: 4%;
+    text-align: right;
+  }
+  .StripeElement {
+    width: 278px !important;
+    margin-top: 10px !important;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  body {
+    background-color: #4a4a4a !important;
+    font-family: "Montserrat", sans-serif;
+  }
+
+ .contain .monrestaurant{
+   margin-top:3%
+ }
+  .contain .photoProfil {
+    width: 38% !important;
+  }
+
+  .contain {
+    padding-top: 8% !important;
+  }
+
+  .contain .infoProfil {
+    margin-top: 0%;
+  }
+
+  .infoProfil h1 {
+    font-size: 50px;
+  }
+
+  .contain .buttonAbo {
+    margin-top: 0% !important;
+  }
+  .contain {
+    border-radius: 28px;
+    margin-top: 0% !important;
+    background: #ffffff;
+    padding-top: 18%;
+    margin-bottom: 20%;
+  }
+  .contain .photoProfil {
+    width: 63%;
+    margin-bottom: 5% !important;
+  }
+  .contain {
+    border-radius: 28px;
+    margin-top: -8%;
+    background: #ffffff;
+    padding-top: 2% !important;
+    margin-bottom: 20%;
+  }
+  .lienCommentaire {
+    font-size: 23px!important;
+    background-color: #f4a521 !important;
+    color:white;
+    border-radius: 58px!important;
+    width: 100%;
+    padding-top: 3% !important;
+    padding-bottom: 3% !important;
+  
+  }
+
+  .rowButton{
+    margin-top: 10%;
+  }
+  .contain .ligne {
+    margin-bottom: 2%;
+    color: #f4a521;
+    font-size: 38px !important;
+    margin-bottom: 5% !important;
+  }
+}
