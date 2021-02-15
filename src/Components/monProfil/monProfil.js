@@ -162,7 +162,10 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/customerAccount", options)
+    fetch(
+      "https://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
+      options
+    )
       .then((response) => {
         return response.json();
       })
@@ -182,7 +185,10 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/restaurantList", options)
+    fetch(
+      "https://back-end.osc-fr1.scalingo.io/serveur/restaurantList",
+      options
+    )
       .then((response) => {
         return response.json();
       })
@@ -236,7 +242,10 @@ class Profil extends Component {
             <Col s={6} md={12} className="colPhoto">
               <Image
                 className="photoProfil"
-                src={"https://back-end.osc-fr1.scalingo.io" + this.state.profil.picture}
+                src={
+                  "https://back-end.osc-fr1.scalingo.io" +
+                  this.state.profil.picture
+                }
                 roundedCircle
               />
             </Col>
@@ -291,7 +300,7 @@ class Profil extends Component {
           </Col>
           <Col xs={12} s={12} md={6}>
             <Button className="lienCommentaire" href="/monAbonnement">
-              Devenir Premium !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              Devenir Premium
             </Button>
           </Col>
         </Row>
