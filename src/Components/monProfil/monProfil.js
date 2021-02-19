@@ -210,7 +210,7 @@ class Profil extends Component {
     if (this.state.profil.mangoWalletReferent) {
       return (
         <Button className="lienCommentaire" href="/referent">
-          Compte Référent
+          Mon compte Référent
         </Button>
       );
     }
@@ -267,43 +267,52 @@ class Profil extends Component {
             {this.renderMesRestau()}
           </Col>
         </Row>
+
+      
         <Row className="rowButton">
-          <Col classeName="colModifier" md={6}>
-            <Link to="/modifierMonProfil" className="modif">
-              <button className="buttonModifier">Modifier</button>
-            </Link>
-          </Col>
-          <Col md={6}>
+        <Col xs={12} md={6} lg={6}>
             <button className="buttonAbo" onClick={this.infoStripe}>
-              Mon porte-monnaie
+              Mes pourboires individuels
             </button>
           </Col>
+          <Col xs={12} s={12} md={6} lg={6}>
+            <Button className="buttonAbo" href="/cagnotte">
+              Mes pourboires collectifs
+            </Button>
+          </Col>
+          
         </Row>
         <Row>
-          <Col xs={12} s={12} md={6}>
+       
+           <Col xs={12} s={12} md={6} lg={6}>
+            {this.renderCompteReferent()}
+          </Col>
+          <Col classeName="colModifier" md={6} lg={6}>
+            <Link to="/modifierMonProfil" className="modif">
+              <button className="buttonModifier lienCommentaire">Modifier mon profil</button>
+            </Link>
+          </Col>
+        </Row>
+         <Row>
+         
+          <Col xs={12} s={12} md={6} lg={6}>
             <Button className="lienCommentaire" href="/mesTips">
               Mes commentaires
             </Button>
           </Col>
-          <Col xs={12} s={12} md={6}>
+          <Col xs={12} s={12} md={6} lg={6}>
             <Button className="lienCommentaire" href="/mesHistoriques">
-              Mes historiques
-            </Button>
-          </Col>
-          <Col xs={12} s={12} md={6}>
-            <Button className="lienCommentaire" href="/cagnotte">
-              Ma Cagnotte Collective
-            </Button>
-          </Col>
-          <Col xs={12} s={12} md={6}>
-            {this.renderCompteReferent()}
-          </Col>
-          <Col xs={12} s={12} md={6}>
-            <Button className="lienCommentaire" href="/monAbonnement">
-              Devenir Premium
+              Mes pourboires encaissés
             </Button>
           </Col>
         </Row>
+        <Row >
+        <Col xs={12} s={12} md={6} lg={6}>
+            <Button className="lienCommentaire" href="/monAbonnement">
+             Souscrire l'abonnement premium
+            </Button>
+          </Col>
+          </Row>
       </Container>
     );
   }

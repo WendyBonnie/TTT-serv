@@ -52,7 +52,7 @@ class Connexion extends Component {
     return (
       <Container className='connexCont'>
         <Row className="background">
-          <Col  className="blockConnexion" sm={12} md={7}>
+          <Col  className="blockConnexion" sm={12} md={7} lg={12}>
             <h1 className="titreConnexion">Déjà membre?</h1>
             <h1 className="titreConnexion">Connectez-vous!</h1>
 

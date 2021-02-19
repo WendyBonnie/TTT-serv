@@ -31,11 +31,10 @@ class Barremenu extends Component {
 
             <Dropdown.Menu>
               <Dropdown.Item href="/MonProfil">Mon profil</Dropdown.Item>
-              <Dropdown.Item href="/mesTips">Mes commentaires</Dropdown.Item>
-              <Dropdown.Item href="/mesHistoriques">Mes historiques</Dropdown.Item>
-              <Dropdown.Item href="/Connexion">Connexion</Dropdown.Item>
-              <Link to="/connexion" onClick={() => localStorage.clear()}>
-                <Dropdown.Item href="/Connexion">Deconnexion</Dropdown.Item>
+     
+              <Dropdown.Item href="/">Connexion</Dropdown.Item>
+              <Link to="/" onClick={() => localStorage.clear()}>
+                <Dropdown.Item href="/">Deconnexion</Dropdown.Item>
               </Link>
             </Dropdown.Menu>
           </Dropdown>
