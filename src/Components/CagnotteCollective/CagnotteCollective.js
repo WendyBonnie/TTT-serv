@@ -144,7 +144,7 @@ class CagnotteCollective extends Component {
         <Row className='rowCagn'>
           <Col>
           <h1>
-          Montant de votre cagnotte : 
+          Montant des pourboires collectifs : 
           </h1>
           <h2><strong>{this.state.amount/100} euros</strong></h2>
           <Button onClick={this.payoutMangoPay}>Retirer votre argent</Button>
@@ -152,7 +152,7 @@ class CagnotteCollective extends Component {
         </Row>
         <Row className='rowPasDeCagn'>
           <Col>
-          <h5> Pas encore de cagnotte ? Suivez les étapes ci-dessous !</h5>
+          <h5> Pas encore de cagnotte pour percevoir vos pourboires collectifs ? Suivez les étapes ci-dessous !</h5>
           </Col>
         </Row>
         <Row className='rowId'>

@@ -283,10 +283,11 @@ class Profil extends Component {
           
         </Row>
         <Row>
-       
-           <Col xs={12} s={12} md={6} lg={6}>
-            {this.renderCompteReferent()}
-          </Col>
+          <Col md={6} lg={6}>
+        <Button className="lienCommentaire" href="/monAbonnement">
+             Souscrire l'abonnement premium
+            </Button>
+            </Col>
           <Col classeName="colModifier" md={6} lg={6}>
             <Link to="/modifierMonProfil" className="modif">
               <button className="buttonModifier lienCommentaire">Modifier mon profil</button>
@@ -308,9 +309,10 @@ class Profil extends Component {
         </Row>
         <Row >
         <Col xs={12} s={12} md={6} lg={6}>
-            <Button className="lienCommentaire" href="/monAbonnement">
-             Souscrire l'abonnement premium
-            </Button>
+            
+            <Col xs={12} s={12} md={6} lg={6}>
+            {this.renderCompteReferent()}
+          </Col>
           </Col>
           </Row>
       </Container>
