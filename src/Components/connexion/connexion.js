@@ -41,11 +41,15 @@ class Connexion extends Component {
       })
 
       .then((responseData) => {
-        console.log(responseData);
-        localStorage.setItem("token", responseData.token);
-        localStorage.setItem("userID", responseData.userId);
-        this.props.history.push("/monprofil");
-      });
+        this.setState({ message: responseData.message });
+
+        if (responseData.token) {
+          localStorage.setItem("token", responseData.token);
+          localStorage.setItem("userID", responseData.userId);
+          this.props.setLogin(true);
+          this.props.history.push("/monprofil");
+        }
+    });
   };
 
   render() {
@@ -103,7 +107,9 @@ class Connexion extends Component {
                     </Button>
                   </Link>
                 </Col>
+                
                 <Col className="colMembre" xs={12}>
+                {this.state.message}
                   <p className="membre">
                     Pas encore membre ?
                     <Link className="compte" to="/inscription">
@@ -113,6 +119,7 @@ class Connexion extends Component {
                 </Col>
               </Form.Row>
             </Form>
+            
           </Col>
           <Col className="imageDeskServeur" md={5}>
        
