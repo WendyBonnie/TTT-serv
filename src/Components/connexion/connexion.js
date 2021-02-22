@@ -59,7 +59,6 @@ class Connexion extends Component {
           <Col  className="blockConnexion" sm={12} md={7} lg={12}>
             <h1 className="titreConnexion">Déjà membre?</h1>
             <h1 className="titreConnexion">Connectez-vous!</h1>
-
             <Form className="identifiants">
               <Form.Row className="align-items-center">
                 <Col xs={12} s={12}>
