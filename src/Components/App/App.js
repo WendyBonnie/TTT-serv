@@ -24,7 +24,8 @@ class App extends Component {
     super(props);
     this.state = {
       login: false,
-  }};
+  }
+};
 
   setLogin = (value) => {
     this.setState({ login: value });
@@ -34,7 +35,7 @@ class App extends Component {
     return (
       <Router>
         <div className="main-container">
-          <Barremenu />
+          <Barremenu setLogin={this.setLogin} login={this.state.login}/>
           <Switch>
           <Route
               exact

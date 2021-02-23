@@ -41,21 +41,24 @@ class Connexion extends Component {
       })
 
       .then((responseData) => {
-        console.log(responseData);
-        localStorage.setItem("token", responseData.token);
-        localStorage.setItem("userID", responseData.userId);
-        this.props.history.push("/monprofil");
-      });
+        this.setState({ message: responseData.message });
+
+        if (responseData.token) {
+          localStorage.setItem("token", responseData.token);
+          localStorage.setItem("userID", responseData.userId);
+          this.props.setLogin(true);
+          this.props.history.push("/monprofil");
+        }
+    });
   };
 
   render() {
     return (
       <Container className='connexCont'>
         <Row className="background">
-          <Col  className="blockConnexion" sm={12} md={7}>
+          <Col  className="blockConnexion" sm={12} md={7} lg={12}>
             <h1 className="titreConnexion">Déjà membre?</h1>
             <h1 className="titreConnexion">Connectez-vous!</h1>
-
             <Form className="identifiants">
               <Form.Row className="align-items-center">
                 <Col xs={12} s={12}>
@@ -103,7 +106,9 @@ class Connexion extends Component {
                     </Button>
                   </Link>
                 </Col>
+                
                 <Col className="colMembre" xs={12}>
+                {this.state.message}
                   <p className="membre">
                     Pas encore membre ?
                     <Link className="compte" to="/inscription">
@@ -113,6 +118,7 @@ class Connexion extends Component {
                 </Col>
               </Form.Row>
             </Form>
+            
           </Col>
           <Col className="imageDeskServeur" md={5}>
        
