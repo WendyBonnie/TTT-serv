@@ -213,7 +213,7 @@ class CagnotteCollective extends Component {
               />
             </Form>
             <Button
-              variant="primary"
+              className='butBankAcc'
               type="submit"
               onClick={this.addBankAccount}
             >
