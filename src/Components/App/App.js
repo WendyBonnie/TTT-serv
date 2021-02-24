@@ -24,20 +24,29 @@ class App extends Component {
     super(props);
     this.state = {
       login: false,
+    };
   }
-};
 
   setLogin = (value) => {
     this.setState({ login: value });
   };
 
+  componentDidMount() {
+    if (localStorage.getItem("token") != null) {
+      this.setState({ login: true });
+    }
+    window.addEventListener("beforeunload", () =>
+      localStorage.removeItem("token")
+    );
+  }
+
   render() {
     return (
       <Router>
         <div className="main-container">
-          <Barremenu setLogin={this.setLogin} login={this.state.login}/>
+          <Barremenu setLogin={this.setLogin} login={this.state.login} />
           <Switch>
-          <Route
+            <Route
               exact
               path="/"
               render={(props) => (

@@ -309,8 +309,7 @@ class Profil extends Component {
         </Row>
         <Row >
        
-            
-            <Col xs={12} s={12} md={6} lg={6}>
+            <Col>
             {this.renderCompteReferent()}
           </Col>
          

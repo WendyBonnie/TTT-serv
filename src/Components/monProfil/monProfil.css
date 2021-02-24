@@ -10,6 +10,10 @@
   margin-bottom: 20%;
 }
 
+.contain .button:hover{
+  background-color: #4a4a4a;
+}
+
 .contain .infoProfil {
   text-align: center;
   margin-top: 5%;
@@ -130,6 +134,10 @@ p {
     margin-top: 5%;
   
   
+}
+
+.buttonRef{
+  text-align: center;
 }
 
 @media (max-width: 800px) {

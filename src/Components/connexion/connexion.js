@@ -49,14 +49,14 @@ class Connexion extends Component {
           this.props.setLogin(true);
           this.props.history.push("/monprofil");
         }
-    });
+      });
   };
 
   render() {
     return (
-      <Container className='connexCont'>
+      <Container className="connexCont">
         <Row className="background">
-          <Col  className="blockConnexion" sm={12} md={7} lg={12}>
+          <Col className="blockConnexion" sm={12} md={7} lg={12}>
             <h1 className="titreConnexion">Déjà membre?</h1>
             <h1 className="titreConnexion">Connectez-vous!</h1>
             <Form className="identifiants">
@@ -106,9 +106,9 @@ class Connexion extends Component {
                     </Button>
                   </Link>
                 </Col>
-                
+
                 <Col className="colMembre" xs={12}>
-                {this.state.message}
+                  {this.state.message}
                   <p className="membre">
                     Pas encore membre ?
                     <Link className="compte" to="/inscription">
@@ -118,11 +118,8 @@ class Connexion extends Component {
                 </Col>
               </Form.Row>
             </Form>
-            
           </Col>
-          <Col className="imageDeskServeur" md={5}>
-       
-          </Col>
+          <Col className="imageDeskServeur" md={5}></Col>
         </Row>
       </Container>
     );
