@@ -22,15 +22,28 @@ import Referent from "../Referent/referent";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      login: false,
   }
+};
+
+  setLogin = (value) => {
+    this.setState({ login: value });
+  };
 
   render() {
     return (
       <Router>
         <div className="main-container">
-          <Barremenu />
+          <Barremenu setLogin={this.setLogin} login={this.state.login}/>
           <Switch>
-            <Route path="/connexion" component={Connexion} />
+          <Route
+              exact
+              path="/"
+              render={(props) => (
+                <Connexion setLogin={this.setLogin} {...props} />
+              )}
+            />
             <Route path="/inscription" component={Inscription} />
             <Route path="/monProfil" component={Profil} />
             <Route path="/modifierMonProfil" component={ModifierMonProfil} />

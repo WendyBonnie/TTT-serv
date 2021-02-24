@@ -34,7 +34,7 @@ class referent extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/referentWallet", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/referentWallet", options)
       .then((response) => {
         return response.json();
       })
@@ -61,7 +61,7 @@ class referent extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/waiterList", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/waiterList", options)
       .then((response) => {
         return response.json();
       })
@@ -109,7 +109,7 @@ class referent extends Component {
                 body: JSON.stringify(data),
               };
 
-              fetch("http://localhost:8080/serveur/referentTransfert", options)
+              fetch("https://back-end.osc-fr1.scalingo.io/serveur/referentTransfert", options)
                 .then((response) => {
                   return response;
                 })

@@ -33,7 +33,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/mangoBank", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoBank", options)
       .then((response) => {
         return response.json();
       })
@@ -66,7 +66,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/payoutMango", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/payoutMango", options)
       .then((response) => {
         return response.json();
       })
@@ -99,7 +99,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/getWalet", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/getWalet", options)
       .then((response) => {
         return response.json();
       })
@@ -126,7 +126,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/mangoKYC", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoKYC", options)
       .then((response) => {
         return response.json();
       })
@@ -144,7 +144,7 @@ class CagnotteCollective extends Component {
         <Row className='rowCagn'>
           <Col>
           <h1>
-          Montant de votre cagnotte : 
+          Montant des pourboires collectifs : 
           </h1>
           <h2><strong>{this.state.amount/100} euros</strong></h2>
           <Button onClick={this.payoutMangoPay}>Retirer votre argent</Button>
@@ -152,7 +152,7 @@ class CagnotteCollective extends Component {
         </Row>
         <Row className='rowPasDeCagn'>
           <Col>
-          <h5> Pas encore de cagnotte ? Suivez les étapes ci-dessous !</h5>
+          <h5> Pas encore de cagnotte pour percevoir vos pourboires collectifs ? Suivez les étapes ci-dessous !</h5>
           </Col>
         </Row>
         <Row className='rowId'>

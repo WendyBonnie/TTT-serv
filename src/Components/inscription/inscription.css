@@ -13,6 +13,10 @@ body {
   margin-top: -13%;
   padding: 70px;
 }
+.inscr .form-control{
+  height: 66px;
+  font-size: 0.8rem;
+}
 
 .inscr .RowInscr {
   padding-left: 8% !important;

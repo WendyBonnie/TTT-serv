@@ -9,7 +9,6 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 class footer extends Component {
-
   deleteProfil = (e) => {
     window.confirm(
       "Etes-vous sur de vouloir supprimer votre compte? Cette action est irréversible."
@@ -34,7 +33,7 @@ class footer extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/delete", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/delete", options)
       .then((response) => {
         return response.json();
       })
@@ -53,8 +52,6 @@ class footer extends Component {
       );
   };
   render() {
-
-    
     return (
       <div className="footer">
         <Navbar fixed="bottom" collapseOnSelect expand="lg" bg="#edeaea">
@@ -67,18 +64,29 @@ class footer extends Component {
               <Nav.Link href="https://tipourboire.com" className="textFooter">
                 Condition Général
               </Nav.Link>
-              <Nav.Link href="https://tipourboire.com" className="textFooter">
+              <Nav.Link
+                href="mailto:contact@tipourboire.com"
+                className="textFooter"
+              >
                 Contact
               </Nav.Link>
-              <Nav.Link href="#pricing" className="textFooter" onClick={this.deleteProfil}>
+              <Nav.Link
+                href="#pricing"
+                className="textFooter"
+                onClick={this.deleteProfil}
+              >
                 Supprimer mon compte
               </Nav.Link>
             </Nav>
             <Nav>
-             {/* <Nav.Link href="#deets" className="textFooter">
+              {/* <Nav.Link href="#deets" className="textFooter">
                 Langues
     </Nav.Link>*/}
-              <Nav.Link eventKey={2} href="https://tipourboire.com" className="textFooter">
+              <Nav.Link
+                eventKey={2}
+                href="https://tipourboire.com"
+                className="textFooter"
+              >
                 A propos
               </Nav.Link>
             </Nav>

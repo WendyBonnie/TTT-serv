@@ -50,7 +50,7 @@ export default function CheckoutForm() {
     }
     function createSubscription({ customerId, paymentMethodId, priceId }) {
       return (
-        fetch("http://localhost:8080/serveur/createsubscription", {
+        fetch("https://back-end.osc-fr1.scalingo.io/serveur/createsubscription", {
           method: "post",
           headers: {
             "Content-type": "application/json",
