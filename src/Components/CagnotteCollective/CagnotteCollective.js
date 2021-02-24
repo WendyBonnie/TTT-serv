@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Container,Row,Col } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import "./CagnotteCollective.css";
 
@@ -132,6 +132,7 @@ class CagnotteCollective extends Component {
       })
       .then((responseData) => {
         this.setState({ message: responseData.message });
+        console.log(this.state.message);
       });
   };
 
@@ -140,78 +141,86 @@ class CagnotteCollective extends Component {
   }
   render() {
     return (
-      <Container className='cagnotteCont'>
-        <Row className='rowCagn'>
+      <Container className="cagnotteCont">
+        <Row className="rowCagn">
           <Col>
-          <h1>
-          Montant des pourboires collectifs : 
-          </h1>
-          <h2><strong>{this.state.amount/100} euros</strong></h2>
-          <Button onClick={this.payoutMangoPay}>Retirer votre argent</Button>
+            <h1>Montant des pourboires collectifs :</h1>
+            <h2>
+              <strong>{this.state.amount / 100} euros</strong>
+            </h2>
+            <Button onClick={this.payoutMangoPay}>Retirer votre argent</Button>
           </Col>
         </Row>
-        <Row className='rowPasDeCagn'>
+        <Row className="rowPasDeCagn">
           <Col>
-          <h5> Pas encore de cagnotte pour percevoir vos pourboires collectifs ? Suivez les étapes ci-dessous !</h5>
+            <h5>
+              {" "}
+              Pas encore de cagnotte pour percevoir vos pourboires collectifs ?
+              Suivez les étapes ci-dessous !
+            </h5>
           </Col>
         </Row>
-        <Row className='rowId'>
+        <Row className="rowId">
           <Col>
-          <form onSubmit={this.onSubmit}>
-            <h3>Confirmation d'identité </h3>
-            <h5>(Recto Verso sur la même page)</h5>
-            <input className="chargePic" type="file" name="file" />
+            <form onSubmit={this.onSubmit}>
+              <h3>Confirmation d'identité </h3>
+              <h5>(Recto Verso sur la même page)</h5>
+              <input className="chargePic" type="file" name="file" />
 
-            <Button type="submit">Télécharger</Button>
-          </form>
+              <Button type="submit">Télécharger</Button>
+            </form>
           </Col>
+          {this.state.message}
         </Row>
         <Row>
           <Col>
-          <Form>
-          <Form.Control
-            type="text"
-            placeholder="Votre Adresse"
-            name="adress"
-            onChange={this.handleInput}
-            value={this.state.adress}
-          />
-          <Form.Control
-            type="text"
-            placeholder="Code Postal"
-            name="zip"
-            onChange={this.handleInput}
-            value={this.state.zip}
-          />
-          <Form.Control
-            type="text"
-            placeholder="Ville"
-            name="city"
-            onChange={this.handleInput}
-            value={this.state.city}
-          />
-          <Form.Control
-            type="text"
-            placeholder="Votre Région"
-            name="region"
-            onChange={this.handleInput}
-            value={this.state.region}
-          />
+            <Form>
+              <Form.Control
+                type="text"
+                placeholder="Votre Adresse"
+                name="adress"
+                onChange={this.handleInput}
+                value={this.state.adress}
+              />
+              <Form.Control
+                type="text"
+                placeholder="Code Postal"
+                name="zip"
+                onChange={this.handleInput}
+                value={this.state.zip}
+              />
+              <Form.Control
+                type="text"
+                placeholder="Ville"
+                name="city"
+                onChange={this.handleInput}
+                value={this.state.city}
+              />
+              <Form.Control
+                type="text"
+                placeholder="Votre Région"
+                name="region"
+                onChange={this.handleInput}
+                value={this.state.region}
+              />
 
-          <Form.Control
-            type="text"
-            placeholder="Votre IBAN"
-            name="iban"
-            onChange={this.handleInput}
-            value={this.state.iban}
-          />
-        </Form>
-        <Button variant="primary" type="submit" onClick={this.addBankAccount}>
-          Envoyez les informations banquaires
-        </Button>
+              <Form.Control
+                type="text"
+                placeholder="Votre IBAN"
+                name="iban"
+                onChange={this.handleInput}
+                value={this.state.iban}
+              />
+            </Form>
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={this.addBankAccount}
+            >
+              Envoyez les informations banquaires
+            </Button>
           </Col>
         </Row>
-  
       </Container>
     );
   }
