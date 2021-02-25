@@ -21,6 +21,13 @@
 
 }
 
+.butBankAcc:active{
+    background-color:#555!important ;
+}
+.butBankAcc:focus{
+    background-color:#555!important ;
+}
+
 .rowCagn{
     text-align: center;
 }

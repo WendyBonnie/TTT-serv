@@ -308,12 +308,11 @@ class Profil extends Component {
           </Col>
         </Row>
         <Row >
-        <Col className='buttonRef' xs={12} s={12} md={6} lg={6}>
-            
-            
+       
+            <Col>
             {this.renderCompteReferent()}
-          
           </Col>
+         
           </Row>
       </Container>
     );
