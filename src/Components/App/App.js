@@ -35,9 +35,6 @@ class App extends Component {
     if (localStorage.getItem("token") != null) {
       this.setState({ login: true });
     }
-    window.addEventListener("beforeunload", () =>
-      localStorage.removeItem("token")
-    );
   }
 
   render() {
