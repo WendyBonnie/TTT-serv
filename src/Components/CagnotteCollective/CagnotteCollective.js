@@ -219,6 +219,7 @@ class CagnotteCollective extends Component {
             >
               Envoyez les informations banquaires
             </Button>
+            <p>{this.state.message}</p>
           </Col>
         </Row>
       </Container>

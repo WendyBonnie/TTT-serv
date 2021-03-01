@@ -126,6 +126,7 @@ class referent extends Component {
           >
             Envoyez
           </Button>
+          <p>{this.state.message}</p>
         </Col>
       );
     });
