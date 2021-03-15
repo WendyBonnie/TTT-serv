@@ -29,7 +29,9 @@ body {
 .Titrep {
   font-size: 14px;
 }
-
+.cgvLink {
+  color:#f5a624  !important
+}
 .inscr .Bloc-principal .form-group .form-control {
   font-size: 0.8rem;
   border-radius: 8px;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-//import "./checkouForm.css";
+import "./checkouForm.css";
 import CardSection from "../cardSection/CardSection";
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -104,7 +104,7 @@ export default function CheckoutForm() {
   return (
     <form className="coForm" onSubmit={handleSubmit}>
       <CardSection />
-      <button /*className="submitButton"*/ disabled={!stripe}>
+      <button className="submitButton" disabled={!stripe}>
         Devenir un Serveur Premium
       </button>
     </form>

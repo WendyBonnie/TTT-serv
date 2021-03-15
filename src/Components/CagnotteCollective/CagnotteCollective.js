@@ -1,7 +1,9 @@
+import { Alert } from "bootstrap";
 import React, { Component } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import "./CagnotteCollective.css";
+
 
 class CagnotteCollective extends Component {
   constructor(props) {
@@ -133,7 +135,7 @@ class CagnotteCollective extends Component {
       })
       .then((responseData) => {
         this.setState({ message: responseData.message });
-        console.log(this.state.message);
+      
       });
   };
 
@@ -199,7 +201,7 @@ class CagnotteCollective extends Component {
               />
               <Form.Control
                 type="text"
-                placeholder="Votre Région"
+                placeholder="Votre région, PACA, AQUITAINE, BRETAGNE... "
                 name="region"
                 onChange={this.handleInput}
                 value={this.state.region}
@@ -207,7 +209,7 @@ class CagnotteCollective extends Component {
 
               <Form.Control
                 type="text"
-                placeholder="Votre IBAN"
+                placeholder="Votre IBAN, FRXXXXXXXXXXXXXXXXXX"
                 name="iban"
                 onChange={this.handleInput}
                 value={this.state.iban}
@@ -220,7 +222,7 @@ class CagnotteCollective extends Component {
             >
               Envoyez les informations banquaires
             </Button>
-            <p>{this.state.message}</p>
+           
           </Col>
         </Row>
       </Container>
