@@ -8,6 +8,7 @@ class CagnotteCollective extends Component {
     super(props);
     this.state = {
       document: {},
+      amount: 0,
     };
   }
   addBankAccount = (e) => {
@@ -213,7 +214,7 @@ class CagnotteCollective extends Component {
               />
             </Form>
             <Button
-              className='butBankAcc'
+              className="butBankAcc"
               type="submit"
               onClick={this.addBankAccount}
             >

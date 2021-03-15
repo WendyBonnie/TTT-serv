@@ -34,7 +34,10 @@ class referent extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/referentWallet", options)
+    fetch(
+      "https://back-end.osc-fr1.scalingo.io/serveur/referentWallet",
+      options
+    )
       .then((response) => {
         return response.json();
       })
@@ -109,13 +112,17 @@ class referent extends Component {
                 body: JSON.stringify(data),
               };
 
-              fetch("https://back-end.osc-fr1.scalingo.io/serveur/referentTransfert", options)
+              fetch(
+                "https://back-end.osc-fr1.scalingo.io/serveur/referentTransfert",
+                options
+              )
                 .then((response) => {
                   return response;
                 })
                 .then(
                   (data) => {
                     console.log(data);
+                    window.alert("Coucou ca à marché");
                   },
 
                   (error) => {
