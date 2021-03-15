@@ -141,7 +141,7 @@ class referent extends Component {
       <Container className="mesHisto">
         <Row className="commentaireHisto">
           <Col xs={12} s={12} md={12}>
-            <h1>Montant de la cagnotte référent :</h1>
+            <h1>Montant du pot commun :</h1>
             <h2 className="montantCo">
               <strong>{this.state.amount / 100} euros</strong>
             </h2>

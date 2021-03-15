@@ -200,7 +200,7 @@ class CagnotteCollective extends Component {
               />
               <Form.Control
                 type="text"
-                placeholder="Votre Région"
+                placeholder="Votre région, PACA, AQUITAINE, BRETAGNE... "
                 name="region"
                 onChange={this.handleInput}
                 value={this.state.region}
@@ -208,7 +208,7 @@ class CagnotteCollective extends Component {
 
               <Form.Control
                 type="text"
-                placeholder="Votre IBAN"
+                placeholder="Votre IBAN, FRXXXXXXXXXXXXXXXXXX"
                 name="iban"
                 onChange={this.handleInput}
                 value={this.state.iban}
