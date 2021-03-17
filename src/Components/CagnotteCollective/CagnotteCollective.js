@@ -4,7 +4,6 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import "./CagnotteCollective.css";
 
-
 class CagnotteCollective extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +41,7 @@ class CagnotteCollective extends Component {
       })
 
       .then((responseData) => {
-        console.log(responseData);
+        this.setState({ messageBA: responseData.message });
       });
   };
 
@@ -135,7 +134,6 @@ class CagnotteCollective extends Component {
       })
       .then((responseData) => {
         this.setState({ message: responseData.message });
-      
       });
   };
 
@@ -222,7 +220,9 @@ class CagnotteCollective extends Component {
             >
               Envoyez les informations banquaires
             </Button>
-           
+            <br />
+            <br />
+            {this.state.messageBA}
           </Col>
         </Row>
       </Container>
