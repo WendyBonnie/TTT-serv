@@ -1,156 +1,101 @@
+.connexion-container a {
+  color: #f5a624 !important;
+}
 .connexion-container {
-  background: white;
-
-  margin-top: -10%;
-  border-radius: 28px;
-  border: none;
-  color: #ffffff;
-  box-shadow: 1px 1px 3px #999;
-  padding: 70px;
-}
-
-
-.background {
-  border-radius: 28px !important;
-  margin-top: -13% !important;
+  margin-top: -5% !important; 
   background-color: white !important;
-  padding-top: 15%;
-  
-}
-
-.imageDeskServeur{
-  display: none;
-}
-
-.background h1 {
-  font-size: 28px;
-  font-style: inherit;
-}
-
-.connexion-container .sign-up {
-  background-color: #ffffff;
-  font-size: 0.8rem;
-  border-radius: 8px;
-  border: 2px solid #4a4a4a !important;
-  color: #f5a624;
-}
-.connexion-container .sign-up:hover,
-.connexion-container .sign-up:active {
-  background-color: #f5a624;
-  color: #4a4a4a;
-}
-
-.connexion-container .background {
-  background-color: #efefef;
-}
-
-.connexion-container .mdp {
-  color: #555;
-  text-decoration: #555;
-}
-
-.connexion-container .titreConnexion {
-  color: #4a4a4a;
-}
-
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 0px;
-  margin-left: -5px;
-}
-
-.mb-2 {
-  color: #ffffff;
-}
-
-.mdpOublie {
-  font-size: 13px !important;
-  text-align: right;
-  padding-right: 5%;
-  color: red;
-  margin-top: 2%;
-}
-.connectServeur {
   border-radius: 28px !important;
-  background-color: #f5a624 !important;
-  width: 100%;
-  border-color: #f5a624 !important;
   padding-top: 3% !important;
-  padding-bottom: 3% !important;
-  font-size: 23px !important;
-}
-.colMembre {
-  margin-top: 6%;
-}
-.membre {
-  font-size: 18px !important;
+  padding-left: 10% !important;
+  padding-right: 10% !important;
 }
 
-.compte {
-  color: #f5a624;
+.connexion-container h1 {
+  font-size: 28px !important;
+  margin-top: 5% !important;
+  font-weight: bold !important;
 }
-.form-control {
+
+.connexion-container .form-control {
   border-radius: 28px !important;
-  border-width: 0.5px !important;
-  padding: 1.5rem 5.75rem !important;
-  padding-left: 15px !important;
-  width: 100% !important;
-
-  margin-top: 3%;
+  margin-top: 5% !important;
 }
-.blockConnexion {
-  margin-bottom: 20%;
+
+.forgetpwd {
+  font-size: 18px !important;
+  color: #e05858 !important;
+  display: inherit !important;
+  margin-top: -20px !important;
+  text-decoration: none !important;
+  margin-top: 10px !important;
+  text-align: right !important;
+}
+
+.blocCompte {
+  text-align: right !important;
+}
+.connectButton {
+  border-radius: 28px !important;
+  border-color: #f5a624 !important;
+  background-color: #f5a624 !important;
+  color: white !important;
+  padding-left: 28% !important;
+  padding-right: 28% !important;
+}
+
+.connectButton:hover {
+  background-color: #555 !important;
+}
+
+.text2 {
+  font-size: 22px !important;
+  font-weight: lighter !important;
+  margin-top: 10px !important;
+  margin-bottom: -10px !important;
+  font-weight: bold !important;
+}
+
+.alignRight {
+  text-align: right !important;
+}
+
+.form-control {
+  padding: 1.375rem 0.75rem !important;
+  margin-bottom: 3% !important;
 }
 
 @media only screen and (min-device-width: 1024px) {
-  .connexCont{
-    margin-right:0%!important
-  }
-  .background h1 {
-    font-size: 38px;
-  }
-  .background {
+  .connexion-container {
     margin-top: 0% !important;
-    padding-top: 0% !important;
   }
-  .input-group {
-    width: 50% !important;
+  .connexion-container h1 {
+    font-size: 28px !important;
+    margin-top: 0% !important;
   }
-
-  .imageDeskServeur{
-    display: block;
-   
-    background-image: url("/images/drink (7).jpg");
-    background-repeat: no-repeat;
-    width: 100%;
-
+  .connexion-container .form-control {
+    border-radius: 28px !important ;
+    margin-top: 3% !important;
   }
-.connexPass{
-  width: 50%!important;
-}
-  .imageDeskServeur img{
-   width:100%
-  }
-
-
-  .connectServeur {
-    border-radius: 28px !important;
-    background-color: #f5a624 !important;
-   
-    border-color: #f5a624 !important;
-    padding-top: 2% !important;
-    padding-bottom: 2% !important;
+  .text2 {
     font-size: 22px !important;
+    font-weight: lighter !important;
+    margin-top: 10px !important;
+    margin-bottom: -10px !important;
+    font-weight: bold !important;
+  }
+  .forgetpwd {
+    font-size: 18px !important;
+    color: #e05858 !important;
+    display: inherit !important;
+    margin-top: -20px !important;
+    text-decoration: none !important;
+    margin-top: 10px !important;
+    text-align: right !important;
+  }
+  .form-control {
+    padding: 1.300rem !important;
+    margin-bottom: 2% !important;
+    text-align: left!important;
   }
 
-  .mdpOublie {
-    text-align: left;
-    padding-left: 1%;
-  }
-  .blockConnexion {
-    padding-top: 6%;
-    padding-bottom:6%;
-    margin-bottom:0%!important
-  }
 }
