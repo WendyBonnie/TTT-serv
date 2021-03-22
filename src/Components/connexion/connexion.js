@@ -54,73 +54,52 @@ class Connexion extends Component {
 
   render() {
     return (
-      <Container className="connexCont">
-        <Row className="background">
-          <Col className="blockConnexion" sm={12} md={7} lg={12}>
-            <h1 className="titreConnexion">Déjà membre?</h1>
-            <h1 className="titreConnexion">Connectez-vous!</h1>
-            <Form className="identifiants">
-              <Form.Row className="align-items-center">
-                <Col xs={12} s={12}>
-                  <Form.Label htmlFor="inlineFormInputGroup" srOnly>
-                    Username
-                  </Form.Label>
-                  <InputGroup className="mb-2">
-                    <FormControl
-                      name="email"
-                      id="inlineFormInputGroup"
-                      placeholder="Email"
-                      onChange={this.handleInput}
-                      value={this.state.email}
-                    />
-                  </InputGroup>
-                </Col>
-                <Col s={12} className="colPassword">
-                  <Form.Label htmlFor="inlineFormInput" srOnly>
-                    Mot de passe
-                  </Form.Label>
-                  <Form.Control
-                    name="password"
-                    className=" connexPass"
-                    id="inlineFormInput"
-                    placeholder="Password"
-                    type="password"
-                    onChange={this.handleInput}
-                    value={this.state.password}
-                  />
-                </Col>
-                <Col sm={12}>
-                  <Link to="/passwordReset">
-                    <p className="mdpOublie">Mot de passe oublié ?</p>
-                  </Link>
-                </Col>
-
-                <Col md={4}>
-                  <Link to="/monProfil">
-                    <Button
-                      type="submit"
-                      className="connectServeur"
-                      onClick={this.addLogin}
-                    >
-                      Se connecter
-                    </Button>
-                  </Link>
-                </Col>
-
-                <Col className="colMembre" xs={12}>
-                  {this.state.message}
-                  <p className="membre">
-                    Pas encore membre ?
-                    <Link className="compte" to="/inscription">
-                      {""} Créer mon compte
-                    </Link>
-                  </p>
-                </Col>
-              </Form.Row>
-            </Form>
+      <Container className="connexion-container">
+        <Row>
+          <Col>
+            <h1>Déja membre ? </h1>
+            <h1>Connectez-vous!</h1>
           </Col>
-          <Col className="imageDeskServeur" md={5}></Col>
         </Row>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Control
+            name="email"
+            type="email"
+            ClassName="formMail"
+            placeholder="Votre e-mail"
+            id="email"
+            onChange={this.handleInput}
+            value={this.state.email}
+          />
+          <Form.Control
+            name="password"
+            type="password"
+            ClassName="formMail"
+            placeholder="Votre mot de passe"
+            id="password"
+            onChange={this.handleInput}
+            value={this.state.password}
+          />
+        </Form.Group>
+        <Col className="colMdp" xs={12} md={12}>
+          <Link className="forgetpwd" to="/passwordReset">
+            <p>Mot de passe oublié ?</p>
+          </Link>
+        </Col>
+        <Col md={12} className="blocCompte">
+          <Button className="connectButton" onClick={this.addLogin}>
+            Se connecter
+          </Button>
+          <p>{this.state.message}</p>
+        </Col>
+        <Col className="alignRight">
+          <Form.Label className="text2">
+            Pas encore membre ?{" "}
+            <Link className="creerCompte" to="/Inscription">
+              Créer mon compte
+            </Link>
+          </Form.Label>
+        </Col>
       </Container>
     );
   }
