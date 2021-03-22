@@ -41,7 +41,13 @@ class CagnotteCollective extends Component {
       })
 
       .then((responseData) => {
-        this.setState({ messageBA: responseData.message });
+        if (responseData.Type === "param_error") {
+          window.alert("Une erreur s'est produite, veuillez réessayer.");
+        } else {
+          window.alert(
+            "Votre compte bancaire à bien été enregistré vous pouvez maintenant retirer votre argent."
+          );
+        }
       });
   };
 
@@ -133,7 +139,13 @@ class CagnotteCollective extends Component {
         return response.json();
       })
       .then((responseData) => {
-        this.setState({ message: responseData.message });
+        if (responseData.Type === "param_error") {
+          window.alert("Une erreur s'est produite, veuillez réessayer.");
+        } else {
+          window.alert(
+            "Vots documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
+          );
+        }
       });
   };
 
@@ -166,12 +178,18 @@ class CagnotteCollective extends Component {
             <form onSubmit={this.onSubmit}>
               <h3>Confirmation d'identité </h3>
               <h5>(Recto Verso sur la même page)</h5>
-              <input className="chargePic" type="file" name="file" />
+              <input
+                className="chargePic"
+                type="file"
+                name="file"
+                multiple
+                accept="image/png, image/jpeg, image/jpg, image/pdf"
+              />
 
               <Button type="submit">Télécharger</Button>
             </form>
+            {this.state.message}
           </Col>
-          {this.state.message}
         </Row>
         <Row>
           <Col>
