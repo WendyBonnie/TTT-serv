@@ -236,7 +236,7 @@ class CagnotteCollective extends Component {
               type="submit"
               onClick={this.addBankAccount}
             >
-              Envoyez les informations banquaires
+              Envoyez vos informations bancaires
             </Button>
             <br />
             <br />
