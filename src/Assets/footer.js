@@ -62,7 +62,7 @@ class footer extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="https://tipourboire.com" className="textFooter">
-                Condition Général
+                Conditions Générales
               </Nav.Link>
               <Nav.Link
                 href="mailto:contact@tipourboire.com"

@@ -2,16 +2,17 @@
   color: #f5a624 !important;
 }
 .connexion-container {
-  margin-top: -5% !important; 
+  margin-top: -5% !important;
   background-color: white !important;
   border-radius: 28px !important;
   padding-top: 3% !important;
   padding-left: 10% !important;
   padding-right: 10% !important;
+  margin-bottom: 30% !important;
 }
 
 .connexion-container h1 {
-  font-size: 28px !important;
+  font-size: 22px !important;
   margin-top: 5% !important;
   font-weight: bold !important;
 }
@@ -93,9 +94,8 @@
     text-align: right !important;
   }
   .form-control {
-    padding: 1.300rem !important;
+    padding: 1.3rem !important;
     margin-bottom: 2% !important;
-    text-align: left!important;
+    text-align: left !important;
   }
-
 }
