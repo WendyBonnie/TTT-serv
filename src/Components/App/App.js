@@ -3,6 +3,7 @@ import "../App/App.css";
 import Profil from "../monProfil/monProfil";
 import Connexion from "../connexion/connexion";
 import Inscription from "../inscription/inscription";
+import InscriptionParrainage from "../inscriptionParrainage/inscriptionParrainage";
 import MesTips from "../mesTips/mesTips";
 import ModifierMonProfil from "../modifierMonProfil/modifierMonProfil";
 import monAbonnement from "../monAbonnement/monAbonnement";
@@ -51,6 +52,10 @@ class App extends Component {
               )}
             />
             <Route path="/inscription" component={Inscription} />
+            <Route
+              path="/inscriptionParrainage"
+              component={InscriptionParrainage}
+            />
             <Route path="/monProfil" component={Profil} />
             <Route path="/modifierMonProfil" component={ModifierMonProfil} />
             <Route path="/mesTips" component={mesComs} />

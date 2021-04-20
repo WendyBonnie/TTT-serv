@@ -29,6 +29,10 @@ class Profil extends Component {
     return;
   };
 
+  handleInput = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   renderMesHistory = () => {
     if (Array.isArray(this.state.profil.history)) {
       if (this.state.profil.history.length > 0) {
@@ -202,6 +206,33 @@ class Profil extends Component {
         }
       );
   };
+  postParrainage = (e) => {
+    e.preventDefault();
+    const data = {
+      email: this.state.email,
+    };
+
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      "X-Requested-With": "XMLHttpRequest",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    });
+
+    const options = {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: headers,
+    };
+
+    fetch("http://localhost:8080/serveur/parrainage", options)
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((responseData) => {
+        this.setState({ message: responseData.message });
+      });
+  };
   componentDidMount() {
     this.getMonProfil();
     this.getRestaurantList();
@@ -235,7 +266,7 @@ class Profil extends Component {
 
   render() {
     return (
-      <Container className="contain">
+      <Container className="contain parrainage">
         {/* {this.abonnement()}*/}
         <Row className="mescartes">
           <Col className="mesdetails" sm={12} md={12}>
@@ -267,10 +298,35 @@ class Profil extends Component {
             {this.renderMesRestau()}
           </Col>
         </Row>
+        <Row>
+          <Col className="colParrainage">
+            <Col md={12}>
+              <label className="demandeParrainage">Parrainé un ami</label>
+            </Col>
+            <input
+              type="text"
+              name="email"
+              onChange={this.handleInput}
+              placeholder="Email du parrainé"
+              className="inputParrainage"
+            />
 
-      
+            <input
+              type="submit"
+              value="Envoyer"
+              onClick={this.postParrainage}
+              className="buttonParrainage"
+            />
+            <p className="infoParrainage">
+              " Vous pouvez envoyer une invitation à rejoindre la communauté
+              Tipourboire avec 2 mois d'abonnement premium gratuit à vos amis !
+              "
+            </p>
+          </Col>
+        </Row>
+
         <Row className="rowButton">
-        <Col xs={12} md={6} lg={6}>
+          <Col xs={12} md={6} lg={6}>
             <button className="buttonAbo" onClick={this.infoStripe}>
               Mes pourboires individuels
             </button>
@@ -280,22 +336,22 @@ class Profil extends Component {
               Mes pourboires collectifs
             </Button>
           </Col>
-          
         </Row>
         <Row>
           <Col md={6} lg={6}>
-        <Button className="lienCommentaire" href="/monAbonnement">
-             Souscrire l'abonnement premium
+            <Button className="lienCommentaire" href="/monAbonnement">
+              Souscrire l'abonnement premium
             </Button>
-            </Col>
+          </Col>
           <Col classeName="colModifier" md={6} lg={6}>
             <Link to="/modifierMonProfil" className="modif">
-              <button className="buttonModifier lienCommentaire">Modifier mon profil</button>
+              <button className="buttonModifier lienCommentaire">
+                Modifier mon profil
+              </button>
             </Link>
           </Col>
         </Row>
-         <Row>
-         
+        <Row>
           <Col xs={12} s={12} md={6} lg={6}>
             <Button className="lienCommentaire" href="/mesTips">
               Mes commentaires
@@ -307,13 +363,9 @@ class Profil extends Component {
             </Button>
           </Col>
         </Row>
-        <Row >
-       
-            <Col>
-            {this.renderCompteReferent()}
-          </Col>
-         
-          </Row>
+        <Row>
+          <Col>{this.renderCompteReferent()}</Col>
+        </Row>
       </Container>
     );
   }

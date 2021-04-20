@@ -10,7 +10,7 @@
   margin-bottom: 20%;
 }
 
-.contain .button:hover{
+.contain .button:hover {
   background-color: #4a4a4a;
 }
 
@@ -43,7 +43,7 @@
 
 body {
   background-color: #4a4a4a !important;
-  font-family: "Montserrat", sans-serif!important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .contain .btnDelete {
@@ -59,7 +59,41 @@ body {
   color: #f4a521;
   font-style: inherit;
 }
-
+/**
+*Style parrainage 
+*/
+.parrainage .inputParrainage {
+  padding: 0.5rem;
+  border-radius: 28px;
+  border-width: 1px;
+  text-align: center !important;
+  margin-right: 3%;
+  margin-top: 3%;
+}
+.parrainage .demandeParrainage {
+  color: #f4a521;
+  font-size: 34px !important;
+}
+.parrainage .colParrainage {
+  text-align: center !important;
+  margin-top: 10%;
+}
+.parrainage .buttonParrainage {
+  border-radius: 28px !important;
+  background-color: #f5a624 !important;
+  margin-left: 1%;
+  border-color: #f5a624 !important;
+  padding-top: 1% !important;
+  padding-bottom: 1% !important;
+  font-size: 16px !important;
+  border: 0px solid #4a4a4a !important;
+  color: white;
+  border-width: 0px;
+}
+.parrainage .infoParrainage {
+  font-weight: bold;
+  margin-top: 2% !important;
+}
 .contain a {
   text-decoration: none;
   color: #4a4a4a;
@@ -89,7 +123,6 @@ body {
 .container .restauAffil {
   margin-bottom: 11%;
 }
-
 
 .contain .photoProfil {
   width: 63%;
@@ -122,24 +155,21 @@ body {
 }
 
 .lienCommentaire {
-  
-    font-size: 36px;
-    background-color: #f4a521 !important;
-    color:white!important;
-    border-radius: 58px!important;
-    border-color: #f5a624!important;
-    margin-top: 5%;
-  
-  
+  font-size: 36px;
+  background-color: #f4a521 !important;
+  color: white !important;
+  border-radius: 58px !important;
+  border-color: #f5a624 !important;
+  margin-top: 5%;
 }
 
-.buttonRef{
+.buttonRef {
   text-align: center;
 }
 
 @media (max-width: 800px) {
-  .contain{
-    margin-right:auto
+  .contain {
+    margin-right: auto;
   }
   .container .photoProfil {
     margin-left: 0%;
@@ -165,14 +195,13 @@ body {
   }
 
   .lienCommentaire {
-    font-size: 23px!important;
+    font-size: 23px !important;
     background-color: #f4a521 !important;
-    color:white;
-    border-radius: 58px!important;
+    color: white;
+    border-radius: 58px !important;
     width: 100%;
     padding-top: 3% !important;
     padding-bottom: 3% !important;
-  
   }
 
   .container .delete {
@@ -191,9 +220,9 @@ body {
     font-family: "Montserrat", sans-serif;
   }
 
- .contain .monrestaurant{
-   margin-top:3%
- }
+  .contain .monrestaurant {
+    margin-top: 3%;
+  }
   .contain .photoProfil {
     width: 38% !important;
   }
@@ -232,17 +261,16 @@ body {
     margin-bottom: 20%;
   }
   .lienCommentaire {
-    font-size: 23px!important;
+    font-size: 23px !important;
     background-color: #f4a521 !important;
-    color:white;
-    border-radius: 58px!important;
+    color: white;
+    border-radius: 58px !important;
     width: 100%;
     padding-top: 3% !important;
     padding-bottom: 3% !important;
-  
   }
 
-  .rowButton{
+  .rowButton {
     margin-top: 10%;
   }
   .contain .ligne {
