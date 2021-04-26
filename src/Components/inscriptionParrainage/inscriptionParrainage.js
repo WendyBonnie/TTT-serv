@@ -42,14 +42,16 @@ class InscriptionParrainage extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/register", options)
+    fetch("http://localhost:8080/serveur/inscriptionParrainage", options)
       .then((response) => {
         return response.json();
       })
 
       .then(
         (responseObject) => {
+         
           this.setState({ message: responseObject.message });
+        
         },
 
         (error) => {
