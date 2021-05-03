@@ -224,7 +224,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/parrainage", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage", options)
       .then((response) => {
         return response.json();
       })
@@ -301,7 +301,7 @@ class Profil extends Component {
         <Row>
           <Col className="colParrainage">
             <Col md={12}>
-              <label className="demandeParrainage">Parrainé un ami</label>
+              <label className="demandeParrainage">Parrainer un ami</label>
             </Col>
             <input
               type="text"
