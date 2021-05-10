@@ -65,7 +65,8 @@ body {
 .parrainage .inputParrainage {
   padding: 0.5rem;
   border-radius: 28px;
-  border-width: 1px;
+  border-width: 0.01px;
+  border-color:grey;
   text-align: center !important;
   margin-right: 3%;
   margin-top: 3%;
