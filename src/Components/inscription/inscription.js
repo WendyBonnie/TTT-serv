@@ -45,7 +45,7 @@ class Inscription extends Component {
     fetch("https://back-end.osc-fr1.scalingo.io/serveur/register", options)
       .then((response) => {
         return response.json();
-      }) 
+      })
 
       .then(
         (responseObject) => {
@@ -60,17 +60,16 @@ class Inscription extends Component {
   render() {
     return (
       <Container className="inscr">
-      <Row className="RowInscr" >
-        <Col md={8} className="Titre"  sm={12} >
-          
-            
-              <h1 className="titreh1">Créer mon compte </h1>
-              <p className="Titrep">Merci de remplir les informations ci-dessous pour finaliser la création de votre compte.</p>
+        <Row className="RowInscr">
+          <Col md={8} className="Titre" sm={12}>
+            <h1 className="titreh1">Créer mon compte </h1>
+            <p className="Titrep">
+              Merci de remplir les informations ci-dessous pour finaliser la
+              création de votre compte.
+            </p>
 
-            
             <Form>
               <Form.Group controlId="lastname">
-                
                 <Form.Control
                   type="text"
                   placeholder="Nom"
@@ -81,7 +80,6 @@ class Inscription extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="firstname">
-                
                 <Form.Control
                   type="text"
                   placeholder="Prénom"
@@ -92,10 +90,9 @@ class Inscription extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="date">
-               
                 <Form.Control
                   type="date"
-                  placeholder="Date de naissance"
+                  placeholder="JJMMAAAA"
                   name="date"
                   onChange={this.handleInput}
                   value={this.state.date}
@@ -104,7 +101,6 @@ class Inscription extends Component {
               </Form.Group>
 
               <Form.Group controlId="adress">
-               
                 <Form.Control
                   type="text"
                   placeholder="Adresse"
@@ -115,7 +111,6 @@ class Inscription extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="city">
-                
                 <Form.Control
                   type="text"
                   placeholder="Ville"
@@ -126,7 +121,6 @@ class Inscription extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="phone">
-                
                 <Form.Control
                   type="text"
                   placeholder="Telephone(Facultatif)"
@@ -137,7 +131,6 @@ class Inscription extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="staff">
-                
                 <Form.Control
                   as="select"
                   type="text"
@@ -156,7 +149,6 @@ class Inscription extends Component {
                 </Form.Control>
               </Form.Group>
               <Form.Group controlId="email">
-                
                 <Form.Control
                   type="mail"
                   placeholder="Email "
@@ -167,7 +159,6 @@ class Inscription extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="password">
-                
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -177,18 +168,18 @@ class Inscription extends Component {
                   className="tailleInscr"
                 />
               </Form.Group>
-              
-          <Form.Group controlId="formBasicCheckbox">
-                    <Row style={{ marginLeft: "2px" }}>
-                      <a
-                        className="cgvLink"
-                        href="/CGV_TIPTOTHANK.pdf"
-                        target="_blanck"
-                      >
-                        J'ai lu et j'accepte les CGU et CGV
-                      </a>
-                    </Row>
-                  </Form.Group>
+
+              <Form.Group controlId="formBasicCheckbox">
+                <Row style={{ marginLeft: "2px" }}>
+                  <a
+                    className="cgvLink"
+                    href="/CGV_TIPTOTHANK.pdf"
+                    target="_blanck"
+                  >
+                    J'ai lu et j'accepte les CGU et CGV
+                  </a>
+                </Row>
+              </Form.Group>
 
               <Button
                 className="connectServeur"
@@ -201,11 +192,9 @@ class Inscription extends Component {
               </Button>
               <p>{this.state.message}</p>
             </Form>
-         
-        </Col>
-        <Col className="imageInscrServeur" md={4}>
-        </Col>
-      </Row>
+          </Col>
+          <Col className="imageInscrServeur" md={4}></Col>
+        </Row>
       </Container>
     );
   }
