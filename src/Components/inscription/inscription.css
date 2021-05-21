@@ -13,11 +13,16 @@ body {
   margin-top: -13%;
   padding: 70px;
 }
-.inscr .form-control{
+.inscr .form-control {
   height: 66px;
   font-size: 0.8rem;
 }
 
+.inscr .annonce {
+  margin-top: 20px;
+  color: #f5a624;
+  font-size: 8px;
+}
 .inscr .RowInscr {
   padding-left: 8% !important;
   padding-right: 8% !important;
@@ -30,7 +35,7 @@ body {
   font-size: 14px;
 }
 .cgvLink {
-  color:#f5a624  !important
+  color: #f5a624 !important;
 }
 .inscr .Bloc-principal .form-group .form-control {
   font-size: 0.8rem;
@@ -71,7 +76,7 @@ body {
   font-size: 23px !important;
 }
 
-.imageInscrServeur{
+.imageInscrServeur {
   display: none;
 }
 
@@ -88,31 +93,29 @@ body {
     background: #ffffff;
     width: 100%;
     margin: auto;
-    margin-right: 0%!important;
-    padding:0%!important;
+    margin-right: 0% !important;
+    padding: 0% !important;
   }
 
-  .inscr .container{
-    margin-right: 0%!important;
-    
+  .inscr .container {
+    margin-right: 0% !important;
   }
 
-  .inscr .RowInscr{
-    padding-right:0%!important;
-    padding-left:0%!important;
-   
+  .inscr .RowInscr {
+    padding-right: 0% !important;
+    padding-left: 0% !important;
   }
 
-  .Titre{
-    padding-top:5%;
-    padding-bottom:5%
+  .Titre {
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
 
-  .tailleInscr{
-    width: 70%!important;
+  .tailleInscr {
+    width: 70% !important;
   }
 
-  .imageInscrServeur{
+  .imageInscrServeur {
     display: block;
     background-image: url("/images/drink (7).jpg");
     background-repeat: no-repeat;

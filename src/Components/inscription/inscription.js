@@ -190,6 +190,15 @@ class Inscription extends Component {
               >
                 S'inscrire
               </Button>
+              <p className="annonce">
+                *TIPOURBOIRE est responsable du traitement des données
+                personnelles collectées sur ce site. Elles sont collectées aux
+                fins de : l'exécution du contrat/vous informer de nos nouveautés
+                et actualités/à des fins statistiques, les bases légales
+                respectives des traitements pouvant être l'exécution du contrat,
+                l'intérêt légitime, ou le consentement. Pour plus d'informations
+                voir notre politique de confidentialité.
+              </p>
               <p>{this.state.message}</p>
             </Form>
           </Col>
