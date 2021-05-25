@@ -2,6 +2,7 @@ import React from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import "./checkouForm.css";
 import CardSection from "../cardSection/CardSection";
+import Form from "react-bootstrap/Form";
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
@@ -50,18 +51,21 @@ export default function CheckoutForm() {
     }
     function createSubscription({ customerId, paymentMethodId, priceId }) {
       return (
-        fetch("https://back-end.osc-fr1.scalingo.io/serveur/createsubscription", {
-          method: "post",
-          headers: {
-            "Content-type": "application/json",
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-          body: JSON.stringify({
-            customerId: customerId,
-            paymentMethodId: paymentMethodId,
-            priceId: "price_1Hr1j9Hoh2Vgz5QdvrI9FBDN",
-          }),
-        })
+        fetch(
+          "https://back-end.osc-fr1.scalingo.io/serveur/createsubscription",
+          {
+            method: "post",
+            headers: {
+              "Content-type": "application/json",
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+            body: JSON.stringify({
+              customerId: customerId,
+              paymentMethodId: paymentMethodId,
+              priceId: "price_1Hr1j9Hoh2Vgz5QdvrI9FBDN",
+            }),
+          }
+        )
           .then((response) => {
             return response.json();
           })
@@ -107,6 +111,12 @@ export default function CheckoutForm() {
       <button className="submitButton" disabled={!stripe}>
         Devenir un Serveur Premium
       </button>
+      <Form.Check
+        className="checkboxRet"
+        type="checkbox"
+        name="retractation"
+        label=" Je renonce à mon droit de rétractation afin que le service commence immédiatement "
+      />
     </form>
   );
 }
