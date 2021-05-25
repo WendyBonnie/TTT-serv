@@ -171,7 +171,7 @@ class Inscription extends Component {
 
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
-                  className="cgvLink"
+                  className="checkboxCGU"
                   type="checkbox"
                   name="CGU"
                   label="J'ai lu et j'accepte les CGU et CGV"
@@ -183,7 +183,7 @@ class Inscription extends Component {
                     href="/CGV_TIPTOTHANK.pdf"
                     target="_blanck"
                   >
-                    CGU
+                    CGU & CGV
                   </a>
                 </Row>
               </Form.Group>

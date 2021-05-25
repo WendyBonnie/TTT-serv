@@ -28,6 +28,10 @@ body {
   padding-right: 8% !important;
 }
 
+.inscr .checkboxCGU {
+  font-weight: bold;
+  color: #f5a624;
+}
 .titreh1 {
   color: #f4a521;
 }
