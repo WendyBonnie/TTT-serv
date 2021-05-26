@@ -179,7 +179,7 @@ class Inscription extends Component {
                   label="J'ai lu et j'accepte les CGU et CGV"
                   onChange={this.handleInput}
                 />
-                <Row style={{ marginLeft: "20px" }}>
+                
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
@@ -187,9 +187,10 @@ class Inscription extends Component {
                   >
                     CGU & CGV
                   </a>
-                </Row>
+                
               </Form.Group>
-<Col className='taillInscr'>
+              <Row className='centerInscr'>
+<Col md={5} className='centerInscr'>
               <Button
                 className="connectServeur"
                 variant="primary"
@@ -199,6 +200,8 @@ class Inscription extends Component {
               >
                 S'inscrire
               </Button>
+              </Col>
+              </Row>
               <p className="annonce">
                 *TIPOURBOIRE est responsable du traitement des données
                 personnelles collectées sur ce site. Elles sont collectées aux
@@ -209,7 +212,7 @@ class Inscription extends Component {
                 voir notre politique de confidentialité.
               </p>
               <p>{this.state.message}</p>
-              </Col>
+             
               </Col>
             </Row>
          
