@@ -15,9 +15,10 @@ class footer extends Component {
     );
     e.preventDefault();
     const data = {
-      userId: localStorage.getItem(
-        "userID"
-      ) /*on get l'Id qu'on a stocké durant la connexion*/,
+      userId:
+        localStorage.getItem(
+          "userID"
+        ) /*on get l'Id qu'on a stocké durant la connexion*/,
       /*userID avec le ID en majuscule car c'est comme ca qu'on l'a mis dans le local storage (/connexion) */
       profil: this.state.profil,
     };
@@ -61,8 +62,24 @@ class footer extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="https://tipourboire.com" className="textFooter">
-                Conditions Générales
+              <Nav.Link href="mentionsLégales.pdf" className="textFooter">
+                Mentions Légales
+              </Nav.Link>
+              <Nav.Link
+                href="cgu-cgv/CGV_TIPTOTHANK.pdf"
+                className="textFooter"
+              >
+                CGU
+              </Nav.Link>
+
+              <Nav.Link
+                href="cgu-cgv/CGV_TIPTOTHANK.pdf"
+                className="textFooter"
+              >
+                Confidentialité
+              </Nav.Link>
+              <Nav.Link href="" className="textFooter">
+                Cookies
               </Nav.Link>
               <Nav.Link
                 href="mailto:contact@tipourboire.com"

@@ -89,9 +89,10 @@ class Profil extends Component {
     );
     e.preventDefault();
     const data = {
-      userId: localStorage.getItem(
-        "userID"
-      ) /*on get l'Id qu'on a stocké durant la connexion*/,
+      userId:
+        localStorage.getItem(
+          "userID"
+        ) /*on get l'Id qu'on a stocké durant la connexion*/,
       /*userID avec le ID en majuscule car c'est comme ca qu'on l'a mis dans le local storage (/connexion) */
       profil: this.state.profil,
     };
@@ -305,7 +306,9 @@ class Profil extends Component {
         <Row>
           <Col className="colParrainage">
             <Col md={12}>
-              <label className="demandeParrainage">Parrainer un ami</label>
+              <label className="demandeParrainage">
+                Parrainer un Serveur et/ou Restaurateur
+              </label>
             </Col>
             <input
               type="text"
@@ -322,9 +325,9 @@ class Profil extends Component {
               className="buttonParrainage"
             />
             <p className="infoParrainage">
-              " Vous pouvez envoyer une invitation à rejoindre la communauté
-              Tipourboire avec 2 mois d'abonnement premium gratuit à vos amis !
-              "
+              " Vous êtes satisfaits : parlez-en autour de vous ! A chaque
+              parrainage d'un serveur ou d'un restaurateur, vous et votre ami,
+              gagnez 2 mois d'abonnements Premium "
             </p>
           </Col>
         </Row>
