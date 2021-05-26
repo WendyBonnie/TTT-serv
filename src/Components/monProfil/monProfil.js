@@ -94,9 +94,10 @@ class Profil extends Component {
     );
     e.preventDefault();
     const data = {
-      userId: localStorage.getItem(
-        "userID"
-      ) /*on get l'Id qu'on a stocké durant la connexion*/,
+      userId:
+        localStorage.getItem(
+          "userID"
+        ) /*on get l'Id qu'on a stocké durant la connexion*/,
       /*userID avec le ID en majuscule car c'est comme ca qu'on l'a mis dans le local storage (/connexion) */
       profil: this.state.profil,
     };
@@ -230,7 +231,8 @@ class Profil extends Component {
     };
 
     fetch(
-      "https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage",
+      "https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage?_id=" +
+        this.state.profil.email,
       options
     )
       .then((response) => {

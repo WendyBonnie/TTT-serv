@@ -28,6 +28,10 @@ body {
   padding-right: 8% !important;
 }
 
+.inscr .checkboxCGU {
+  font-weight: bold;
+  color: #f5a624;
+}
 .titreh1 {
   color: #f4a521;
 }
@@ -37,10 +41,12 @@ body {
 .cgvLink {
   color: #f5a624 !important;
 }
+
 .inscr .Bloc-principal .form-group .form-control {
   font-size: 0.8rem;
   border-radius: 8px;
 }
+
 .inscr .Bloc-principal .form-label {
   color: #4a4a4a;
 }
@@ -51,6 +57,7 @@ body {
   border-radius: 8px;
   border: 2px solid #4a4a4a !important;
 }
+
 .inscr .Bloc-principal .submitButton:hover,
 .inscr .Bloc-principal .submitButton:active {
   background-color: #f4a521;
@@ -60,6 +67,7 @@ body {
 .Bloc-principal a {
   text-decoration: none !important;
 }
+
 .inscr .Bloc-principal .Titre {
   text-align: left;
   color: #4a4a4a;
