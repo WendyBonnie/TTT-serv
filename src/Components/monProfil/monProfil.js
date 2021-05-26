@@ -224,7 +224,11 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage", options)
+    fetch(
+      "https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage?_id=" +
+        this.state.profil.email,
+      options
+    )
       .then((response) => {
         return response.json();
       })
