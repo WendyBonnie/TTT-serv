@@ -61,14 +61,16 @@ class Inscription extends Component {
     return (
       <Container className="inscr">
         <Row className="RowInscr">
-          <Col md={8} className="Titre" sm={12}>
+          <Col md={12} className="Titre" sm={12}>
             <h1 className="titreh1">Créer mon compte </h1>
             <p className="Titrep">
               Merci de remplir les informations ci-dessous pour finaliser la
               création de votre compte.
             </p>
-
-            <Form>
+            </Col>
+            <Row className='centerInscr'>
+              <Col md={9}>
+              
               <Form.Group controlId="lastname">
                 <Form.Control
                   type="text"
@@ -187,7 +189,7 @@ class Inscription extends Component {
                   </a>
                 </Row>
               </Form.Group>
-
+<Col className='taillInscr'>
               <Button
                 className="connectServeur"
                 variant="primary"
@@ -207,9 +209,10 @@ class Inscription extends Component {
                 voir notre politique de confidentialité.
               </p>
               <p>{this.state.message}</p>
-            </Form>
-          </Col>
-          <Col className="imageInscrServeur" md={4}></Col>
+              </Col>
+              </Col>
+            </Row>
+         
         </Row>
       </Container>
     );

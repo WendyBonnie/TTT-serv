@@ -5,37 +5,40 @@ body {
 .inscr {
   background: #ffffff;
   width: 100%;
-  margin: auto;
-  margin-bottom: 45px;
+  margin-bottom: 70px;
   border-radius: 28px;
   border: none;
   color: #555;
   margin-top: -13%;
   padding: 70px;
+  
 }
 .inscr .form-control {
   height: 66px;
   font-size: 0.8rem;
 }
 
-.inscr .RowInscr {
-  padding-left: 8% !important;
-  padding-right: 8% !important;
-}
 
 .titreh1 {
   color: #f4a521;
-  text-align: left !important;
+  text-align: center
 }
 .Titrep {
   font-size: 14px;
+  text-align: center;
 }
+
+.inscr .form{
+text-align: center;
+}
+
 .cgvLink {
   color: #f5a624 !important;
 }
 .inscr .Bloc-principal .form-group .form-control {
   font-size: 0.8rem;
   border-radius: 8px;
+ 
 }
 .inscr .Bloc-principal .form-label {
   color: #4a4a4a;
@@ -79,7 +82,6 @@ body {
 @media only screen and (min-device-width: 1024px) {
   .inscr .connectServeur {
     background-color: #f5a624 !important;
-    width: 29%;
     border-color: #f5a624 !important;
     padding-top: 1% !important;
     padding-bottom: 1% !important;
@@ -88,32 +90,22 @@ body {
   .inscr {
     background: #ffffff;
     width: 100%;
-    margin: auto;
-    margin-right: 0% !important;
+    margin-top:0%;
+    text-align: center;
+   
     padding: 0% !important;
   }
 
-  .inscr .container {
-    margin-right: 0% !important;
+  .centerInscr{
+    justify-content: center;
   }
 
-  .inscr .RowInscr {
-    padding-right: 0% !important;
-    padding-left: 0% !important;
-  }
 
   .Titre {
     padding-top: 5%;
     padding-bottom: 5%;
   }
 
-  .tailleInscr {
-    width: 70% !important;
-  }
+ 
 
-  .imageInscrServeur {
-    display: block;
-    background-image: url("/images/drink (7).jpg");
-    background-repeat: no-repeat;
-  }
 }
