@@ -1,10 +1,140 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import "./modifierMonProfil.css";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import storage from "../firebase"
+
+function UploadPicture() {
+  const [imageStorage, setImageStorage] = useState("");
+  const [message, setMessage] = useState("");
+ 
+
+  const uploadpicture = (e) => {
+    if (imageStorage == null) return;
+    storage
+      .ref(`/PictureServeur/${imageStorage.name}`)
+      .put(imageStorage)
+      .on("state_changed", alert("Votre logo a bien été enregistré"), alert);
+  };
+
+  const getMonProfil = () => {
+    const headers = new Headers({
+      Authorization: "Bearer " + localStorage.getItem("token"),
+      "Content-Type": "application/json",
+      "X-Requested-With": "XMLHttpRequest",
+    });
+
+    const options = {
+      method: "GET",
+      headers: headers,
+    };
+
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
+      .then((response) => {
+        return response.json();
+      })
+      .then(
+        (responseObject) => {
+          
+         
+        },
+
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
+const modifProfilLogo = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+
+    const headers = new Headers({
+      "X-Requested-With": "XMLHttpRequest",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    });
+
+    const options = {
+      method: "PUT",
+      body: data,
+      headers: headers,
+    };
+
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/editlogo", options)
+      .then((response) => {
+        return response.json();
+      })
+
+      .then(
+        (responseObject) => {
+        setMessage(responseObject.message)
+        const headers = new Headers({
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          "Content-Type": "application/json",
+          "X-Requested-With": "XMLHttpRequest",
+        });
+    
+        const options = {
+          method: "GET",
+          headers: headers,
+        };
+    
+        fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
+          .then((response) => {
+            return response.json();
+          })
+          .then(
+            (responseObject) => {
+              setImageStorage(responseObject.picture)
+        
+            },
+    
+            (error) => {
+              console.log(error);
+            }
+          );
+        },
+
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+  useEffect(() => {
+    getMonProfil();
+  }, []);
+
+ return(
+<div>
+          <form onSubmit={modifProfilLogo} className="formLogo">
+            <img
+              className="serveurPicture"
+              src={"https://back-end.osc-fr1.scalingo.io/" + imageStorage}
+            ></img>
+            <br />
+            <br />
+            <input className="chargePic" type="file" name="file" onChange={(e) => {
+                setImageStorage(e.target.files[0]);
+              }} />
+
+            <button className="button" type="submit" onClick={uploadpicture}>
+              Télécharger
+            </button>
+          </form>
+        </div>
+ )
+
+
+}
+
+
+
+
+
+
 
 class modifierMonProfil extends Component {
   constructor(props) {
@@ -207,22 +337,8 @@ class modifierMonProfil extends Component {
                 </Form.Control>
               </Form.Group>
         </Form>
+        <UploadPicture/>
         
-        <div>
-          <form onSubmit={this.modifProfilLogo} className="formLogo">
-            <img
-              className="serveurPicture"
-              src={"https://back-end.osc-fr1.scalingo.io/" + this.state.serveur.picture}
-            ></img>
-            <br />
-            <br />
-            <input className="chargePic" type="file" name="file" />
-
-            <button className="button" type="submit">
-              Télécharger
-            </button>
-          </form>
-        </div>
         <Button
           className="submitButton"
           variant="primary"
