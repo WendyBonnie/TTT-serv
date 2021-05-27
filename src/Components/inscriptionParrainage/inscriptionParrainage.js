@@ -62,8 +62,8 @@ class InscriptionParrainage extends Component {
   render() {
     return (
       <Container className="inscr">
-        <Row className="RowInscr">
-          <Col md={8} className="Titre" sm={12}>
+        
+          <Col md={12} className="Titre" sm={12}>
             <h1 className="titreh1">
               Vous avez été parrainé, crée votre compte afin de profiter de
               votre offre.{" "}
@@ -72,7 +72,9 @@ class InscriptionParrainage extends Component {
               Merci de remplir les informations ci-dessous pour finaliser la
               création de votre compte.
             </p>
-            <Form>
+            </Col>
+           <Row className='centerInscr'>
+             <Col md={8}>
               <Form.Group controlId="lastname">
                 <Form.Control
                   type="text"
@@ -80,7 +82,7 @@ class InscriptionParrainage extends Component {
                   name="lastname"
                   onChange={this.handleInput}
                   value={this.state.lastname}
-                  className="tailleInscr"
+                 
                 />
               </Form.Group>
               <Form.Group controlId="firstname">
@@ -90,7 +92,7 @@ class InscriptionParrainage extends Component {
                   name="firstname"
                   onChange={this.handleInput}
                   value={this.state.firstname}
-                  className="tailleInscr"
+               
                 />
               </Form.Group>
               <Form.Group controlId="date">
@@ -100,7 +102,7 @@ class InscriptionParrainage extends Component {
                   name="date"
                   onChange={this.handleInput}
                   value={this.state.date}
-                  className="tailleInscr"
+                  
                 />
               </Form.Group>
 
@@ -111,7 +113,7 @@ class InscriptionParrainage extends Component {
                   name="adress"
                   onChange={this.handleInput}
                   value={this.state.adress}
-                  className="tailleInscr"
+                
                 />
               </Form.Group>
               <Form.Group controlId="city">
@@ -121,7 +123,7 @@ class InscriptionParrainage extends Component {
                   name="city"
                   onChange={this.handleInput}
                   value={this.state.city}
-                  className="tailleInscr"
+               
                 />
               </Form.Group>
               <Form.Group controlId="phone">
@@ -131,7 +133,7 @@ class InscriptionParrainage extends Component {
                   name="phone"
                   onChange={this.handleInput}
                   value={this.state.phone}
-                  className="tailleInscr"
+                
                 />
               </Form.Group>
               <Form.Group controlId="staff">
@@ -141,7 +143,7 @@ class InscriptionParrainage extends Component {
                   name="staff"
                   onChange={this.handleInput}
                   value={this.state.staff}
-                  className="tailleInscr"
+                
                 >
                   <option>-</option>
                   <option>Commis</option>
@@ -159,7 +161,7 @@ class InscriptionParrainage extends Component {
                   name="email"
                   onChange={this.handleInput}
                   value={this.state.email}
-                  className="tailleInscr"
+                  
                 />
               </Form.Group>
               <Form.Group controlId="password">
@@ -169,12 +171,12 @@ class InscriptionParrainage extends Component {
                   name="password"
                   onChange={this.handleInput}
                   value={this.state.password}
-                  className="tailleInscr"
+              
                 />
               </Form.Group>
 
               <Form.Group controlId="formBasicCheckbox">
-                <Row style={{ marginLeft: "2px" }}>
+           
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
@@ -182,8 +184,10 @@ class InscriptionParrainage extends Component {
                   >
                     J'ai lu et j'accepte les CGU et CGV
                   </a>
-                </Row>
+             
               </Form.Group>
+              <Row className='centerInscr'>
+              <Col md={5}>
               <Button
                 className="connectServeur"
                 variant="primary"
@@ -193,11 +197,14 @@ class InscriptionParrainage extends Component {
               >
                 S'inscrire
               </Button>
+              </Col>
+              </Row>
               <p>{this.state.message}</p>
-            </Form>
-          </Col>
-          <Col className="imageInscrServeur" md={4}></Col>
-        </Row>
+              </Col>
+              </Row>
+          
+         
+      
       </Container>
     );
   }

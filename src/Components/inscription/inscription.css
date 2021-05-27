@@ -5,7 +5,6 @@ body {
 .inscr {
   background: #ffffff;
   width: 100%;
-  margin: auto;
   margin-bottom: 45px;
   border-radius: 28px;
   border: none;
@@ -91,7 +90,7 @@ body {
 @media only screen and (min-device-width: 1024px) {
   .inscr .connectServeur {
     background-color: #f5a624 !important;
-    width: 29%;
+  
     border-color: #f5a624 !important;
     padding-top: 1% !important;
     padding-bottom: 1% !important;
@@ -100,28 +99,19 @@ body {
   .inscr {
     background: #ffffff;
     width: 100%;
-    margin: auto;
-    margin-right: 0% !important;
-    padding: 0% !important;
+  
   }
 
-  .inscr .container {
-    margin-right: 0% !important;
-  }
+ 
 
-  .inscr .RowInscr {
-    padding-right: 0% !important;
-    padding-left: 0% !important;
-  }
+  
 
   .Titre {
     padding-top: 5%;
     padding-bottom: 5%;
   }
 
-  .tailleInscr {
-    width: 70% !important;
-  }
+  
 
   .imageInscrServeur {
     display: block;

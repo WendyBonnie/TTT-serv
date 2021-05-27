@@ -5,12 +5,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import storage from "../firebase"
+import storage from "../firebase";
 
 function UploadPicture() {
   const [imageStorage, setImageStorage] = useState("");
   const [message, setMessage] = useState("");
- 
 
   const uploadpicture = (e) => {
     if (imageStorage == null) return;
@@ -37,10 +36,7 @@ function UploadPicture() {
         return response.json();
       })
       .then(
-        (responseObject) => {
-          
-         
-        },
+        (responseObject) => {},
 
         (error) => {
           console.log(error);
@@ -48,7 +44,7 @@ function UploadPicture() {
       );
   };
 
-const modifProfilLogo = (e) => {
+  const modifProfilLogo = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
 
@@ -70,32 +66,34 @@ const modifProfilLogo = (e) => {
 
       .then(
         (responseObject) => {
-        setMessage(responseObject.message)
-        const headers = new Headers({
-          Authorization: "Bearer " + localStorage.getItem("token"),
-          "Content-Type": "application/json",
-          "X-Requested-With": "XMLHttpRequest",
-        });
-    
-        const options = {
-          method: "GET",
-          headers: headers,
-        };
-    
-        fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
-          .then((response) => {
-            return response.json();
-          })
-          .then(
-            (responseObject) => {
-              setImageStorage(responseObject.picture)
-        
-            },
-    
-            (error) => {
-              console.log(error);
-            }
-          );
+          setMessage(responseObject.message);
+          const headers = new Headers({
+            Authorization: "Bearer " + localStorage.getItem("token"),
+            "Content-Type": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+          });
+
+          const options = {
+            method: "GET",
+            headers: headers,
+          };
+
+          fetch(
+            "https://back-end.osc-fr1.scalingo.io/serveur/monProfil",
+            options
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .then(
+              (responseObject) => {
+                setImageStorage(responseObject.picture);
+              },
+
+              (error) => {
+                console.log(error);
+              }
+            );
         },
 
         (error) => {
@@ -107,34 +105,31 @@ const modifProfilLogo = (e) => {
     getMonProfil();
   }, []);
 
- return(
-<div>
-          <form onSubmit={modifProfilLogo} className="formLogo">
-            <img
-              className="serveurPicture"
-              src={"https://back-end.osc-fr1.scalingo.io/" + imageStorage}
-            ></img>
-            <br />
-            <br />
-            <input className="chargePic" type="file" name="file" onChange={(e) => {
-                setImageStorage(e.target.files[0]);
-              }} />
+  return (
+    <div>
+      <form onSubmit={modifProfilLogo} className="formLogo">
+        <img
+          className="serveurPicture"
+          src={"https://back-end.osc-fr1.scalingo.io/" + imageStorage}
+        ></img>
+        <br />
+        <br />
+        <input
+          className="chargePic"
+          type="file"
+          name="file"
+          onChange={(e) => {
+            setImageStorage(e.target.files[0]);
+          }}
+        />
 
-            <button className="button" type="submit" onClick={uploadpicture}>
-              Télécharger
-            </button>
-          </form>
-        </div>
- )
-
-
+        <button className="button" type="submit" onClick={uploadpicture}>
+          Télécharger
+        </button>
+      </form>
+    </div>
+  );
 }
-
-
-
-
-
-
 
 class modifierMonProfil extends Component {
   constructor(props) {
@@ -189,9 +184,10 @@ class modifierMonProfil extends Component {
   editserveur = (e) => {
     e.preventDefault();
     const data = {
-      userId: localStorage.getItem(
-        "userID"
-      ) /*on get l'Id qu'on a stocké durant la connexion*/,
+      userId:
+        localStorage.getItem(
+          "userID"
+        ) /*on get l'Id qu'on a stocké durant la connexion*/,
       /*userID avec le ID en majuscule car c'est comme ca qu'on l'a mis dans le local storage (/connexion) */
       serveur: this.state.serveur,
     };
@@ -263,63 +259,55 @@ class modifierMonProfil extends Component {
       <div className="bloc-modifierProfil">
         <Row>
           <Col md={{ span: 12, offset: 3 }} className="titreModif">
-       
-          <p >Modification du profil</p>
-        
-        
-        <Form>
-          <Form.Group controlId="formGroupName">
-            
-            <Form.Control
-              name="lastname"
-              type="text"
-              placeholder="Nom"
-              onChange={this.change}
-              value={this.state.serveur.lastname}
-            />
-          </Form.Group>
-          <Form.Group controlId="formGroupPrenom">
-         
-            <Form.Control
-              name="firstname"
-              type="text"
-              placeholder="Prénom"
-              onChange={this.change}
-              value={this.state.serveur.firstname}
-            />
-          </Form.Group>
-          <Form.Group controlId="formAdresse">
-            
-            <Form.Control
-              type="text"
-              placeholder="Adresse"
-              name="adress"
-              onChange={this.change}
-              value={this.state.serveur.adress}
-            />
-          </Form.Group>
-          <Form.Group controlId="formVille">
-            
-            <Form.Control
-              type="text"
-              placeholder="Ville"
-              name="city"
-              onChange={this.change}
-              value={this.state.serveur.city}
-            />
-          </Form.Group>
-          <Form.Group controlId="formTel">
-            
-            <Form.Control
-              type="text"
-              placeholder="Telephone(Facultatif)"
-              name="phone"
-              onChange={this.change}
-              value={this.state.serveur.phone}
-            />
-          </Form.Group>
-          <Form.Group controlId="formPoste">
-                
+            <p>Modification du profil</p>
+
+            <Form>
+              <Form.Group controlId="formGroupName">
+                <Form.Control
+                  name="lastname"
+                  type="text"
+                  placeholder="Nom"
+                  onChange={this.change}
+                  value={this.state.serveur.lastname}
+                />
+              </Form.Group>
+              <Form.Group controlId="formGroupPrenom">
+                <Form.Control
+                  name="firstname"
+                  type="text"
+                  placeholder="Prénom"
+                  onChange={this.change}
+                  value={this.state.serveur.firstname}
+                />
+              </Form.Group>
+              <Form.Group controlId="formAdresse">
+                <Form.Control
+                  type="text"
+                  placeholder="Adresse"
+                  name="adress"
+                  onChange={this.change}
+                  value={this.state.serveur.adress}
+                />
+              </Form.Group>
+              <Form.Group controlId="formVille">
+                <Form.Control
+                  type="text"
+                  placeholder="Ville"
+                  name="city"
+                  onChange={this.change}
+                  value={this.state.serveur.city}
+                />
+              </Form.Group>
+              <Form.Group controlId="formTel">
+                <Form.Control
+                  type="text"
+                  placeholder="Telephone(Facultatif)"
+                  name="phone"
+                  onChange={this.change}
+                  value={this.state.serveur.phone}
+                />
+              </Form.Group>
+              <Form.Group controlId="formPoste">
                 <Form.Control
                   as="select"
                   type="text"
@@ -336,19 +324,19 @@ class modifierMonProfil extends Component {
                   <option>Accueil</option>
                 </Form.Control>
               </Form.Group>
-        </Form>
-        <UploadPicture/>
-        
-        <Button
-          className="submitButton"
-          variant="primary"
-          type="submit"
-          onClick={this.editserveur}
-        >
-          Mettre à jour mon profil
-        </Button>
-        <p>{this.state.message}</p>
-        </Col>
+            </Form>
+            <UploadPicture />
+
+            <Button
+              className="submitButton"
+              variant="primary"
+              type="submit"
+              onClick={this.editserveur}
+            >
+              Mettre à jour mon profil
+            </Button>
+            <p>{this.state.message}</p>
+          </Col>
         </Row>
       </div>
     );
