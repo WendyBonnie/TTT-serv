@@ -19,6 +19,7 @@ class Inscription extends Component {
   };
   addNewRegister = (e) => {
     e.preventDefault();
+
     const data = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
@@ -29,6 +30,7 @@ class Inscription extends Component {
       email: this.state.email,
       phone: this.state.phone,
       password: this.state.password,
+      acceptControl: this.state.acceptControl,
     };
 
     const headers = new Headers({
@@ -42,7 +44,7 @@ class Inscription extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/register", options)
+    fetch("http://localhost:8080/serveur/register", options)
       .then((response) => {
         return response.json();
       })
@@ -68,7 +70,7 @@ class Inscription extends Component {
               création de votre compte.
             </p>
 
-            <Form>
+            <Form onSubmit={this.addNewRegister}>
               <Form.Group controlId="lastname">
                 <Form.Control
                   type="text"
@@ -173,9 +175,11 @@ class Inscription extends Component {
                 <Form.Check
                   className="checkboxCGU"
                   type="checkbox"
-                  name="CGU"
+                  name="acceptControl"
                   label="J'ai lu et j'accepte les CGU et CGV"
                   onChange={this.handleInput}
+                  value={this.state.acceptControl}
+                  required
                 />
                 <Row style={{ marginLeft: "20px" }}>
                   <a
@@ -193,7 +197,16 @@ class Inscription extends Component {
                 variant="primary"
                 block
                 type="submit"
-                onClick={this.addNewRegister}
+                onClick={() => {
+                  if (!this.state.acceptControl) {
+                    this.setState({
+                      message:
+                        "Veuillez accepter les conditions générales d'utilisations.",
+                    });
+                  } else {
+                    this.addNewRegister();
+                  }
+                }}
               >
                 S'inscrire
               </Button>
