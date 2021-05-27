@@ -59,7 +59,7 @@ function UploadPicture() {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/editlogo", options)
+    fetch("http://localhost:8080/serveur/editlogo", options)
       .then((response) => {
         return response.json();
       })
