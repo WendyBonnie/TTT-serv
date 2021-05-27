@@ -2,6 +2,14 @@
   background-color: antiquewhite;
 }
 
+Input {
+  border-radius: 38px!important;
+}
+
+.form-control {
+  border-radius: 38px!important;
+}
+
 .bloc-modifierProfil {
   background: #ffffff;
   font: bold 12px;
