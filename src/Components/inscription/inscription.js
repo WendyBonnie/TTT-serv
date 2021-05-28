@@ -19,6 +19,7 @@ class Inscription extends Component {
   };
   addNewRegister = (e) => {
     e.preventDefault();
+
     const data = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
@@ -29,6 +30,7 @@ class Inscription extends Component {
       email: this.state.email,
       phone: this.state.phone,
       password: this.state.password,
+      acceptControl: this.state.acceptControl,
     };
 
     const headers = new Headers({
@@ -67,119 +69,121 @@ class Inscription extends Component {
               Merci de remplir les informations ci-dessous pour finaliser la
               création de votre compte.
             </p>
-            </Col>
-            <Row className='centerInscr'>
-              <Col md={9}>
-              
-              <Form.Group controlId="lastname">
-                <Form.Control
-                  type="text"
-                  placeholder="Nom"
-                  name="lastname"
-                  onChange={this.handleInput}
-                  value={this.state.lastname}
-                  className="tailleInscr"
-                />
-              </Form.Group>
-              <Form.Group controlId="firstname">
-                <Form.Control
-                  type="text"
-                  placeholder="Prénom"
-                  name="firstname"
-                  onChange={this.handleInput}
-                  value={this.state.firstname}
-                  className="tailleInscr"
-                />
-              </Form.Group>
-              <Form.Group controlId="date">
-                <Form.Control
-                  type="date"
-                  placeholder="JJMMAAAA"
-                  name="date"
-                  onChange={this.handleInput}
-                  value={this.state.date}
-                  className="tailleInscr"
-                />
-              </Form.Group>
+          </Col>
+          <Row className="centerInscr">
+            <Col md={9}>
+              <Form onSubmit={this.addNewRegister}>
+                <Form.Group controlId="lastname">
+                  <Form.Control
+                    type="text"
+                    placeholder="Nom"
+                    name="lastname"
+                    onChange={this.handleInput}
+                    value={this.state.lastname}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+                <Form.Group controlId="firstname">
+                  <Form.Control
+                    type="text"
+                    placeholder="Prénom"
+                    name="firstname"
+                    onChange={this.handleInput}
+                    value={this.state.firstname}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+                <Form.Group controlId="date">
+                  <Form.Control
+                    type="date"
+                    placeholder="JJMMAAAA"
+                    name="date"
+                    onChange={this.handleInput}
+                    value={this.state.date}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
 
-              <Form.Group controlId="adress">
-                <Form.Control
-                  type="text"
-                  placeholder="Adresse"
-                  name="adress"
-                  onChange={this.handleInput}
-                  value={this.state.adress}
-                  className="tailleInscr"
-                />
-              </Form.Group>
-              <Form.Group controlId="city">
-                <Form.Control
-                  type="text"
-                  placeholder="Ville"
-                  name="city"
-                  onChange={this.handleInput}
-                  value={this.state.city}
-                  className="tailleInscr"
-                />
-              </Form.Group>
-              <Form.Group controlId="phone">
-                <Form.Control
-                  type="text"
-                  placeholder="Telephone(Facultatif)"
-                  name="phone"
-                  onChange={this.handleInput}
-                  value={this.state.phone}
-                  className="tailleInscr"
-                />
-              </Form.Group>
-              <Form.Group controlId="staff">
-                <Form.Control
-                  as="select"
-                  type="text"
-                  name="staff"
-                  onChange={this.handleInput}
-                  value={this.state.staff}
-                  className="tailleInscr"
-                >
-                  <option>-</option>
-                  <option>Commis</option>
-                  <option>Chef de rang</option>
-                  <option>Maître d'hôtel</option>
-                  <option>Barman</option>
-                  <option>Cuisinier</option>
-                  <option>Accueil</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="email">
-                <Form.Control
-                  type="mail"
-                  placeholder="Email "
-                  name="email"
-                  onChange={this.handleInput}
-                  value={this.state.email}
-                  className="tailleInscr"
-                />
-              </Form.Group>
-              <Form.Group controlId="password">
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  onChange={this.handleInput}
-                  value={this.state.password}
-                  className="tailleInscr"
-                />
-              </Form.Group>
+                <Form.Group controlId="adress">
+                  <Form.Control
+                    type="text"
+                    placeholder="Adresse"
+                    name="adress"
+                    onChange={this.handleInput}
+                    value={this.state.adress}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+                <Form.Group controlId="city">
+                  <Form.Control
+                    type="text"
+                    placeholder="Ville"
+                    name="city"
+                    onChange={this.handleInput}
+                    value={this.state.city}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+                <Form.Group controlId="phone">
+                  <Form.Control
+                    type="text"
+                    placeholder="Telephone(Facultatif)"
+                    name="phone"
+                    onChange={this.handleInput}
+                    value={this.state.phone}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+                <Form.Group controlId="staff">
+                  <Form.Control
+                    as="select"
+                    type="text"
+                    name="staff"
+                    onChange={this.handleInput}
+                    value={this.state.staff}
+                    className="tailleInscr"
+                  >
+                    <option>-</option>
+                    <option>Commis</option>
+                    <option>Chef de rang</option>
+                    <option>Maître d'hôtel</option>
+                    <option>Barman</option>
+                    <option>Cuisinier</option>
+                    <option>Accueil</option>
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group controlId="email">
+                  <Form.Control
+                    type="mail"
+                    placeholder="Email "
+                    name="email"
+                    onChange={this.handleInput}
+                    value={this.state.email}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+                <Form.Group controlId="password">
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    onChange={this.handleInput}
+                    value={this.state.password}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
 
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  className="checkboxCGU"
-                  type="checkbox"
-                  name="CGU"
-                  label="J'ai lu et j'accepte les CGU et CGV"
-                  onChange={this.handleInput}
-                />
-                
+                <Form.Group controlId="formBasicCheckbox">
+                  <Form.Check
+                    className="checkboxCGU"
+                    type="checkbox"
+                    name="acceptControl"
+                    label="J'ai lu et j'accepte les CGU et CGV"
+                    onChange={this.handleInput}
+                    value={this.state.acceptControl}
+                    required
+                  />
+
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
@@ -187,21 +191,31 @@ class Inscription extends Component {
                   >
                     CGU & CGV
                   </a>
-                
-              </Form.Group>
-              <Row className='centerInscr'>
-<Col md={5} className='centerInscr'>
-              <Button
-                className="connectServeur"
-                variant="primary"
-                block
-                type="submit"
-                onClick={this.addNewRegister}
-              >
-                S'inscrire
-              </Button>
-              </Col>
-              </Row>
+                </Form.Group>
+                <Row className="centerInscr">
+                  <Col md={5} className="centerInscr">
+                    <Button
+                      className="connectServeur"
+                      variant="primary"
+                      block
+                      type="submit"
+                      onClick={() => {
+                        if (!this.state.acceptControl) {
+                          this.setState({
+                            message:
+                              "Veuillez accepter les conditions générales d'utilisations.",
+                          });
+                        } else {
+                          this.addNewRegister();
+                        }
+                      }}
+                    >
+                      S'inscrire
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
+
               <p className="annonce">
                 *TIPOURBOIRE est responsable du traitement des données
                 personnelles collectées sur ce site. Elles sont collectées aux
@@ -212,10 +226,8 @@ class Inscription extends Component {
                 voir notre politique de confidentialité.
               </p>
               <p>{this.state.message}</p>
-             
-              </Col>
-            </Row>
-         
+            </Col>
+          </Row>
         </Row>
       </Container>
     );
