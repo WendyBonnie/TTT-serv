@@ -3,6 +3,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import "./checkouForm.css";
 import CardSection from "../cardSection/CardSection";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
@@ -108,15 +109,16 @@ export default function CheckoutForm() {
   return (
     <form className="coForm" onSubmit={handleSubmit}>
       <CardSection />
-      <button className="submitButton" disabled={!stripe}>
-        Devenir un Serveur Premium
-      </button>
       <Form.Check
         className="checkboxRet"
         type="checkbox"
         name="retractation"
-        label=" Je renonce à mon droit de rétractation afin que le service commence immédiatement "
+        label=" Je renonce à mon droit de rétractation d'une durée de 14 jours, afin que le service commence immédiatement. "
+        required
       />
+      <button className="submitButtonSub" disabled={!stripe}>
+        Devenir un Serveur Premium
+      </button>
     </form>
   );
 }

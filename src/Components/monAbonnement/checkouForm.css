@@ -1,12 +1,16 @@
-.submitButton {
+.submitButtonSub {
   border-radius: 28px;
   background-color: #f5a624;
   color: white;
   border: none;
   margin-bottom: 12px;
+  font-size: 22px;
+  padding: 1%;
+  margin-top: 3%;
 }
 
 .checkboxRet {
   color: #f5a624 !important;
   font-weight: bold;
+  margin-top: 3%;
 }
