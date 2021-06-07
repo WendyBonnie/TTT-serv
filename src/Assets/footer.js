@@ -63,23 +63,23 @@ class footer extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link
-                href="mentionsLegales/mentionsLégales.pdf"
+                href="/mentionsLegales/mentionsLégales.pdf"
                 className="textFooter"
               >
                 Mentions Légales
               </Nav.Link>
-              <Nav.Link href="CGV/CGV.pdf" className="textFooter">
+              <Nav.Link href="/CGV/CGV.pdf" className="textFooter">
                 CGU
               </Nav.Link>
 
               <Nav.Link
-                href="confidentialité/Politique_de_confidentialité.pdf"
+                href="/confidentialité/Politique_de_confidentialité_serveur.pdf"
                 className="textFooter"
               >
                 Confidentialité
               </Nav.Link>
               <Nav.Link
-                href="cookies/POLITIQUE_DE_COOKIES.pdf"
+                href="/cookies/POLITIQUE_DE_COOKIES.pdf"
                 className="textFooter"
               >
                 Cookies

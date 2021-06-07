@@ -96,7 +96,7 @@ class Inscription extends Component {
                 <Form.Group controlId="date">
                   <Form.Control
                     type="date"
-                    placeholder="JJMMAAAA"
+                    placeholder="jj/mm/aaaa"
                     name="date"
                     onChange={this.handleInput}
                     value={this.state.date}
