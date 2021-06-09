@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import "./connexion.css";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
+import CookieConsent, { Cookies } from "react-cookie-consent";
 
 class Connexion extends Component {
   constructor(props) {
@@ -55,6 +56,31 @@ class Connexion extends Component {
   render() {
     return (
       <Container className="connexion-container">
+        <CookieConsent
+          location="top"
+          buttonText="Accepter"
+          enableDeclineButton
+          expires={135}
+          onDecline={() => {
+            alert("Pas bien !");
+          }}
+          cookieName="Tipourboire"
+          style={{ background: "#2B373B" }}
+          buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        >
+          Le Site Tipourboire utilise différents cookies afin d’améliorer ses
+          services et effectuer des suivis d’audience. Certains cookies sont
+          indispensables au fonctionnement du Site. Vous pouvez accepter ces
+          cookies, les refuser, ou gérer vos préférences. Vous pouvez consulter
+          notre{" "}
+          <a
+            href="/cookies/POLITIQUE_DE_COOKIES.pdf"
+            target="_blank"
+            style={{ fontSize: "20px" }}
+          >
+            Politique de cookies
+          </a>
+        </CookieConsent>
         <Row>
           <Col>
             <h1>Déja membre ? </h1>
