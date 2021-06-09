@@ -58,11 +58,13 @@ class Connexion extends Component {
       <Container className="connexion-container">
         <CookieConsent
           location="top"
-          buttonText="Accepter"
+          buttonText="Ok"
           enableDeclineButton
-          expires={135}
+          expires={30}
           onDecline={() => {
-            alert("Pas bien !");
+            alert(
+              "Le refus de nos cookies vous permets tout de même une bonne navigation sur notre site. A bientot :)"
+            );
           }}
           cookieName="Tipourboire"
           style={{ background: "#2B373B" }}
