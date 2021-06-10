@@ -66,7 +66,7 @@ body {
   padding: 0.5rem;
   border-radius: 28px;
   border-width: 0.01px;
-  border-color:grey;
+  border-color: grey;
   text-align: center !important;
   margin-right: 3%;
   margin-top: 3%;
@@ -90,6 +90,10 @@ body {
   border: 0px solid #4a4a4a !important;
   color: white;
   border-width: 0px;
+}
+
+.parrainage .buttonParrainage:hover {
+  background-color: #555 !important;
 }
 .parrainage .infoParrainage {
   font-weight: bold;

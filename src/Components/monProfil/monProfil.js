@@ -7,11 +7,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
-import storage from "../firebase"
-
-
-
-
+import storage from "../firebase";
 
 class Profil extends Component {
   constructor(props) {
