@@ -7,11 +7,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
-import storage from "../firebase"
-
-
-
-
+import storage from "../firebase";
 
 class Profil extends Component {
   constructor(props) {
@@ -172,10 +168,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch(
-      "https://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
-      options
-    )
+    fetch("http://localhost:8080/serveur/customerAccount", options)
       .then((response) => {
         return response.json();
       })

@@ -73,6 +73,7 @@ export default function CheckoutForm() {
           // If the card is declined, display an error to the user.
           .then((result) => {
             if (result.error) {
+              window.alert(result.message);
               // The card had an error when trying to attach it to a customer.
               throw result;
             }
@@ -81,6 +82,7 @@ export default function CheckoutForm() {
           // Normalize the result to contain the object returned by Stripe.
           // Add the additional details we need.
           .then((result) => {
+            window.alert(result.message);
             return {
               paymentMethodId: paymentMethodId,
               priceId: priceId,
