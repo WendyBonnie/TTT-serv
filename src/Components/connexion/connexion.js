@@ -58,15 +58,17 @@ class Connexion extends Component {
       <Container className="connexion-container">
         <CookieConsent
           location="top"
-          buttonText="Accepter"
+          buttonText="Ok"
+          expires={30}
           enableDeclineButton
-          expires={135}
           onDecline={() => {
-            alert("Pas bien !");
+            alert(
+              "Le refus de nos cookies vous permets tout de même une bonne navigation sur notre site. A bientot :)"
+            );
           }}
           cookieName="Tipourboire"
           style={{ background: "#2B373B" }}
-          buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+          buttonStyle={{ color: "#4e503b", fontSize: "14px" }}
         >
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
