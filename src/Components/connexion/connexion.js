@@ -67,8 +67,8 @@ class Connexion extends Component {
             );
           }}
           cookieName="Tipourboire"
-          style={{ background: "#2B373B" }}
-          buttonStyle={{ color: "#4e503b", fontSize: "14px" }}
+          style={{ background: "#f5a624", color: "#555" }}
+          buttonStyle={{ color: "#555", fontSize: "14px" }}
         >
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
