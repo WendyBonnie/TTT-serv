@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-import { Button } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import storage from "../firebase";
 
 class Profil extends Component {
@@ -18,6 +18,7 @@ class Profil extends Component {
       history: [],
       stripeUrl: "",
       restaurant: [],
+      showModal: false,
     };
   }
 
@@ -41,7 +42,7 @@ class Profil extends Component {
         <Button
           className="lienCommentaire"
           onClick={() => {
-            this.unSubscribe();
+            this.setState({ showModal: true });
           }}
         >
           Résilier mon abonnement
@@ -56,8 +57,6 @@ class Profil extends Component {
     }
   };
   unSubscribe = () => {
-    window.confirm("Etes-vous sûr de vouloir résilier votre abonnement ? ");
-
     const headers = new Headers({
       "Content-Type": "application/json",
       /**on ajoute  pour l'AUTHENTIFICATION le header autorization qui a comme valeur bearer(puis espace) suivi par le token de l'user */
@@ -76,6 +75,7 @@ class Profil extends Component {
       .then(
         (responseObject) => {
           this.setState({ message: responseObject.message });
+          this.setState({ showModal: false });
           this.getMonProfil();
         },
 
@@ -219,7 +219,10 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/customerAccount", options)
+    fetch(
+      "http://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
+      options
+    )
       .then((response) => {
         return response.json();
       })
@@ -316,11 +319,48 @@ class Profil extends Component {
       });
     }
   };
+  modalUnsubscribe = () => {
+    return (
+      <Modal
+        show={this.state.showModal}
+        onHide={() => {
+          this.setState({ showModal: false });
+        }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Résiliation abonnement</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Etes vous sur de vouloir résilier votre abonnement Tipourboire vous
+          serez taxé de 25%{" "}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              this.unSubscribe();
+            }}
+          >
+            Résilier
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              this.setState({ showModal: false });
+            }}
+          >
+            Annuler
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
 
   render() {
     return (
       <Container className="contain parrainage">
         {/* {this.abonnement()}*/}
+        {this.modalUnsubscribe()}
         <Row className="mescartes">
           <Col className="mesdetails" sm={12} md={12}>
             <Col s={6} md={12} className="colPhoto">
