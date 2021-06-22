@@ -52,21 +52,18 @@ export default function CheckoutForm() {
     }
     function createSubscription({ customerId, paymentMethodId, priceId }) {
       return (
-        fetch(
-          "https://back-end.osc-fr1.scalingo.io/serveur/createsubscription",
-          {
-            method: "post",
-            headers: {
-              "Content-type": "application/json",
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
-            body: JSON.stringify({
-              customerId: customerId,
-              paymentMethodId: paymentMethodId,
-              priceId: "price_1Hr1j9Hoh2Vgz5QdvrI9FBDN",
-            }),
-          }
-        )
+        fetch("http://localhost:8080/serveur/createsubscription", {
+          method: "post",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+          body: JSON.stringify({
+            customerId: customerId,
+            paymentMethodId: paymentMethodId,
+            priceId: "price_1Hr1j9Hoh2Vgz5QdvrI9FBDN",
+          }),
+        })
           .then((response) => {
             return response.json();
           })
