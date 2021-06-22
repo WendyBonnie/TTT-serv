@@ -118,7 +118,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
+    fetch("http://localhost:8080/serveur/monProfil", options)
       .then((response) => {
         return response.json();
       })
@@ -126,7 +126,7 @@ class Profil extends Component {
         (responseObject) => {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
-          console.log(this.state.profil);
+          console.log(this.state.profil, "--------------------------------");
         },
 
         (error) => {

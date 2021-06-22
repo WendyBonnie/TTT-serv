@@ -111,16 +111,13 @@ class referent extends Component {
                 body: JSON.stringify(data),
               };
 
-              fetch(
-                "https://back-end.osc-fr1.scalingo.io/serveur/referentTransfert",
-                options
-              )
+              fetch("http://localhost:8080/serveur/referentTransfert", options)
                 .then((response) => {
                   return response;
                 })
                 .then(
                   (data) => {
-                    console.log(data);
+                    console.log(data, "DATA");
                     window.alert("Coucou ca à marché");
                   },
 

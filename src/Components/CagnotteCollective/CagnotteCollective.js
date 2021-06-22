@@ -143,7 +143,7 @@ class CagnotteCollective extends Component {
           window.alert("Une erreur s'est produite, veuillez réessayer.");
         } else {
           window.alert(
-            "Vots documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
+            "Vos documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
           );
         }
       });

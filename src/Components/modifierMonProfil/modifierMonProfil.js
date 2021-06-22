@@ -122,7 +122,6 @@ function UploadPicture() {
             setImageStorage(e.target.files[0]);
           }}
         />
-
         <button className="button" type="submit" onClick={uploadpicture}>
           Télécharger
         </button>
