@@ -34,6 +34,57 @@ class Profil extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  renderButtonUnSub = () => {
+    let abonne = this.state.profil.abonne;
+    if (abonne === true) {
+      return (
+        <Button
+          className="lienCommentaire"
+          onClick={() => {
+            this.unSubscribe();
+          }}
+        >
+          Résilier mon abonnement
+        </Button>
+      );
+    } else {
+      return (
+        <Button className="lienCommentaire" href="/monAbonnement">
+          Souscrire à l'abonnement premium
+        </Button>
+      );
+    }
+  };
+  unSubscribe = () => {
+    window.confirm("Etes-vous sûr de vouloir résilier votre abonnement ? ");
+
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      /**on ajoute  pour l'AUTHENTIFICATION le header autorization qui a comme valeur bearer(puis espace) suivi par le token de l'user */
+      Authorization: "bearer " + localStorage.getItem("token"),
+    });
+
+    const options = {
+      method: "DELETE",
+      headers: headers,
+    };
+
+    fetch("http://localhost:8080/serveur/unsubscribe", options)
+      .then((response) => {
+        return response.json();
+      })
+      .then(
+        (responseObject) => {
+          this.setState({ message: responseObject.message });
+          this.getMonProfil();
+        },
+
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
   renderMesHistory = () => {
     if (Array.isArray(this.state.profil.history)) {
       if (this.state.profil.history.length > 0) {
@@ -201,7 +252,6 @@ class Profil extends Component {
       .then(
         (data) => {
           this.setState({ restaurant: data });
-          console.log(this.state.restaurant);
         },
         (err) => {
           console.log(err);
@@ -347,9 +397,7 @@ class Profil extends Component {
         </Row>
         <Row>
           <Col md={6} lg={6}>
-            <Button className="lienCommentaire" href="/monAbonnement">
-              Souscrire l'abonnement premium
-            </Button>
+            {this.renderButtonUnSub()}
           </Col>
           <Col classeName="colModifier" md={6} lg={6}>
             <Link to="/modifierMonProfil" className="modif">
