@@ -1,5 +1,6 @@
 body {
   background-color: white !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .inscr {
@@ -90,7 +91,7 @@ body {
 @media only screen and (min-device-width: 1024px) {
   .inscr .connectServeur {
     background-color: #f5a624 !important;
-  
+
     border-color: #f5a624 !important;
     padding-top: 1% !important;
     padding-bottom: 1% !important;
@@ -99,19 +100,12 @@ body {
   .inscr {
     background: #ffffff;
     width: 100%;
-  
   }
-
- 
-
-  
 
   .Titre {
     padding-top: 5%;
     padding-bottom: 5%;
   }
-
-  
 
   .imageInscrServeur {
     display: block;

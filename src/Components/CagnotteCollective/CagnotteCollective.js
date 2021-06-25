@@ -220,7 +220,7 @@ class CagnotteCollective extends Component {
         </Row>
         <Row className="rowPasDeCagn">
           <Col>
-            <h5>
+            <h5 className="rappelKYC">
               {" "}
               Pas encore de cagnotte pour percevoir vos pourboires collectifs ?
               Suivez les étapes ci-dessous !
@@ -229,39 +229,46 @@ class CagnotteCollective extends Component {
         </Row>
         <Row className="rowId">
           <Col>
-            <form onSubmit={this.onSubmit}>
-              <h3>Confirmation d'identité </h3>
-              <h5>
-                (Recto Verso sur la même page, taille minimum: 32 Kb taille
-                maximum: 10Mb )
-              </h5>
-              <input
-                className="chargePic"
-                type="file"
-                name="file"
-                multiple
-                accept="image/png, image/jpeg, image/jpg, image/pdf"
-              />
+            <div className="kyc">
+              <form onSubmit={this.onSubmit}>
+                <p className="titleKyc">Confirmation d'identité </p>
+                <p>
+                  ( Recto Verso sur la même page, taille minimum: 32 Kb taille
+                  maximum: 10Mb )
+                </p>
+                <input
+                  className="chargePic"
+                  type="file"
+                  name="file"
+                  multiple
+                  accept="image/png, image/jpeg, image/jpg, image/pdf"
+                />
 
-              <Button type="submit">Télécharger</Button>
-            </form>
-            {this.state.message}
+                <Button type="submit">Télécharger</Button>
+              </form>
+              {this.state.message}
+            </div>
           </Col>
-          <Col>
-            <h2>Statut de vos document:</h2>
-            <p>{this.state.profil.kycStatut === "VALIDATED" ? "Validé" : ""}</p>
-            <p>
-              {this.state.profil.kycStatut === "REFUSED"
-                ? "Refusé veuillez contactez le support: contact@tipourboire.com"
-                : ""}
-            </p>
-            <p>
-              {this.state.profil.kycStatut !== "REFUSED" &&
-              this.state.profil.kycStatut !== "VALIDATED"
-                ? "En Cours"
-                : ""}
-            </p>
-          </Col>
+
+          <div className="kycStatut">
+            <p className="kycTitleStatut">Statut de vos documents:</p>
+            <div className="statut">
+              <p className="statutValid">
+                {this.state.profil.kycStatut === "VALIDATED" ? "Validé" : ""}
+              </p>
+              <p className="statutRefused">
+                {this.state.profil.kycStatut === "REFUSED"
+                  ? "Refusé veuillez contactez le support: contact@tipourboire.com"
+                  : ""}
+              </p>
+              <p className="statutIn">
+                {this.state.profil.kycStatut !== "REFUSED" &&
+                this.state.profil.kycStatut !== "VALIDATED"
+                  ? "En Cours"
+                  : ""}
+              </p>
+            </div>
+          </div>
         </Row>
         <Row>
           <Col>
