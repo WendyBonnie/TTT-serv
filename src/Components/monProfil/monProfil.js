@@ -328,14 +328,16 @@ class Profil extends Component {
         }}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Résiliation abonnement</Modal.Title>
+          <Modal.Title className="modalTitle">
+            Résiliation abonnement
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Etes vous sur de vouloir résilier votre abonnement Tipourboire vous
-          serez taxé de 25%{" "}
+        <Modal.Body className="modalBody">
+          Etes vous sur de vouloir résilier votre abonnement Tipourboire ?{" "}
         </Modal.Body>
         <Modal.Footer>
           <Button
+            className="modalButton"
             variant="secondary"
             onClick={() => {
               this.unSubscribe();
@@ -344,6 +346,7 @@ class Profil extends Component {
             Résilier
           </Button>
           <Button
+            className="modalButton"
             variant="primary"
             onClick={() => {
               this.setState({ showModal: false });
