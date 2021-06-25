@@ -248,8 +248,18 @@ class CagnotteCollective extends Component {
             {this.state.message}
           </Col>
           <Col>
-            <p style={{ backgroundColor: "green" }}>
-              {this.state.profil.kycStatut}
+            <h2>Statut de vos document:</h2>
+            <p>{this.state.profil.kycStatut === "VALIDATED" ? "Validé" : ""}</p>
+            <p>
+              {this.state.profil.kycStatut === "REFUSED"
+                ? "Refusé veuillez contactez le support: contact@tipourboire.com"
+                : ""}
+            </p>
+            <p>
+              {this.state.profil.kycStatut !== "REFUSED" &&
+              this.state.profil.kycStatut !== "VALIDATED"
+                ? "En Cours"
+                : ""}
             </p>
           </Col>
         </Row>
