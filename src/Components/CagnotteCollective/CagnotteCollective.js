@@ -10,6 +10,7 @@ class CagnotteCollective extends Component {
     this.state = {
       document: {},
       amount: 0,
+      profil: {},
     };
   }
   addBankAccount = (e) => {
@@ -134,7 +135,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoKYC", options)
+    fetch("http://localhost:8080/serveur/mangoKYC", options)
       .then((response) => {
         return response.json();
       })
@@ -142,6 +143,7 @@ class CagnotteCollective extends Component {
         if (responseData.Type === "param_error") {
           window.alert("Une erreur s'est produite, veuillez réessayer.");
         } else {
+          console.log(responseData);
           window.alert(
             "Vos documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
           );
@@ -149,8 +151,60 @@ class CagnotteCollective extends Component {
       });
   };
 
+  checkKyc = () => {
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      Authorization: "bearer " + localStorage.getItem("token"),
+    });
+
+    const options = {
+      method: "get",
+
+      headers: headers,
+    };
+
+    fetch("http://localhost:8080/serveur/kyc-statut", options)
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((responseData) => {
+        console.log(responseData[0].Status);
+      });
+  };
+  getMonProfil = () => {
+    const headers = new Headers({
+      Authorization: "Bearer " + localStorage.getItem("token"),
+      "Content-Type": "application/json",
+      "X-Requested-With": "XMLHttpRequest",
+    });
+
+    const options = {
+      method: "GET",
+      headers: headers,
+    };
+
+    fetch("http://localhost:8080/serveur/monProfil", options)
+      .then((response) => {
+        return response.json();
+      })
+      .then(
+        (responseObject) => {
+          const monProfil = responseObject;
+          this.setState({ profil: monProfil });
+          console.log("dsqdsqdsqwsxdqsddqsdsq", this.state.profil.kycStatut);
+        },
+
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
   componentDidMount() {
     this.getWalletAmount();
+    this.checkKyc();
+    this.getMonProfil();
   }
   render() {
     return (
@@ -177,7 +231,10 @@ class CagnotteCollective extends Component {
           <Col>
             <form onSubmit={this.onSubmit}>
               <h3>Confirmation d'identité </h3>
-              <h5>(Recto Verso sur la même page)</h5>
+              <h5>
+                (Recto Verso sur la même page, taille minimum: 32 Kb taille
+                maximum: 10Mb )
+              </h5>
               <input
                 className="chargePic"
                 type="file"
@@ -189,6 +246,11 @@ class CagnotteCollective extends Component {
               <Button type="submit">Télécharger</Button>
             </form>
             {this.state.message}
+          </Col>
+          <Col>
+            <p style={{ backgroundColor: "green" }}>
+              {this.state.profil.kycStatut}
+            </p>
           </Col>
         </Row>
         <Row>

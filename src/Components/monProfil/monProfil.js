@@ -68,7 +68,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/unsubscribe", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/unsubscribe", options)
       .then((response) => {
         return response.json();
       })
