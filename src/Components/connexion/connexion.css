@@ -47,6 +47,8 @@
 
 .connectButton:hover {
   background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
 }
 
 .text2 {

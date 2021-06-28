@@ -1,7 +1,6 @@
-.mesHisto{
+.mesHisto {
   margin-bottom: 15%;
 }
-
 
 .titreReferent {
   margin-bottom: 5%;
@@ -10,38 +9,41 @@
   text-align: center;
 }
 
-
-.commentaireHisto{
+.commentaireHisto {
   text-align: center;
   justify-content: center;
 }
 
-
-.montantCo{
-  color: #f5a624 ;
+.montantCo {
+  color: #f5a624;
   margin-top: 5%;
   margin-bottom: 10%;
 }
 
-.CollectButton{
+.CollectButton {
   border-radius: 52px;
   background-color: #f5a624;
   border-color: #f5a624;
   margin-top: 4%;
   margin-bottom: 10%;
 }
+.CollectButton:hover {
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
+}
 
-.nameServ{
+.nameServ {
   color: #f5a624;
   margin-top: 14%;
 }
 
-.rowServeurCo{
+.rowServeurCo {
   text-align: center;
 }
 
 @media only screen and (min-device-width: 1024px) {
-  .rowServeurCo{
+  .rowServeurCo {
     text-align: center;
   }
 }

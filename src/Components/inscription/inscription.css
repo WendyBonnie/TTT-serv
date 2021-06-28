@@ -83,6 +83,11 @@ body {
   padding-bottom: 3% !important;
   font-size: 23px !important;
 }
+.inscr .connectServeur:hover {
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
+}
 
 .imageInscrServeur {
   display: none;

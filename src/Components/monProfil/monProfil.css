@@ -94,6 +94,8 @@ body {
 
 .parrainage .buttonParrainage:hover {
   background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
 }
 .parrainage .infoParrainage {
   font-weight: bold;
@@ -145,6 +147,12 @@ body {
   color: #ffffff;
   border-width: 0px;
 }
+.contain .buttonModifier:hover,
+.contain .buttonModifier:active {
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
+}
 
 .contain .buttonAbo {
   border-radius: 28px !important;
@@ -157,6 +165,11 @@ body {
   color: #ffffff;
   margin-top: 10%;
   border-width: 0px;
+}
+.contain .buttonAbo:hover {
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
 }
 
 /**
@@ -183,6 +196,11 @@ body {
   border-color: #f5a624 !important;
   font-size: 18px !important;
   font-weight: 600 !important;
+}
+.modalButton:hover {
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
 }
 
 .lienCommentaire {
@@ -225,7 +243,7 @@ body {
     margin-bottom: 2%;
   }
 
-  .lienCommentaire {
+  .contain .lienCommentaire {
     font-size: 23px !important;
     background-color: #f4a521 !important;
     color: white;
@@ -233,6 +251,11 @@ body {
     width: 100%;
     padding-top: 3% !important;
     padding-bottom: 3% !important;
+  }
+  .contain .lienCommentaire:hover {
+    background-color: #555 !important;
+    color: #f5a624 !important;
+    border-color: #f5a624 !important ;
   }
 
   .container .delete {

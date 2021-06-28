@@ -40,7 +40,7 @@ class Profil extends Component {
     if (abonne === true) {
       return (
         <Button
-          className="lienCommentaire"
+          className="buttonModifier lienCommentaire"
           onClick={() => {
             this.setState({ showModal: true });
           }}
@@ -50,7 +50,10 @@ class Profil extends Component {
       );
     } else {
       return (
-        <Button className="lienCommentaire" href="/monAbonnement">
+        <Button
+          className="buttonModifier lienCommentaire"
+          href="/monAbonnement"
+        >
           Souscrire à l'abonnement premium
         </Button>
       );
@@ -118,7 +121,7 @@ class Profil extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/monProfil", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
       .then((response) => {
         return response.json();
       })
@@ -449,12 +452,15 @@ class Profil extends Component {
         </Row>
         <Row>
           <Col xs={12} s={12} md={6} lg={6}>
-            <Button className="lienCommentaire" href="/mesTips">
+            <Button className="buttonModifier lienCommentaire" href="/mesTips">
               Mes commentaires
             </Button>
           </Col>
           <Col xs={12} s={12} md={6} lg={6}>
-            <Button className="lienCommentaire" href="/mesHistoriques">
+            <Button
+              className="buttonModifier lienCommentaire"
+              href="/mesHistoriques"
+            >
               Mes pourboires encaissés
             </Button>
           </Col>

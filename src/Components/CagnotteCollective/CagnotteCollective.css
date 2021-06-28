@@ -14,10 +14,9 @@
 }
 
 .cagnotteCont button:hover {
-  border-radius: 52px;
-  background-color: #555;
-  border-color: #f5a624;
-  margin-top: 5%;
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
 }
 
 .butBankAcc:active {
