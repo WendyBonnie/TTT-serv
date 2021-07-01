@@ -281,7 +281,7 @@ class Profil extends Component {
 
     fetch(
       "https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage?_id=" +
-        this.state.profil.email,
+        this.state.email,
       options
     )
       .then((response) => {
@@ -289,7 +289,7 @@ class Profil extends Component {
       })
 
       .then((responseData) => {
-        this.setState({ message: responseData.message });
+        this.setState({ messageParrainage: responseData.message });
       });
   };
   componentDidMount() {
@@ -418,11 +418,13 @@ class Profil extends Component {
               onClick={this.postParrainage}
               className="buttonParrainage"
             />
+
             <p className="infoParrainage">
               " Vous êtes satisfaits : parlez-en autour de vous ! A chaque
               parrainage d'un serveur ou d'un restaurateur, vous et votre ami,
               gagnez 2 mois d'abonnements Premium "
             </p>
+            {this.state.messageParrainage}
           </Col>
         </Row>
 
