@@ -178,7 +178,7 @@ class Profil extends Component {
     };
 
     fetch(
-      "http://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
+      "https://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
       options
     )
       .then((response) => {
