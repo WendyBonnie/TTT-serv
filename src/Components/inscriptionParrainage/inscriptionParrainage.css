@@ -11,25 +11,32 @@ body {
   color: #555;
   margin-top: -13%;
   padding: 70px;
-  
 }
 .inscr .form-control {
   height: 66px;
   font-size: 0.8rem;
 }
 
-
+.inscr .annonceParrainage {
+  margin-top: 20px;
+  color: #f5a624;
+  font-size: 8px;
+}
+.inscr .checkboxCGUParrainage {
+  font-weight: bold;
+  color: #f5a624;
+}
 .titreh1 {
   color: #f4a521;
-  text-align: center
+  text-align: center;
 }
 .Titrep {
   font-size: 14px;
   text-align: center;
 }
 
-.inscr .form{
-text-align: center;
+.inscr .form {
+  text-align: center;
 }
 
 .cgvLink {
@@ -38,7 +45,6 @@ text-align: center;
 .inscr .Bloc-principal .form-group .form-control {
   font-size: 0.8rem;
   border-radius: 8px;
- 
 }
 .inscr .Bloc-principal .form-label {
   color: #4a4a4a;
@@ -90,22 +96,18 @@ text-align: center;
   .inscr {
     background: #ffffff;
     width: 100%;
-    margin-top:0%;
+    margin-top: 0%;
     text-align: center;
-   
+
     padding: 0% !important;
   }
 
-  .centerInscr{
+  .centerInscr {
     justify-content: center;
   }
-
 
   .Titre {
     padding-top: 5%;
     padding-bottom: 5%;
   }
-
- 
-
 }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./monProfil.css";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
@@ -9,6 +9,60 @@ import Card from "react-bootstrap/Card";
 import { Button, Modal } from "react-bootstrap";
 import storage from "../firebase";
 
+function Tuto() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button className="buttonTuto" onClick={handleShow}>
+        Etape obligatoire{" "}
+        <Button onClick={handleShow} className="flecheTuto">
+          {">"}
+        </Button>
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        animation={true}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Rappel d'utilisation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Image className="imgModalTuto" src="/images/logoOK.png" />
+          <li>
+            {" "}
+            Insère ta photo pour plus de visibilité au près de tes clients.
+          </li>
+          <li>
+            {" "}
+            Rentre tes coordonnées bancaires pour recevoir tes pourboires.
+          </li>
+          <p>
+            - Section mes pourboires individuels pour activer & lié ton compte
+            bancaires. <br />- Section mes pourboires collectifs pour activer &
+            lié ton compte bancaires.
+          </p>
+          <p></p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="modalButton"
+            variant="secondary"
+            onClick={handleClose}
+          >
+            Fermer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
 class Profil extends Component {
   constructor(props) {
     super(props);
@@ -129,51 +183,6 @@ class Profil extends Component {
         (responseObject) => {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
-          console.log(this.state.profil, "--------------------------------");
-        },
-
-        (error) => {
-          console.log(error);
-        }
-      );
-  };
-
-  deleteProfil = (e) => {
-    window.confirm(
-      "Etes-vous sur de vouloir supprimer votre compte? Cette action est irréversible."
-    );
-    e.preventDefault();
-    const data = {
-      userId:
-        localStorage.getItem(
-          "userID"
-        ) /*on get l'Id qu'on a stocké durant la connexion*/,
-      /*userID avec le ID en majuscule car c'est comme ca qu'on l'a mis dans le local storage (/connexion) */
-      profil: this.state.profil,
-    };
-
-    const headers = new Headers({
-      "Content-Type": "application/json",
-      Authorization: "bearer " + localStorage.getItem("token"),
-    });
-
-    const options = {
-      method: "DELETE",
-      body: JSON.stringify(data),
-      headers: headers,
-    };
-
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/delete", options)
-      .then((response) => {
-        return response.json();
-      })
-      .then(
-        (responseObject) => {
-          this.setState({ message: responseObject.message });
-          alert(
-            "La suppression de votre compte a bien été prise en compte. Merci."
-          );
-          this.props.history.push("/connexion");
         },
 
         (error) => {
@@ -223,7 +232,7 @@ class Profil extends Component {
     };
 
     fetch(
-      "http://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
+      "https://back-end.osc-fr1.scalingo.io/serveur/customerAccount",
       options
     )
       .then((response) => {
@@ -281,7 +290,7 @@ class Profil extends Component {
 
     fetch(
       "https://back-end.osc-fr1.scalingo.io/serveur/emailParrainage?_id=" +
-        this.state.profil.email,
+        this.state.email,
       options
     )
       .then((response) => {
@@ -289,7 +298,7 @@ class Profil extends Component {
       })
 
       .then((responseData) => {
-        this.setState({ message: responseData.message });
+        this.setState({ messageParrainage: responseData.message });
       });
   };
   componentDidMount() {
@@ -379,6 +388,9 @@ class Profil extends Component {
                 roundedCircle
               />
             </Col>
+            <Col md={{ span: 9, offset: 7 }} className="colTuto">
+              <Tuto />
+            </Col>
             <div className="infoProfil">
               <h1>
                 {this.state.profil.firstname} {this.state.profil.lastname}
@@ -392,6 +404,7 @@ class Profil extends Component {
               <p className="profilParafin">{this.state.profil.phone}</p>
             </div>
           </Col>
+
           <Col className="monrestaurant" sm={12} md={12}>
             <h1 className="ligne">Mes restaurants </h1>
             {this.renderMesRestau()}
@@ -418,11 +431,13 @@ class Profil extends Component {
               onClick={this.postParrainage}
               className="buttonParrainage"
             />
+
             <p className="infoParrainage">
               " Vous êtes satisfaits : parlez-en autour de vous ! A chaque
               parrainage d'un serveur ou d'un restaurateur, vous et votre ami,
               gagnez 2 mois d'abonnements Premium "
             </p>
+            {this.state.messageParrainage}
           </Col>
         </Row>
 
