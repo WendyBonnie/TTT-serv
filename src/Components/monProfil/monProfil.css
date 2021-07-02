@@ -216,6 +216,53 @@ body {
   text-align: center;
 }
 
+/**
+* Style modal tuto
+*/
+.colTuto {
+  position: fixed;
+  left: 150px !important;
+  top: 45% !important;
+  z-index: 2000 !important;
+}
+.buttonTuto {
+  background-color: #7200ff !important;
+  position: -webkit-sticky;
+  font-size: 20px !important;
+  top: 0 !important;
+  float: right !important;
+  border-width: 0 !important;
+  padding: 6% 2% 2% !important;
+  border-radius: 25px !important;
+  vertical-align: top !important;
+  transform: rotate(7deg) !important;
+  -ms-transform: rotate(90deg) !important; /* IE 9 */
+  -moz-transform: rotate(90deg) !important; /* Firefox */
+  -webkit-transform: rotate(90deg) !important; /* Safari and Chrome */
+  -o-transform: rotate(90deg) !important; /* Opera */
+}
+
+.flecheTuto {
+  margin-left: 0.4rem !important;
+  background-color: #f5a624 !important;
+  color: #7200ff !important;
+  border-width: 0 !important;
+  vertical-align: top !important;
+  transform: rotate(7deg) !important;
+  -ms-transform: rotate(270deg) !important; /* IE 9 */
+  -moz-transform: rotate(270deg) !important; /* Firefox */
+  -webkit-transform: rotate(270deg) !important; /* Safari and Chrome */
+  -o-transform: rotate(270deg) !important; /* Opera */
+}
+.flecheTuto:hover {
+  border-color: #f5a624 !important;
+  color: white !important;
+}
+.imgModalTuto {
+  width: 30%;
+  margin-bottom: 3%;
+}
+
 @media (max-width: 800px) {
   .contain {
     margin-right: auto;

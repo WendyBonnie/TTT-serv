@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./monProfil.css";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
@@ -9,6 +9,60 @@ import Card from "react-bootstrap/Card";
 import { Button, Modal } from "react-bootstrap";
 import storage from "../firebase";
 
+function Tuto() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button className="buttonTuto" onClick={handleShow}>
+        Etape obligatoire{" "}
+        <Button onClick={handleShow} className="flecheTuto">
+          {">"}
+        </Button>
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        animation={true}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Rappel d'utilisation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Image className="imgModalTuto" src="/images/logoOK.png" />
+          <li>
+            {" "}
+            Insère ta photo pour plus de visibilité au près de tes clients.
+          </li>
+          <li>
+            {" "}
+            Rentre tes coordonnées bancaires pour recevoir tes pourboires.
+          </li>
+          <p>
+            - Section mes pourboires individuels pour activer & lié ton compte
+            bancaires. <br />- Section mes pourboires collectifs pour activer &
+            lié ton compte bancaires.
+          </p>
+          <p></p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="modalButton"
+            variant="secondary"
+            onClick={handleClose}
+          >
+            Fermer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
 class Profil extends Component {
   constructor(props) {
     super(props);
@@ -334,6 +388,9 @@ class Profil extends Component {
                 roundedCircle
               />
             </Col>
+            <Col md={{ span: 9, offset: 7 }} className="colTuto">
+              <Tuto />
+            </Col>
             <div className="infoProfil">
               <h1>
                 {this.state.profil.firstname} {this.state.profil.lastname}
@@ -347,6 +404,7 @@ class Profil extends Component {
               <p className="profilParafin">{this.state.profil.phone}</p>
             </div>
           </Col>
+
           <Col className="monrestaurant" sm={12} md={12}>
             <h1 className="ligne">Mes restaurants </h1>
             {this.renderMesRestau()}
