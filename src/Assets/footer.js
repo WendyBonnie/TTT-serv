@@ -6,14 +6,19 @@ import {
   Form,
   FormControl,
   Button,
+  Modal,
   NavDropdown,
 } from "react-bootstrap";
+
 class footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
+
   deleteProfil = (e) => {
-    window.confirm(
-      "Etes-vous sur de vouloir supprimer votre compte? Cette action est irréversible."
-    );
-    e.preventDefault();
     const data = {
       userId:
         localStorage.getItem(
@@ -41,10 +46,6 @@ class footer extends Component {
       .then(
         (responseObject) => {
           this.setState({ message: responseObject.message });
-          alert(
-            "La suppression de votre compte a bien été prise en compte. Merci."
-          );
-          this.props.history.push("/connexion");
         },
 
         (error) => {
@@ -52,9 +53,49 @@ class footer extends Component {
         }
       );
   };
+
+  modalDelete = () => {
+    return (
+      <Modal
+        show={this.state.showModal}
+        onHide={() => {
+          this.setState({ showModal: false });
+        }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title className="modalTitle">Supprimer mon compte</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="modalBody">
+          Etes vous sur de vouloir supprimer votre compte Tipourboire ?{" "}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="modalButtonDelete"
+            variant="secondary"
+            onClick={() => {
+              this.deleteProfil();
+            }}
+          >
+            Supprimer
+          </Button>
+          <Button
+            className="modalButtonDelete"
+            variant="primary"
+            onClick={() => {
+              this.setState({ showModal: false });
+            }}
+          >
+            Annuler
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
+
   render() {
     return (
       <div className="footer">
+        {this.modalDelete()}
         <Navbar fixed="bottom" collapseOnSelect expand="lg" bg="#edeaea">
           <Navbar.Brand href="#home" className="textFooter">
             @Tipourboire
@@ -91,9 +132,8 @@ class footer extends Component {
                 Contact
               </Nav.Link>
               <Nav.Link
-                href="#pricing"
                 className="textFooter"
-                onClick={this.deleteProfil}
+                onClick={() => this.setState({ showModal: true })}
               >
                 Supprimer mon compte
               </Nav.Link>
