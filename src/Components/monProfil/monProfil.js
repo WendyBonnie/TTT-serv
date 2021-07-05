@@ -34,7 +34,7 @@ function Tuto() {
           <Modal.Title>Rappel d'utilisation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Image className="imgModalTuto" src="/images/logoOK.png" />
+          <Image className="imgModalTuto" src="images/logoOK.png" />
           <li>
             {" "}
             Insère ta photo pour plus de visibilité au près de tes clients.
