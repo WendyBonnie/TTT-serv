@@ -116,12 +116,11 @@ class referent extends Component {
                 options
               )
                 .then((response) => {
-                  return response;
+                  return response.json();
                 })
                 .then(
                   (data) => {
-                    console.log(data, "DATA");
-                    window.alert("Coucou ca à marché");
+                    this.setState({ message: data.message });
                   },
 
                   (error) => {
@@ -132,7 +131,6 @@ class referent extends Component {
           >
             Envoyez
           </Button>
-          <p>{this.state.message}</p>
         </Col>
       );
     });
@@ -157,6 +155,7 @@ class referent extends Component {
         </Row>
 
         <Row className="rowServeurCo">{this.renderMesServeurs()}</Row>
+        <p style={{ textAlign: "center" }}>{this.state.message}</p>
       </Container>
     );
   }
