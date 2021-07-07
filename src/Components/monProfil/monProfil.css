@@ -233,7 +233,7 @@ body {
   padding: 2% 2% 2% 2% !important;
   border-radius: 0px 0px 25px 25px !important;
   vertical-align: top !important;
-  transform: rotate(7deg) !important;
+  transform: rotate(90deg) !important;
   -ms-transform: rotate(90deg) !important; /* IE 9 */
   -moz-transform: rotate(90deg) !important; /* Firefox */
   -webkit-transform: rotate(90deg) !important; /* Safari and Chrome */
@@ -247,7 +247,7 @@ body {
   border-width: 0 !important;
   vertical-align: top !important;
   border-radius: 25px !important;
-  transform: rotate(7deg) !important;
+  transform: rotate(90deg) !important;
   -ms-transform: rotate(270deg) !important; /* IE 9 */
   -moz-transform: rotate(270deg) !important; /* Firefox */
   -webkit-transform: rotate(270deg) !important; /* Safari and Chrome */
@@ -328,7 +328,7 @@ body {
     padding: 3% 3% 3% 3% !important;
     border-radius: 0px 0px 25px 25px !important;
     vertical-align: top !important;
-    transform: rotate(7deg) !important;
+    transform: rotate(90deg) !important;
     -ms-transform: rotate(90deg) !important; /* IE 9 */
     -moz-transform: rotate(90deg) !important; /* Firefox */
     -webkit-transform: rotate(90deg) !important; /* Safari and Chrome */
@@ -342,7 +342,7 @@ body {
     border-width: 0 !important;
     border-radius: 25px !important;
     vertical-align: top !important;
-    transform: rotate(7deg) !important;
+    transform: rotate(90deg) !important;
     -ms-transform: rotate(270deg) !important; /* IE 9 */
     -moz-transform: rotate(270deg) !important; /* Firefox */
     -webkit-transform: rotate(270deg) !important; /* Safari and Chrome */
