@@ -257,9 +257,18 @@ body {
   border-color: #f5a624 !important;
   color: white !important;
 }
-.imgModalTuto {
-  width: 30%;
-  margin-bottom: 3%;
+.titleTutoServ {
+  font-size: 22px !important;
+}
+.puceTuto {
+  font-weight: 800 !important;
+  font-size: 18px;
+}
+.textTutoServ {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  font-size: 14px !important;
 }
 
 @media (max-width: 800px) {
@@ -352,9 +361,8 @@ body {
     border-color: #f5a624 !important;
     color: white !important;
   }
-  .imgModalTuto {
-    width: 30%;
-    margin-bottom: 3%;
+  .titleTutoServ {
+    font-size: 24px !important;
   }
 }
 
@@ -422,5 +430,8 @@ body {
     color: #f4a521;
     font-size: 38px !important;
     margin-bottom: 5% !important;
+  }
+  .titleTutoServ {
+    font-size: 24px !important;
   }
 }
