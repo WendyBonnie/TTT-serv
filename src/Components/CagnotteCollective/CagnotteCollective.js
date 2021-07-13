@@ -81,7 +81,7 @@ class CagnotteCollective extends Component {
       })
 
       .then((responseData) => {
-        console.log(responseData);
+        this.setState({ messageTransfert: responseData.messageTransfert });
       });
   };
 
@@ -216,6 +216,8 @@ class CagnotteCollective extends Component {
               <strong>{this.state.amount / 100} euros</strong>
             </h2>
             <Button onClick={this.payoutMangoPay}>Retirer votre argent</Button>
+            <br />
+            <p>{this.state.messageTransfert}</p>
           </Col>
         </Row>
         <Row className="rowPasDeCagn">
