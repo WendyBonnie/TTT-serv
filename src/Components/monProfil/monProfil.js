@@ -34,21 +34,28 @@ function Tuto() {
           <Modal.Title>Rappel d'utilisation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Image className="imgModalTuto" src="images/logoOK.png" />
-          <li>
-            {" "}
-            Insère ta photo pour plus de visibilité au près de tes clients.
-          </li>
-          <li>
-            {" "}
-            Rentre tes coordonnées bancaires pour recevoir tes pourboires.
-          </li>
-          <p>
-            - Section mes pourboires individuels pour activer & lié ton compte
-            bancaires. <br />- Section mes pourboires collectifs pour activer &
-            lié ton compte bancaires.
+          <p className="titleTutoServ">
+            Pour que tes clients te reconnaissent & commencent à te donner des
+            pourboires, tu dois:
           </p>
-          <p></p>
+          <li className="puceTuto">
+            {" "}
+            Insérer ta photo en allant dans ton profil de ton compte Tipourboire
+          </li>
+          <li className="puceTuto">
+            {" "}
+            Rentrer tes coordonnées bancaires & ta pièce d'identité dans :
+          </li>
+          <br />
+          <p className="textTutoServ">
+            l'onglet "Mes pourboires Communs" de ton compte Tipourboire
+            <br /> si ton restaurant distribue à la générale
+            <br />
+            <br /> l'onglet "Mes pourboires Individuels" de ton compte
+            Tipourboire
+            <br /> si ton restaurant pratique le pourboire individuel <br />
+            <br />
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Button
