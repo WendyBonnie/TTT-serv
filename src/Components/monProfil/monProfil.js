@@ -17,7 +17,7 @@ function Tuto() {
   return (
     <>
       <Button className="buttonTuto" onClick={handleShow}>
-        Etape obligatoire{" "}
+        Etapes obligatoires{" "}
         <Button onClick={handleShow} className="flecheTuto">
           {">"}
         </Button>
