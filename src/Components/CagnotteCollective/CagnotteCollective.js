@@ -163,14 +163,12 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/kyc-statut", options)
+    fetch("http://localhost:8080/serveur/kyc-statut", options)
       .then((response) => {
         return response.json();
       })
 
-      .then((responseData) => {
-        console.log(responseData[0].Status);
-      });
+      .then((responseData) => {});
   };
   getMonProfil = () => {
     const headers = new Headers({
@@ -260,7 +258,7 @@ class CagnotteCollective extends Component {
               </p>
               <p className="statutRefused">
                 {this.state.profil.kycStatut === "REFUSED"
-                  ? "Refusé veuillez contactez le support: contact@tipourboire.com"
+                  ? " Document refusé veuillez vous assurer que la carte d'identité n'ai pas été retouché et que le recto et le verso soit bien visible sur la même page."
                   : ""}
               </p>
               <p className="statutIn">
