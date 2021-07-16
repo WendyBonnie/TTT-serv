@@ -259,10 +259,12 @@ body {
 }
 .titleTutoServ {
   font-size: 22px !important;
+  text-align: center !important;
 }
-.puceTuto {
+.paraTuto {
   font-weight: 800 !important;
   font-size: 18px;
+  text-align: center !important;
 }
 .textTutoServ {
   text-align: center !important;
@@ -362,7 +364,8 @@ body {
     color: white !important;
   }
   .titleTutoServ {
-    font-size: 24px !important;
+    font-size: 22px !important;
+    text-align: center !important;
   }
 }
 
@@ -432,6 +435,7 @@ body {
     margin-bottom: 5% !important;
   }
   .titleTutoServ {
-    font-size: 24px !important;
+    font-size: 22px !important;
+    text-align: center !important;
   }
 }

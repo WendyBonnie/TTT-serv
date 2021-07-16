@@ -36,16 +36,17 @@ function Tuto() {
         <Modal.Body>
           <p className="titleTutoServ">
             Pour que tes clients te reconnaissent & commencent à te donner des
-            pourboires, tu dois:
+            pourboires,
+            <br /> tu dois:
           </p>
-          <li className="puceTuto">
+          <p className="paraTuto">
             {" "}
             Insérer ta photo en allant dans ton profil de ton compte Tipourboire
-          </li>
-          <li className="puceTuto">
+          </p>
+          <p className="paraTuto">
             {" "}
             Rentrer tes coordonnées bancaires & ta pièce d'identité dans :
-          </li>
+          </p>
           <br />
           <p className="textTutoServ">
             l'onglet "Mes pourboires Communs" de ton compte Tipourboire
