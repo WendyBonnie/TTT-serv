@@ -215,6 +215,19 @@ body {
 .buttonRef {
   text-align: center;
 }
+.referentButton {
+  background-color: #f4a521 !important;
+  color: white !important;
+  border-radius: 58px !important;
+  border-color: #f5a624 !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+.referentButton:hover {
+  background-color: #555 !important;
+  color: #f5a624 !important;
+  border-color: #f5a624 !important ;
+}
 
 /**
 * Style modal tuto
@@ -367,6 +380,19 @@ body {
     font-size: 22px !important;
     text-align: center !important;
   }
+  .referentButton {
+    background-color: #f4a521 !important;
+    color: white !important;
+    border-radius: 58px !important;
+    border-color: #f5a624 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+  .referentButton:hover {
+    background-color: #555 !important;
+    color: #f5a624 !important;
+    border-color: #f5a624 !important ;
+  }
 }
 
 @media only screen and (min-device-width: 1024px) {
@@ -437,5 +463,18 @@ body {
   .titleTutoServ {
     font-size: 22px !important;
     text-align: center !important;
+  }
+  .referentButton {
+    background-color: #f4a521 !important;
+    color: white !important;
+    border-radius: 58px !important;
+    border-color: #f5a624 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+  .referentButton:hover {
+    background-color: #555 !important;
+    color: #f5a624 !important;
+    border-color: #f5a624 !important ;
   }
 }

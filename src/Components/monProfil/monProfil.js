@@ -318,7 +318,7 @@ class Profil extends Component {
   renderCompteReferent = () => {
     if (this.state.profil.mangoWalletReferent) {
       return (
-        <Button className="lienCommentaire" href="/referent">
+        <Button className="lienCommentaire referentButton" href="/referent">
           Mon compte Référent
         </Button>
       );
