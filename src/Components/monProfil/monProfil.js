@@ -459,7 +459,7 @@ class Profil extends Component {
           </Col>
           <Col xs={12} s={12} md={6} lg={6}>
             <Button className="buttonAbo" href="/cagnotte">
-              Mes pourboires collectifs
+              Mes pourboires communs
             </Button>
           </Col>
         </Row>
