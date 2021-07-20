@@ -39,13 +39,14 @@ class footer extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/delete", options)
+    fetch("http://localhost:8080/serveur/delete", options)
       .then((response) => {
         return response.json();
       })
       .then(
-        (responseObject) => {
-          this.setState({ message: responseObject.message });
+        () => {
+          let link = "https://serveur.tipourboire.com/";
+          window.location.href = link;
         },
 
         (error) => {
@@ -87,6 +88,7 @@ class footer extends Component {
           >
             Annuler
           </Button>
+          {this.state.message}
         </Modal.Footer>
       </Modal>
     );
