@@ -449,7 +449,7 @@ class Profil extends Component {
             <button
               className="buttonAbo"
               onClick={() => {
-                alert("Arrive prochainement !");
+                alert("Arrive prochainement !!");
               }}>
               Mes pourboires individuels
             </button>
