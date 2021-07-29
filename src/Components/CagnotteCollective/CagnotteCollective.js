@@ -37,7 +37,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/mangoBank", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoBank", options)
       .then((response) => {
         return response.json();
       })
@@ -164,7 +164,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/kyc-statut", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/kyc-statut", options)
       .then((response) => {
         return response.json();
       })
@@ -316,7 +316,8 @@ class CagnotteCollective extends Component {
                 type="text"
                 name="country"
                 onChange={this.handleInput}
-                value={this.state.country}>
+                value={this.state.country}
+              >
                 <option>FR</option>
                 <option>DE</option>
                 <option>LT</option>
@@ -349,7 +350,8 @@ class CagnotteCollective extends Component {
             <Button
               className="butBankAcc"
               type="submit"
-              onClick={this.addBankAccount}>
+              onClick={this.addBankAccount}
+            >
               Envoyez vos informations bancaires
             </Button>
             <br />
