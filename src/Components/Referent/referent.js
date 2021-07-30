@@ -121,13 +121,15 @@ class referent extends Component {
                 .then(
                   (data) => {
                     this.setState({ message: data.message });
+                    this.getReferentWallet();
                   },
 
                   (error) => {
                     console.log(error);
                   }
                 );
-            }}>
+            }}
+          >
             Envoyez
           </Button>
         </Col>
