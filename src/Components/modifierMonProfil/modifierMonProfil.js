@@ -16,6 +16,7 @@ function UploadPicture() {
     storage
       .ref(`/PictureServeur/${imageStorage.name}`)
       .put(imageStorage)
+
       .on("state_changed", alert("Votre logo a bien été enregistré"), alert);
   };
 
@@ -110,8 +111,7 @@ function UploadPicture() {
       <form onSubmit={modifProfilLogo} className="formLogo">
         <img
           className="serveurPicture"
-          src={"https://back-end.osc-fr1.scalingo.io/" + imageStorage}
-        ></img>
+          src={"https://back-end.osc-fr1.scalingo.io/" + imageStorage}></img>
         <br />
         <br />
         <input
@@ -312,8 +312,7 @@ class modifierMonProfil extends Component {
                   type="text"
                   name="staff"
                   onChange={this.change}
-                  value={this.state.serveur.staff}
-                >
+                  value={this.state.serveur.staff}>
                   <option>-</option>
                   <option>Commis</option>
                   <option>Chef de rang</option>
@@ -330,8 +329,7 @@ class modifierMonProfil extends Component {
               className="submitButton"
               variant="primary"
               type="submit"
-              onClick={this.editserveur}
-            >
+              onClick={this.editserveur}>
               Mettre à jour mon profil
             </Button>
             <p>{this.state.message}</p>
