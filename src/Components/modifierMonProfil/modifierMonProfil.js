@@ -110,7 +110,9 @@ function UploadPicture() {
       <form onSubmit={modifProfilLogo} className="formLogo">
         <img
           className="serveurPicture"
-          src={"https://back-end.osc-fr1.scalingo.io/" + imageStorage}
+          src={
+            "https://s3.amazonaws.com/b.c.bucket.tipourboire/" + imageStorage
+          }
         ></img>
         <br />
         <br />

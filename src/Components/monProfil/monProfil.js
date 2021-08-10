@@ -392,7 +392,7 @@ class Profil extends Component {
               <Image
                 className="photoProfil"
                 src={
-                  "https://back-end.osc-fr1.scalingo.io" +
+                  "https://s3.amazonaws.com/b.c.bucket.tipourboire/" +
                   this.state.profil.picture
                 }
                 roundedCircle
