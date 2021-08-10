@@ -22,6 +22,7 @@ class CagnotteCollective extends Component {
       region: this.state.region,
       zip: this.state.zip,
       iban: this.state.iban,
+      country: this.state.country,
     };
 
     const headers = new Headers({
@@ -163,7 +164,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/kyc-statut", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/kyc-statut", options)
       .then((response) => {
         return response.json();
       })
@@ -233,8 +234,8 @@ class CagnotteCollective extends Component {
               <form onSubmit={this.onSubmit}>
                 <p className="titleKyc">Confirmation d'identité </p>
                 <p>
-                  ( Recto Verso sur la même page, taille minimum: 32 Kb taille
-                  maximum: 10Mb )
+                  ( Passeport de préférence sinon Recto Verso sur la même page,
+                  taille minimum: 32 Kb taille maximum: 10Mb )
                 </p>
                 <input
                   className="chargePic"
@@ -309,6 +310,42 @@ class CagnotteCollective extends Component {
                 onChange={this.handleInput}
                 value={this.state.iban}
               />
+
+              <Form.Control
+                as="select"
+                type="text"
+                name="country"
+                onChange={this.handleInput}
+                value={this.state.country}
+              >
+                <option>FR</option>
+                <option>DE</option>
+                <option>LT</option>
+                <option>GB</option>
+                <option>AT</option>
+                <option>BE</option>
+                <option>BG</option>
+                <option>CY</option>
+                <option>DK</option>
+                <option>ES</option>
+                <option>EE</option>
+                <option>FI</option>
+                <option>GR</option>
+                <option>HU</option>
+                <option>IE</option>
+                <option>IT</option>
+                <option>LV</option>
+                <option>LU</option>
+                <option>MT</option>
+                <option>NL</option>
+                <option>PL</option>
+                <option>PT</option>
+                <option>CZ</option>
+                <option>RO</option>
+                <option>SK</option>
+                <option>SI</option>
+                <option>SE</option>
+              </Form.Control>
             </Form>
             <Button
               className="butBankAcc"

@@ -16,6 +16,7 @@ function UploadPicture() {
     storage
       .ref(`/PictureServeur/${imageStorage.name}`)
       .put(imageStorage)
+
       .on("state_changed", alert("Votre logo a bien été enregistré"), alert);
   };
 

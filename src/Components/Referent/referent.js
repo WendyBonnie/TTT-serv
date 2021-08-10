@@ -121,6 +121,7 @@ class referent extends Component {
                 .then(
                   (data) => {
                     this.setState({ message: data.message });
+                    this.getReferentWallet();
                   },
 
                   (error) => {
@@ -150,6 +151,10 @@ class referent extends Component {
             <h2 className="montantCo">
               <strong>{this.state.amount / 100} euros</strong>
             </h2>
+            <p>
+              Les frais de gestion Tipourboire par serveur seront
+              automatiquement enlevés de la part que vous lui distribuez 
+            </p>
             <h1>Liste des Serveurs:</h1>
           </Col>
         </Row>
