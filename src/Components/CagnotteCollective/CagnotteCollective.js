@@ -152,25 +152,6 @@ class CagnotteCollective extends Component {
       });
   };
 
-  checkKyc = () => {
-    const headers = new Headers({
-      "Content-Type": "application/json",
-      Authorization: "bearer " + localStorage.getItem("token"),
-    });
-
-    const options = {
-      method: "get",
-
-      headers: headers,
-    };
-
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/kyc-statut", options)
-      .then((response) => {
-        return response.json();
-      })
-
-      .then((responseData) => {});
-  };
   getMonProfil = () => {
     const headers = new Headers({
       Authorization: "Bearer " + localStorage.getItem("token"),
@@ -202,7 +183,7 @@ class CagnotteCollective extends Component {
 
   componentDidMount() {
     this.getWalletAmount();
-    this.checkKyc();
+
     this.getMonProfil();
   }
   render() {
@@ -210,7 +191,7 @@ class CagnotteCollective extends Component {
       <Container className="cagnotteCont">
         <Row className="rowCagn">
           <Col>
-            <h1>Montant des pourboires collectifs :</h1>
+            <h1>Montant de vos pourboire :</h1>
             <h2>
               <strong>{this.state.amount / 100} euros</strong>
             </h2>
@@ -224,139 +205,8 @@ class CagnotteCollective extends Component {
             <h5 className="rappelKYC">
               {" "}
               Pas encore de cagnotte pour percevoir vos pourboires collectifs ?
-              Suivez les étapes ci-dessous !
+              Suivez les étapes dans la partie "Mes Documents" !
             </h5>
-          </Col>
-        </Row>
-        <Row className="rowId">
-          <Col>
-            <div className="kyc">
-              <form onSubmit={this.onSubmit}>
-                <p className="titleKyc">Confirmation d'identité </p>
-                <p>
-                  ( Passeport de préférence sinon Recto Verso sur la même page,
-                  taille minimum: 32 Kb taille maximum: 10Mb )
-                </p>
-                <input
-                  className="chargePic"
-                  type="file"
-                  name="file"
-                  multiple
-                  accept="image/png, image/jpeg, image/jpg, image/pdf"
-                />
-
-                <Button type="submit">Télécharger</Button>
-              </form>
-              {this.state.message}
-            </div>
-          </Col>
-
-          <div className="kycStatut">
-            <p className="kycTitleStatut">Statut de vos documents:</p>
-            <div className="statut">
-              <p className="statutValid">
-                {this.state.profil.kycStatut === "VALIDATED" ? "Validé" : ""}
-              </p>
-              <p className="statutRefused">
-                {this.state.profil.kycStatut === "REFUSED"
-                  ? " Document refusé veuillez vous assurer que la carte d'identité n'ai pas été retouché et que le recto et le verso soit bien visible sur la même page."
-                  : ""}
-              </p>
-              <p className="statutIn">
-                {this.state.profil.kycStatut !== "REFUSED" &&
-                this.state.profil.kycStatut !== "VALIDATED"
-                  ? "En Cours"
-                  : ""}
-              </p>
-            </div>
-          </div>
-        </Row>
-        <Row>
-          <Col>
-            <Form>
-              <Form.Control
-                type="text"
-                placeholder="Votre Adresse"
-                name="adress"
-                onChange={this.handleInput}
-                value={this.state.adress}
-              />
-              <Form.Control
-                type="text"
-                placeholder="Code Postal"
-                name="zip"
-                onChange={this.handleInput}
-                value={this.state.zip}
-              />
-              <Form.Control
-                type="text"
-                placeholder="Ville"
-                name="city"
-                onChange={this.handleInput}
-                value={this.state.city}
-              />
-              <Form.Control
-                type="text"
-                placeholder="Votre région, PACA, AQUITAINE, BRETAGNE... "
-                name="region"
-                onChange={this.handleInput}
-                value={this.state.region}
-              />
-
-              <Form.Control
-                type="text"
-                placeholder="Votre IBAN, FRXXXXXXXXXXXXXXXXXX"
-                name="iban"
-                onChange={this.handleInput}
-                value={this.state.iban}
-              />
-
-              <Form.Control
-                as="select"
-                type="text"
-                name="country"
-                onChange={this.handleInput}
-                value={this.state.country}
-              >
-                <option>FR</option>
-                <option>DE</option>
-                <option>LT</option>
-                <option>GB</option>
-                <option>AT</option>
-                <option>BE</option>
-                <option>BG</option>
-                <option>CY</option>
-                <option>DK</option>
-                <option>ES</option>
-                <option>EE</option>
-                <option>FI</option>
-                <option>GR</option>
-                <option>HU</option>
-                <option>IE</option>
-                <option>IT</option>
-                <option>LV</option>
-                <option>LU</option>
-                <option>MT</option>
-                <option>NL</option>
-                <option>PL</option>
-                <option>PT</option>
-                <option>CZ</option>
-                <option>RO</option>
-                <option>SK</option>
-                <option>SI</option>
-                <option>SE</option>
-              </Form.Control>
-            </Form>
-            <Button
-              className="butBankAcc"
-              type="submit"
-              onClick={this.addBankAccount}
-            >
-              Envoyez vos informations bancaires
-            </Button>
-            <br />
-            <br />
-            {this.state.messageBA}
           </Col>
         </Row>
       </Container>

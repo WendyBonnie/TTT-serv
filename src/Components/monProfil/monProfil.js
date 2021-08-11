@@ -28,7 +28,8 @@ function Tuto() {
         onHide={handleClose}
         animation={true}
         backdrop="static"
-        keyboard={false}>
+        keyboard={false}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Rappel d'utilisation</Modal.Title>
         </Modal.Header>
@@ -61,7 +62,8 @@ function Tuto() {
           <Button
             className="modalButton"
             variant="secondary"
-            onClick={handleClose}>
+            onClick={handleClose}
+          >
             Fermer
           </Button>
         </Modal.Footer>
@@ -103,7 +105,8 @@ class Profil extends Component {
           className="buttonModifier lienCommentaire"
           onClick={() => {
             this.setState({ showModal: true });
-          }}>
+          }}
+        >
           Résilier mon abonnement
         </Button>
       );
@@ -111,7 +114,8 @@ class Profil extends Component {
       return (
         <Button
           className="buttonModifier lienCommentaire"
-          href="/monAbonnement">
+          href="/monAbonnement"
+        >
           Souscrire à l'abonnement premium
         </Button>
       );
@@ -343,7 +347,8 @@ class Profil extends Component {
         show={this.state.showModal}
         onHide={() => {
           this.setState({ showModal: false });
-        }}>
+        }}
+      >
         <Modal.Header closeButton>
           <Modal.Title className="modalTitle">
             Résiliation abonnement
@@ -358,7 +363,8 @@ class Profil extends Component {
             variant="secondary"
             onClick={() => {
               this.unSubscribe();
-            }}>
+            }}
+          >
             Résilier
           </Button>
           <Button
@@ -366,7 +372,8 @@ class Profil extends Component {
             variant="primary"
             onClick={() => {
               this.setState({ showModal: false });
-            }}>
+            }}
+          >
             Annuler
           </Button>
         </Modal.Footer>
@@ -446,17 +453,13 @@ class Profil extends Component {
 
         <Row className="rowButton">
           <Col xs={12} md={6} lg={6}>
-            <button
-              className="buttonAbo"
-              onClick={() => {
-                alert("Arrive prochainement !!");
-              }}>
-              Mes pourboires individuels
-            </button>
+            <Button className="buttonAbo" href="/mesDocuments">
+              Mes documents
+            </Button>
           </Col>
           <Col xs={12} s={12} md={6} lg={6}>
             <Button className="buttonAbo" href="/cagnotte">
-              Mes pourboires communs
+              Mes pourboires
             </Button>
           </Col>
         </Row>
@@ -481,7 +484,8 @@ class Profil extends Component {
           <Col xs={12} s={12} md={6} lg={6}>
             <Button
               className="buttonModifier lienCommentaire"
-              href="/mesHistoriques">
+              href="/mesHistoriques"
+            >
               Mes pourboires encaissés
             </Button>
           </Col>

@@ -18,6 +18,7 @@ import mesComs from "../mesTips/mesTips";
 import mesHisto from "../MesHistoriques/mesHistoriques";
 import CagnotteCollective from "../CagnotteCollective/CagnotteCollective";
 import Referent from "../Referent/referent";
+import kycDocument from "../KycDocument/kycDocument";
 
 /* Main app component*/
 class App extends Component {
@@ -56,6 +57,7 @@ class App extends Component {
               path="/inscriptionParrainage"
               component={InscriptionParrainage}
             />
+            <Route path="/mesDocuments" component={kycDocument} />
             <Route path="/monProfil" component={Profil} />
             <Route path="/modifierMonProfil" component={ModifierMonProfil} />
             <Route path="/mesTips" component={mesComs} />
