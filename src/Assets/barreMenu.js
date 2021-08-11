@@ -24,7 +24,6 @@ class Barremenu extends Component {
                 <Dropdown.Item href="/MonProfil">Profil</Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
-                    window.confirm("Voulez vous vous déconnecter ?");
                     localStorage.clear();
                     this.props.setLogin(false);
                     this.props.history.push("/");
