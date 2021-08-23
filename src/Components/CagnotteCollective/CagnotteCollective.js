@@ -191,7 +191,7 @@ class CagnotteCollective extends Component {
       <Container className="cagnotteCont">
         <Row className="rowCagn">
           <Col>
-            <h1>Montant de vos pourboire :</h1>
+            <h1>Montant de vos pourboires :</h1>
             <h2>
               <strong>{this.state.amount / 100} euros</strong>
             </h2>
@@ -204,8 +204,8 @@ class CagnotteCollective extends Component {
           <Col>
             <h5 className="rappelKYC">
               {" "}
-              Pas encore de cagnotte pour percevoir vos pourboires collectifs ?
-              Suivez les étapes dans la partie "Mes Documents" !
+              Pas encore de cagnotte pour percevoir vos pourboires ? Suivez les
+              étapes dans la partie "Mes Documents" !
             </h5>
           </Col>
         </Row>

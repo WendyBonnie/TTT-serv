@@ -11,25 +11,22 @@ class mesHistoriques extends Component {
     super(props);
     this.state = { profil: { restaurantName: {} }, wallet: 1, history: [] };
   }
-   
-  
 
-  
   renderMesHistory = () => {
     if (Array.isArray(this.state.profil.history)) {
       if (this.state.profil.history.length > 0) {
         return this.state.profil.history.map((element, index) => {
           return (
             <tr>
-            <td type="text" id="montant" name="montant">
-              {" "}
-              {element.amount / 100}€
-            </td>
-            <td type="date" id="date" name="date">
-              {" "}
-              {new Date(element.date).toLocaleDateString()}
-            </td>
-          </tr>
+              <td type="text" id="montant" name="montant">
+                {" "}
+                {Math.round(element.amount / 10) / 10}€
+              </td>
+              <td type="date" id="date" name="date">
+                {" "}
+                {new Date(element.date).toLocaleDateString()}
+              </td>
+            </tr>
           );
         });
       } else {
@@ -71,11 +68,8 @@ class mesHistoriques extends Component {
       );
   };
 
-  
-
   componentDidMount() {
-      this.getMonProfil();
-  
+    this.getMonProfil();
   }
 
   render() {
@@ -83,23 +77,20 @@ class mesHistoriques extends Component {
       <Container className="mesHisto">
         <Row>
           <Col>
-            <h1 className='titreHisto'>Mes Historiques de pourboires</h1>
+            <h1 className="titreHisto">Mon Historique de pourboire</h1>
           </Col>
         </Row>
         <Row class="table-responsive-sm">
-        <Table class="table-responsive-sm" striped hover>
-        <thead>
-      <tr>
-        <th>Montant</th>
-        <th>Date</th>
-  
-      </tr>
-      </thead>
-        <tbody>
-        {this.renderMesHistory()}
-        </tbody>
-      </Table>
-      </Row>
+          <Table class="table-responsive-sm" striped hover>
+            <thead>
+              <tr>
+                <th>Montant</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>{this.renderMesHistory()}</tbody>
+          </Table>
+        </Row>
       </Container>
     );
   }

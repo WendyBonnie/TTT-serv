@@ -37,25 +37,16 @@ function Tuto() {
           <p className="titleTutoServ">
             Pour que tes clients te reconnaissent & commencent à te donner des
             pourboires,
-            <br /> tu dois:
+            <br /> dans ton compte Tipourboire, tu dois:
           </p>
           <p className="paraTuto">
             {" "}
-            Insérer ta photo en allant dans ton profil de ton compte Tipourboire
+            Insérer ta photo en allant dans ton profil
           </p>
           <p className="paraTuto">
             {" "}
-            Rentrer tes coordonnées bancaires & ta pièce d'identité dans :
-          </p>
-          <br />
-          <p className="textTutoServ">
-            l'onglet "Mes pourboires Communs" de ton compte Tipourboire
-            <br /> si ton restaurant distribue à la générale
-            <br />
-            <br /> l'onglet "Mes pourboires Individuels" de ton compte
-            Tipourboire
-            <br /> si ton restaurant pratique le pourboire individuel <br />
-            <br />
+            Rentrer tes coordonnées bancaires & ta pièce d'identité dans
+            l'onglet "Mes documents"
           </p>
         </Modal.Body>
         <Modal.Footer>
@@ -478,7 +469,7 @@ class Profil extends Component {
         <Row>
           <Col xs={12} s={12} md={6} lg={6}>
             <Button className="buttonModifier lienCommentaire" href="/mesTips">
-              Mes commentaires
+              Mes commentaires reçus
             </Button>
           </Col>
           <Col xs={12} s={12} md={6} lg={6}>
@@ -486,7 +477,7 @@ class Profil extends Component {
               className="buttonModifier lienCommentaire"
               href="/mesHistoriques"
             >
-              Mes pourboires encaissés
+              Mon historique de pourboire
             </Button>
           </Col>
         </Row>
