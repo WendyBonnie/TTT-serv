@@ -144,6 +144,7 @@ class Inscription extends Component {
                     className="tailleInscr"
                   >
                     <option>-</option>
+                    <option>Manager (Pas de bourboire)</option>
                     <option>Commis</option>
                     <option>Chef de rang</option>
                     <option>Maître d'hôtel</option>

@@ -190,8 +190,8 @@ class kycDocument extends Component {
               <form onSubmit={this.onSubmit}>
                 <p className="titleKyc">Confirmation d'identité </p>
                 <p>
-                  ( Passeport de préférence sinon Recto Verso sur la même page,
-                  taille minimum: 32 Kb taille maximum: 10Mb )
+                  ( <u>Passeport de préférence</u> sinon Recto Verso sur la même
+                  page, taille minimum: 32 Kb taille maximum: 10Mb )
                 </p>
                 <input
                   className="chargePic"
