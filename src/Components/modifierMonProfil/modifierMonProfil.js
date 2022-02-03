@@ -318,6 +318,7 @@ class modifierMonProfil extends Component {
                   value={this.state.serveur.staff}
                 >
                   <option>-</option>
+                  <option>Manager (Pas de bourboire)</option>
                   <option>Commis</option>
                   <option>Chef de rang</option>
                   <option>Maître d'hôtel</option>
