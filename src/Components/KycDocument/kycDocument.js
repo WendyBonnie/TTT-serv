@@ -113,7 +113,7 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/mangoKYC", options)
+    fetch("https://back-end.osc-fr1.scalingo.io//serveur/mangoKYC", options)
       .then((response) => {
         return response.json();
       })
