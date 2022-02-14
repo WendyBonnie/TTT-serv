@@ -113,13 +113,16 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoKYC", options)
+    fetch("https://back-end.osc-fr1.scalingo.io//serveur/mangoKYC", options)
       .then((response) => {
         return response.json();
       })
       .then((responseData) => {
-        if (responseData.Type === "param_error") {
-          window.alert("Une erreur s'est produite, veuillez réessayer.");
+        console.log("ezeza", responseData);
+        if (responseData.success == false) {
+          window.alert(
+            "Une erreur s'est produite, veuillez réessayer. Pensez à vérifier la/les taille(s) de votre/vos image(s)"
+          );
         } else {
           console.log(responseData);
           window.alert(
@@ -194,6 +197,7 @@ class kycDocument extends Component {
                   page, taille minimum: 32 Kb taille maximum: 10Mb )
                 </p>
                 <input
+                  enctype="multipart/form-data"
                   className="chargePic"
                   type="file"
                   name="file"

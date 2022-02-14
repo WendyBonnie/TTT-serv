@@ -48,9 +48,9 @@ class Inscription extends Component {
       .then((response) => {
         return response.json();
       })
-
       .then(
         (responseObject) => {
+          console.log(responseObject.success);
           this.setState({ message: responseObject.message });
         },
 
