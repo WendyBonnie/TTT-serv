@@ -36,7 +36,7 @@ class Connexion extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/login", options)
+    fetch("http://localhost:8080/serveur/login", options)
       .then((response) => {
         return response.json();
       })
@@ -49,6 +49,12 @@ class Connexion extends Component {
           localStorage.setItem("userID", responseData.userId);
           this.props.setLogin(true);
           this.props.history.push("/monprofil");
+
+          setTimeout(() => {
+            localStorage.clear();
+            this.props.setLogin(false);
+            this.props.history.push("/");
+          }, 3600000);
         }
       });
   };
