@@ -36,7 +36,7 @@ class Connexion extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/login", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/login", options)
       .then((response) => {
         return response.json();
       })
@@ -93,7 +93,8 @@ class Connexion extends Component {
             fontSize: "20px",
             fontfamily: "Montserrat",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
           indispensables au fonctionnement du Site. Vous pouvez accepter ces
@@ -106,7 +107,8 @@ class Connexion extends Component {
               fontSize: "20px",
               fontfamily: "Montserrat",
               fontWeight: "bold",
-            }}>
+            }}
+          >
             Politique de cookies
           </a>
         </CookieConsent>
