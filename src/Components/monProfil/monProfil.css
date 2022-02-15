@@ -154,6 +154,10 @@ body {
   border-color: #f5a624 !important ;
 }
 
+.rowHisto {
+  justify-content: center;
+}
+
 .contain .buttonAbo {
   border-radius: 28px !important;
   background-color: #f4a521 !important;

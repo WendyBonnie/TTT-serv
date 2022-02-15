@@ -28,8 +28,7 @@ function Tuto() {
         onHide={handleClose}
         animation={true}
         backdrop="static"
-        keyboard={false}
-      >
+        keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>Rappel d'utilisation</Modal.Title>
         </Modal.Header>
@@ -53,8 +52,7 @@ function Tuto() {
           <Button
             className="modalButton"
             variant="secondary"
-            onClick={handleClose}
-          >
+            onClick={handleClose}>
             Fermer
           </Button>
         </Modal.Footer>
@@ -88,7 +86,7 @@ class Profil extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  renderButtonUnSub = () => {
+  /*  renderButtonUnSub = () => {
     let abonne = this.state.profil.abonne;
     if (abonne === true) {
       return (
@@ -111,7 +109,7 @@ class Profil extends Component {
         </Button>
       );
     }
-  };
+  };*/
   unSubscribe = () => {
     const headers = new Headers({
       "Content-Type": "application/json",
@@ -338,8 +336,7 @@ class Profil extends Component {
         show={this.state.showModal}
         onHide={() => {
           this.setState({ showModal: false });
-        }}
-      >
+        }}>
         <Modal.Header closeButton>
           <Modal.Title className="modalTitle">
             Résiliation abonnement
@@ -354,8 +351,7 @@ class Profil extends Component {
             variant="secondary"
             onClick={() => {
               this.unSubscribe();
-            }}
-          >
+            }}>
             Résilier
           </Button>
           <Button
@@ -363,8 +359,7 @@ class Profil extends Component {
             variant="primary"
             onClick={() => {
               this.setState({ showModal: false });
-            }}
-          >
+            }}>
             Annuler
           </Button>
         </Modal.Footer>
@@ -456,7 +451,9 @@ class Profil extends Component {
         </Row>
         <Row>
           <Col md={6} lg={6}>
-            {this.renderButtonUnSub()}
+            <Button className="buttonModifier lienCommentaire" href="/mesTips">
+              Mes commentaires reçus
+            </Button>
           </Col>
           <Col classeName="colModifier" md={6} lg={6}>
             <Link to="/modifierMonProfil" className="modif">
@@ -466,17 +463,11 @@ class Profil extends Component {
             </Link>
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} s={12} md={6} lg={6}>
-            <Button className="buttonModifier lienCommentaire" href="/mesTips">
-              Mes commentaires reçus
-            </Button>
-          </Col>
+        <Row className="rowHisto">
           <Col xs={12} s={12} md={6} lg={6}>
             <Button
               className="buttonModifier lienCommentaire"
-              href="/mesHistoriques"
-            >
+              href="/mesHistoriques">
               Mon historique de pourboire
             </Button>
           </Col>

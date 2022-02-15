@@ -62,7 +62,7 @@ class App extends Component {
             <Route path="/modifierMonProfil" component={ModifierMonProfil} />
             <Route path="/mesTips" component={mesComs} />
             <Route path="/mesHistoriques" component={mesHisto} />
-            <Route path="/monAbonnement" component={monAbonnement} />
+            {/*<Route path="/monAbonnement" component={monAbonnement} />*/}
             <Route path="/passwordReset" component={PasswordReset} />
             <Route path="/passwordRenew" component={PasswordRenew} />
             <Route path="/cagnotte" component={CagnotteCollective} />
