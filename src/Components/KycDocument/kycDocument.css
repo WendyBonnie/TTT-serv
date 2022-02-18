@@ -1,0 +1,16 @@
+.statut {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.statutIn {
+  background-color: orange;
+}
+
+.statutRefused {
+  background-color: red;
+}
+
+.statutValid {
+  background-color: green;
+}

@@ -193,8 +193,8 @@ class kycDocument extends Component {
               <form onSubmit={this.onSubmit}>
                 <p className="titleKyc">Confirmation d'identité </p>
                 <p>
-                  ( <u>Passeport de préférence</u> sinon Recto Verso sur la même
-                  page, taille minimum: 32 Kb taille maximum: 10Mb )
+                  ( <u>Passeport de préférence</u> ou carte d'identité
+                  Recto/Verso taille requise entre 32 Kb et 10Mb )
                 </p>
                 <input
                   enctype="multipart/form-data"
@@ -276,8 +276,7 @@ class kycDocument extends Component {
                 type="text"
                 name="country"
                 onChange={this.handleInput}
-                value={this.state.country}
-              >
+                value={this.state.country}>
                 <option>FR</option>
                 <option>DE</option>
                 <option>LT</option>
@@ -310,8 +309,7 @@ class kycDocument extends Component {
             <Button
               className="butBankAcc"
               type="submit"
-              onClick={this.addBankAccount}
-            >
+              onClick={this.addBankAccount}>
               Envoyez vos informations bancaires
             </Button>
             <br />

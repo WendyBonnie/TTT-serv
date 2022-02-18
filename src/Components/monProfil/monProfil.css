@@ -132,8 +132,12 @@ body {
 }
 
 .contain .photoProfil {
-  width: 63%;
+  width: 43%;
   margin-bottom: 14%;
+}
+
+.rowDocument {
+  margin-top: 2%;
 }
 
 .contain .buttonModifier {
@@ -435,7 +439,7 @@ body {
     margin-bottom: 20%;
   }
   .contain .photoProfil {
-    width: 63%;
+    width: 43%;
     margin-bottom: 5% !important;
   }
   .contain {

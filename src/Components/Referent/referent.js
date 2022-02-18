@@ -82,7 +82,11 @@ class referent extends Component {
       return (
         <Col className="nameServ" xs={12} s={12} md={6}>
           <h3>
-            <strong>{element.serveurName}</strong>
+            <strong>
+              {element.serveurName}
+              {""}
+              {element.serveurLastName}
+            </strong>
           </h3>
           <br />
           <Form>
@@ -128,9 +132,8 @@ class referent extends Component {
                     console.log(error);
                   }
                 );
-            }}
-          >
-            Envoyez
+            }}>
+            Envoyer
           </Button>
         </Col>
       );
@@ -152,10 +155,10 @@ class referent extends Component {
               <strong>{this.state.amount / 100} euros</strong>
             </h2>
             <p>
-              Les frais de gestion Tipourboire par serveur seront
-              automatiquement enlevés de la part que vous lui distribuez 
+              Les frais de gestion seront automatiquement prélevés de la part
+              distribuée à chaque bénéficiaire.
             </p>
-            <h1>Liste des Serveurs:</h1>
+            <h1>Liste des bénéficiaires:</h1>
           </Col>
         </Row>
 

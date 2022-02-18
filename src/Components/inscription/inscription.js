@@ -25,7 +25,7 @@ class Inscription extends Component {
       lastname: this.state.lastname,
       city: this.state.city,
       adress: this.state.adress,
-      staff: this.state.staff,
+      postalCode: this.state.code,
       date: this.state.date,
       email: this.state.email,
       phone: this.state.phone,
@@ -44,7 +44,7 @@ class Inscription extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/register", options)
+    fetch("http://localhost:8080/serveur/register", options)
       .then((response) => {
         return response.json();
       })
@@ -124,6 +124,16 @@ class Inscription extends Component {
                     className="tailleInscr"
                   />
                 </Form.Group>
+                <Form.Group controlId="code">
+                  <Form.Control
+                    type="text"
+                    placeholder="Code Postal"
+                    name="code"
+                    onChange={this.handleInput}
+                    value={this.state.code}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
                 <Form.Group controlId="phone">
                   <Form.Control
                     type="text"
@@ -134,7 +144,8 @@ class Inscription extends Component {
                     className="tailleInscr"
                   />
                 </Form.Group>
-                <Form.Group controlId="staff">
+
+                {/*     <Form.Group controlId="staff">
                   <Form.Control
                     as="select"
                     type="text"
@@ -153,6 +164,7 @@ class Inscription extends Component {
                     <option>Accueil</option>
                   </Form.Control>
                 </Form.Group>
+    */}
                 <Form.Group controlId="email">
                   <Form.Control
                     type="mail"
@@ -188,8 +200,7 @@ class Inscription extends Component {
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
-                    target="_blanck"
-                  >
+                    target="_blanck">
                     CGU & CGV
                   </a>
                 </Form.Group>
@@ -209,8 +220,7 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}
-                    >
+                      }}>
                       S'inscrire
                     </Button>
                   </Col>

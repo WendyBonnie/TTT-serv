@@ -29,23 +29,29 @@ function Tuto() {
         animation={true}
         backdrop="static"
         keyboard={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>Rappel d'utilisation</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
-          <p className="titleTutoServ">
-            Pour que tes clients te reconnaissent & commencent à te donner des
-            pourboires,
-            <br /> dans ton compte Tipourboire, tu dois:
-          </p>
           <p className="paraTuto">
-            {" "}
-            Insérer ta photo en allant dans ton profil
-          </p>
-          <p className="paraTuto">
-            {" "}
-            Rentrer tes coordonnées bancaires & ta pièce d'identité dans
-            l'onglet "Mes documents"
+            <Modal.Title>Comment bénéficier de mes pourboires ?</Modal.Title>
+            <br />
+            <br />
+            Afin d'activer ton compte Tipourboire et permettre à tes clients de
+            te remercier pour la qualité de ton service
+            <br />
+            C'est simple, il te suffit :
+            <br />
+            D'insérer ta photo dans ton espace personnel sécurisé De renseigner
+            tes coordonnées bancaires
+            <br />
+            et de charger ta pièce d'identité
+            <br />
+            dans l'espace "Mes documents"
+            <br />
+            en suivant bien les instructions
+            <br />
+            <br />
+            Bravo, tu peux désormais bénéficier
+            <br />
+            de nos services et booster tes pourboires !
           </p>
         </Modal.Body>
         <Modal.Footer>
@@ -388,25 +394,26 @@ class Profil extends Component {
               <Tuto />
             </Col>
             <div className="infoProfil">
+              <h1 className="titreNice">Bienvenue</h1>
               <h1>
                 {this.state.profil.firstname} {this.state.profil.lastname}
               </h1>
 
-              <h3 className="titreNice">{this.state.profil.staff}</h3>
+              {/* <h3 className="titreNice">{this.state.profil.staff}</h3>
               <p className="profilPara">{this.state.profil.adress}</p>
               <p className="profilPara">{this.state.profil.city}</p>
 
               <p className="profilPara">{this.state.profil.email} </p>
-              <p className="profilParafin">{this.state.profil.phone}</p>
+              <p className="profilParafin">{this.state.profil.phone}</p>*/}
             </div>
           </Col>
 
           <Col className="monrestaurant" sm={12} md={12}>
-            <h1 className="ligne">Mes restaurants </h1>
+            <h1 className="ligne">Mes établissements de rattachement </h1>
             {this.renderMesRestau()}
           </Col>
         </Row>
-        <Row>
+        {/*<Row>
           <Col className="colParrainage">
             <Col md={12}>
               <label className="demandeParrainage">
@@ -435,45 +442,42 @@ class Profil extends Component {
             </p>
             {this.state.messageParrainage}
           </Col>
-        </Row>
+        </Row>*/}
 
         <Row className="rowButton">
-          <Col xs={12} md={6} lg={6}>
-            <Button className="buttonAbo" href="/mesDocuments">
-              Mes documents
-            </Button>
-          </Col>
           <Col xs={12} s={12} md={6} lg={6}>
             <Button className="buttonAbo" href="/cagnotte">
               Mes pourboires
             </Button>
           </Col>
+          <Col xs={12} s={12} md={6} lg={6}>
+            <Button className="buttonModifier  " href="/mesHistoriques">
+              Mon historique de pourboire
+            </Button>
+          </Col>
         </Row>
-        <Row>
+        <Row className="rowDocument">
+          <Col xs={12} md={6} lg={6}>
+            <Button className="buttonAbo " href="/mesDocuments">
+              Mes documents
+            </Button>
+          </Col>
+
+          <Col classeName="colModifier" xs={12} md={6} lg={6}>
+            <Link to="/modifierMonProfil" className="modif">
+              <button className="buttonModifier ">Modifier mon profil</button>
+            </Link>
+          </Col>
+        </Row>
+        <Row className="rowHisto">
           <Col md={6} lg={6}>
             <Button className="buttonModifier lienCommentaire" href="/mesTips">
               Mes commentaires reçus
             </Button>
           </Col>
-          <Col classeName="colModifier" md={6} lg={6}>
-            <Link to="/modifierMonProfil" className="modif">
-              <button className="buttonModifier lienCommentaire">
-                Modifier mon profil
-              </button>
-            </Link>
+          <Col sm={12} md={6} lg={6}>
+            {this.renderCompteReferent()}
           </Col>
-        </Row>
-        <Row className="rowHisto">
-          <Col xs={12} s={12} md={6} lg={6}>
-            <Button
-              className="buttonModifier lienCommentaire"
-              href="/mesHistoriques">
-              Mon historique de pourboire
-            </Button>
-          </Col>
-        </Row>
-        <Row>
-          <Col>{this.renderCompteReferent()}</Col>
         </Row>
       </Container>
     );

@@ -106,7 +106,7 @@ class Connexion extends Component {
         </CookieConsent>
         <Row>
           <Col>
-            <h1>Déja membre ? </h1>
+            <h1>Déja inscrit ? </h1>
             <h1>Connectez-vous !</h1>
           </Col>
         </Row>
@@ -143,7 +143,7 @@ class Connexion extends Component {
         </Col>
         <Col className="alignRight">
           <Form.Label className="text2">
-            Pas encore membre ?{" "}
+            Pas encore inscrit ?{" "}
             <Link className="creerCompte" to="/Inscription">
               Créer mon compte
             </Link>
