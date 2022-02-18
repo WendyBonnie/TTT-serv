@@ -193,8 +193,8 @@ class kycDocument extends Component {
               <form onSubmit={this.onSubmit}>
                 <p className="titleKyc">Confirmation d'identité </p>
                 <p>
-                  ( <u>Passeport de préférence</u> sinon Recto Verso sur la même
-                  page, taille minimum: 32 Kb taille maximum: 10Mb )
+                  ( Vous pouvez mettre deux images/document PDf maximum 32 Kb
+                  taille maximum: 10Mb )
                 </p>
                 <input
                   enctype="multipart/form-data"
@@ -202,7 +202,7 @@ class kycDocument extends Component {
                   type="file"
                   name="file"
                   multiple
-                  accept="image/png, image/jpeg, image/jpg, image/pdf"
+                  accept="image/png, image/jpeg, image/jpg, image/pdf , application/pdf"
                 />
 
                 <Button type="submit">Télécharger</Button>

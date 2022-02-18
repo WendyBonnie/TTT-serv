@@ -3,7 +3,7 @@ import "./inscription.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -11,7 +11,27 @@ import Container from "react-bootstrap/Container";
 class Inscription extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      inscrit: "",
+      gestioName: "",
+      gestioID: "",
+    };
+  }
+
+  componentDidMount() {
+    let inscrit = new URLSearchParams(window.location.search).get("subscribe");
+    let gestioName = new URLSearchParams(window.location.search).get(
+      "gestioName"
+    );
+    let gestioID = new URLSearchParams(window.location.search).get(
+      "gestionnaireID"
+    );
+
+    this.setState({ inscrit: inscrit });
+    this.setState({ gestioName: gestioName });
+    this.setState({ gestioID: gestioID }, () => {
+      console.log(this.state, gestioID);
+    });
   }
 
   handleInput = (e) => {
@@ -31,6 +51,9 @@ class Inscription extends Component {
       phone: this.state.phone,
       password: this.state.password,
       acceptControl: this.state.acceptControl,
+      subscribe: this.state.inscrit,
+      gestioName: this.state.gestioName,
+      gestioID: this.state.gestioID,
     };
 
     const headers = new Headers({
@@ -44,7 +67,7 @@ class Inscription extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/register", options)
+    fetch("http://localhost:8080/serveur/register", options)
       .then((response) => {
         return response.json();
       })
@@ -59,9 +82,14 @@ class Inscription extends Component {
         }
       );
   };
+
+  test = () => {
+    console.log("fdsfdsf", this.state);
+  };
   render() {
     return (
       <Container className="inscr">
+        {this.test()}
         <Row className="RowInscr">
           <Col md={12} className="Titre" sm={12}>
             <h1 className="titreh1">Créer mon compte </h1>
