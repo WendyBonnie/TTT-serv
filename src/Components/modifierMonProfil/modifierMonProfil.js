@@ -113,8 +113,7 @@ function UploadPicture() {
           className="serveurPicture"
           src={
             "https://s3.amazonaws.com/b.c.bucket.tipourboire/" + imageStorage
-          }
-        ></img>
+          }></img>
         <br />
         <br />
         <input
@@ -261,7 +260,7 @@ class modifierMonProfil extends Component {
       <div className="bloc-modifierProfil">
         <Row>
           <Col md={{ span: 12, offset: 3 }} className="titreModif">
-            <p>Modification du profil</p>
+            <p>Modifier mon profil</p>
 
             <Form>
               <Form.Group controlId="formGroupName">
@@ -303,6 +302,15 @@ class modifierMonProfil extends Component {
               <Form.Group controlId="formTel">
                 <Form.Control
                   type="text"
+                  placeholder="Code postal"
+                  name="postalCode"
+                  onChange={this.change}
+                  value={this.state.serveur.postalCode}
+                />
+              </Form.Group>
+              <Form.Group controlId="formTel">
+                <Form.Control
+                  type="text"
                   placeholder="Telephone(Facultatif)"
                   name="phone"
                   onChange={this.change}
@@ -310,7 +318,7 @@ class modifierMonProfil extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="formPoste">
-                <Form.Control
+                {/* <Form.Control
                   as="select"
                   type="text"
                   name="staff"
@@ -325,7 +333,7 @@ class modifierMonProfil extends Component {
                   <option>Barman</option>
                   <option>Cuisinier</option>
                   <option>Accueil</option>
-                </Form.Control>
+               </Form.Control>*/}
               </Form.Group>
             </Form>
             <UploadPicture />
@@ -334,8 +342,7 @@ class modifierMonProfil extends Component {
               className="submitButton"
               variant="primary"
               type="submit"
-              onClick={this.editserveur}
-            >
+              onClick={this.editserveur}>
               Mettre à jour mon profil
             </Button>
             <p>{this.state.message}</p>
