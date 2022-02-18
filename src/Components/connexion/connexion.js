@@ -49,6 +49,12 @@ class Connexion extends Component {
           localStorage.setItem("userID", responseData.userId);
           this.props.setLogin(true);
           this.props.history.push("/monprofil");
+
+          setTimeout(() => {
+            localStorage.clear();
+            this.props.setLogin(false);
+            this.props.history.push("/");
+          }, 3600000);
         }
       });
   };
@@ -87,7 +93,8 @@ class Connexion extends Component {
             fontSize: "20px",
             fontfamily: "Montserrat",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
           indispensables au fonctionnement du Site. Vous pouvez accepter ces
@@ -100,7 +107,8 @@ class Connexion extends Component {
               fontSize: "20px",
               fontfamily: "Montserrat",
               fontWeight: "bold",
-            }}>
+            }}
+          >
             Politique de cookies
           </a>
         </CookieConsent>
