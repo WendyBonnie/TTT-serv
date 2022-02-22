@@ -28,7 +28,10 @@ class mesComs extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mesCommentaires", options)
+    fetch(
+      "https://back-end.osc-fr1.scalingo.io/serveur/mesCommentaires",
+      options
+    )
       .then((response) => {
         return response.json();
       })
@@ -47,22 +50,23 @@ class mesComs extends Component {
       );
   };
   renderMesCommentaires = () => {
-    if (!this.state.mesComs.commentaires.length ) {
+    if (!this.state.mesComs.commentaires.length) {
       return <h4 className="Nocoms">Vous n'avez pas encore de commentaires</h4>;
-    }else {
-    return this.state.mesComs.commentaires.map((element, index) => (
-      <div className="divCom" key={index}>
-        <div className="nomPrenom">
-          <h2 className="prenomCom">{element.prenom}</h2>{" "}
-          <h2 className="nomCom">{element.nom} </h2>
+    } else {
+      return this.state.mesComs.commentaires.map((element, index) => (
+        <div className="divCom" key={index}>
+          <div className="nomPrenom">
+            <h2 className="prenomCom">{element.prenom}</h2>{" "}
+            <h2 className="nomCom">{element.nom} </h2>
+            <h4 className="nomCom">{element.date} </h4>
+          </div>
+          <div>
+            <p className="statut2">{element.texte}</p>
+          </div>
         </div>
-        <div>
-          <p className="statut2">{element.texte}</p>
-        </div>
-      </div>
-    ));
-  }};
-  
+      ));
+    }
+  };
 
   componentDidMount() {
     this.getMesCommentaires();
@@ -73,7 +77,7 @@ class mesComs extends Component {
       <Container className="mesComs">
         <Row>
           <Col>
-            <h1 className='titreComs'>Mes commentaires</h1>
+            <h1 className="titreComs">Mes commentaires</h1>
           </Col>
         </Row>
         <Row className="commentaireBackground">

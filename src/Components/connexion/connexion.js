@@ -66,7 +66,7 @@ class Connexion extends Component {
           location="bottom"
           buttonText="J'accepte"
           declineButtonText="Je refuse"
-          expires={0}
+          expires={30}
           enableDeclineButton
           onDecline={() => {
             alert("REFUS de cookies, votre choix à bien été pris en compte.");
@@ -90,11 +90,10 @@ class Connexion extends Component {
             fontWeight: "bold",
           }}
           style={{
-            fontSize: "20px",
+            fontSize: "10px",
             fontfamily: "Montserrat",
             fontWeight: "bold",
-          }}
-        >
+          }}>
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
           indispensables au fonctionnement du Site. Vous pouvez accepter ces
@@ -107,8 +106,7 @@ class Connexion extends Component {
               fontSize: "20px",
               fontfamily: "Montserrat",
               fontWeight: "bold",
-            }}
-          >
+            }}>
             Politique de cookies
           </a>
         </CookieConsent>

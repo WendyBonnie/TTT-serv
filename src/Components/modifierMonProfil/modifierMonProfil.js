@@ -32,12 +32,14 @@ function UploadPicture() {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
+    fetch("http://localhost:8080/serveur/monProfil", options)
       .then((response) => {
         return response.json();
       })
       .then(
-        (responseObject) => {},
+        (responseObject) => {
+          console.log("response", responseObject);
+        },
 
         (error) => {
           console.log(error);
@@ -60,7 +62,7 @@ function UploadPicture() {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/editlogo", options)
+    fetch("http://localhost:8080/serveur/editlogo", options)
       .then((response) => {
         return response.json();
       })
@@ -88,11 +90,12 @@ function UploadPicture() {
             })
             .then(
               (responseObject) => {
+                console.log("coucou", responseObject);
                 setImageStorage(responseObject.picture);
               },
 
               (error) => {
-                console.log(error);
+                console.log("err", error);
               }
             );
         },
@@ -105,6 +108,10 @@ function UploadPicture() {
   useEffect(() => {
     getMonProfil();
   }, []);
+
+  useEffect(() => {
+    console.log("image", imageStorage);
+  }, [imageStorage]);
 
   return (
     <div>

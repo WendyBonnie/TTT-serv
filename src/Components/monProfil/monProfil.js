@@ -34,24 +34,24 @@ function Tuto() {
             <Modal.Title>Comment bénéficier de mes pourboires ?</Modal.Title>
             <br />
             <br />
-            Afin d'activer ton compte Tipourboire et permettre à tes clients de
-            te remercier pour la qualité de ton service
+            Afin d'activer votre compte Tipourboire et permettre à vos clients
+            de vous remercier pour la qualité de votrz service
             <br />
-            C'est simple, il te suffit :
+            C'est simple, il vous suffit :
             <br />
-            D'insérer ta photo dans ton espace personnel sécurisé De renseigner
-            tes coordonnées bancaires
+            D'insérer votre photo dans votre espace personnel sécurisé De
+            renseigner vos coordonnées bancaires
             <br />
-            et de charger ta pièce d'identité
+            et de charger votre pièce d'identité
             <br />
             dans l'espace "Mes documents"
             <br />
             en suivant bien les instructions
             <br />
             <br />
-            Bravo, tu peux désormais bénéficier
+            Bravo, vous pouvez désormais bénéficier
             <br />
-            de nos services et booster tes pourboires !
+            de nos services et booster vos pourboires !
           </p>
         </Modal.Body>
         <Modal.Footer>
@@ -313,7 +313,7 @@ class Profil extends Component {
   renderCompteReferent = () => {
     if (this.state.profil.mangoWalletReferent) {
       return (
-        <Button className="lienCommentaire referentButton" href="/referent">
+        <Button className=" referentButton" href="/referent">
           Mon compte Référent
         </Button>
       );
@@ -380,16 +380,18 @@ class Profil extends Component {
         {this.modalUnsubscribe()}
         <Row className="mescartes">
           <Col className="mesdetails" sm={12} md={12}>
-            <Col s={6} md={12} className="colPhoto">
-              <Image
-                className="photoProfil"
-                src={
-                  "https://s3.amazonaws.com/b.c.bucket.tipourboire/" +
-                  this.state.profil.picture
-                }
-                roundedCircle
-              />
-            </Col>
+            <Row className="centerPic">
+              <Col s={6} md={8} className="colPhoto">
+                <Image
+                  className="photoProfil"
+                  src={
+                    "https://s3.amazonaws.com/b.c.bucket.tipourboire/" +
+                    this.state.profil.picture
+                  }
+                  roundedCircle
+                />
+              </Col>
+            </Row>
             <Col md={{ span: 9, offset: 7 }} className="colTuto">
               <Tuto />
             </Col>
@@ -451,7 +453,9 @@ class Profil extends Component {
             </Button>
           </Col>
           <Col xs={12} s={12} md={6} lg={6}>
-            <Button className="buttonModifier  " href="/mesHistoriques">
+            <Button
+              className="buttonModifier marginPhone  "
+              href="/mesHistoriques">
               Mon historique de pourboire
             </Button>
           </Col>

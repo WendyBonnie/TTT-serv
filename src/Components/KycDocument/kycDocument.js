@@ -113,7 +113,7 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io//serveur/mangoKYC", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoKYC", options)
       .then((response) => {
         return response.json();
       })
@@ -171,7 +171,7 @@ class kycDocument extends Component {
         (responseObject) => {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
-          console.log("dsqdsqdsqwsxdqsddqsdsq", this.state.profil.kycStatut);
+          console.log("KYC statut", this.state.profil.kycStatut);
         },
 
         (error) => {
@@ -276,8 +276,7 @@ class kycDocument extends Component {
                 type="text"
                 name="country"
                 onChange={this.handleInput}
-                value={this.state.country}
-              >
+                value={this.state.country}>
                 <option>FR</option>
                 <option>DE</option>
                 <option>LT</option>
@@ -310,8 +309,7 @@ class kycDocument extends Component {
             <Button
               className="butBankAcc"
               type="submit"
-              onClick={this.addBankAccount}
-            >
+              onClick={this.addBankAccount}>
               Envoyez vos informations bancaires
             </Button>
             <br />

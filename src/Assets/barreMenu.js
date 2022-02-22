@@ -17,7 +17,9 @@ class Barremenu extends Component {
           <Row className="partie1">
             <Dropdown className="nav justify-content-right">
               <Dropdown.Toggle alignRight variant="success" id="dropdown-basic">
-                <img src="/images/user.png" />
+                <a href="https://tipourboire.com">
+                  <img src="/images/user.png" />
+                </a>
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -35,7 +37,9 @@ class Barremenu extends Component {
             </Dropdown>
 
             <Col className="logoPartie1" md={12}>
-              <img src="/images/logoJaune.png" />
+              <a href="https://tipourboire.com">
+                <img src="/images/logoJaune.png" />
+              </a>
             </Col>
           </Row>
         </Container>

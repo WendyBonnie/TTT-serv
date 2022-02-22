@@ -36,6 +36,7 @@ class App extends Component {
   componentDidMount() {
     if (localStorage.getItem("token") != null) {
       this.setState({ login: true });
+      // this.props.history.push("/monprofil");
     }
   }
 

@@ -59,6 +59,10 @@ body {
   color: #f4a521;
   font-style: inherit;
 }
+
+.centerPic {
+  justify-content: center;
+}
 /**
 *Style parrainage 
 */
@@ -137,7 +141,7 @@ body {
 }
 
 .rowDocument {
-  margin-top: 2%;
+  align-items: flex-end;
 }
 
 .contain .buttonModifier {
@@ -150,6 +154,7 @@ body {
   font-size: 23px !important;
   color: #ffffff;
   border-width: 0px;
+  margin-top: 3%;
 }
 .contain .buttonModifier:hover,
 .contain .buttonModifier:active {
@@ -171,7 +176,7 @@ body {
   padding-bottom: 3% !important;
   font-size: 23px !important;
   color: #ffffff;
-  margin-top: 10%;
+
   border-width: 0px;
 }
 .contain .buttonAbo:hover {
@@ -224,12 +229,16 @@ body {
   text-align: center;
 }
 .referentButton {
-  background-color: #f4a521 !important;
-  color: white !important;
-  border-radius: 58px !important;
+  border-radius: 28px !important;
+  background-color: #f5a624 !important;
+  width: 100%;
   border-color: #f5a624 !important;
-  font-size: 18px !important;
-  font-weight: 600 !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  font-size: 23px !important;
+  color: #ffffff;
+  border-width: 0px;
+  margin-top: 3%;
 }
 .referentButton:hover {
   background-color: #555 !important;
@@ -297,6 +306,10 @@ body {
 @media (max-width: 800px) {
   .contain {
     margin-right: auto;
+  }
+
+  .marginPhone {
+    margin-bottom: 3%;
   }
   .container .photoProfil {
     margin-left: 0%;
@@ -388,14 +401,7 @@ body {
     font-size: 22px !important;
     text-align: center !important;
   }
-  .referentButton {
-    background-color: #f4a521 !important;
-    color: white !important;
-    border-radius: 58px !important;
-    border-color: #f5a624 !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-  }
+
   .referentButton:hover {
     background-color: #555 !important;
     color: #f5a624 !important;
@@ -461,6 +467,7 @@ body {
 
   .rowButton {
     margin-top: 10%;
+    align-items: flex-end;
   }
   .contain .ligne {
     margin-bottom: 2%;
@@ -472,14 +479,7 @@ body {
     font-size: 22px !important;
     text-align: center !important;
   }
-  .referentButton {
-    background-color: #f4a521 !important;
-    color: white !important;
-    border-radius: 58px !important;
-    border-color: #f5a624 !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-  }
+
   .referentButton:hover {
     background-color: #555 !important;
     color: #f5a624 !important;
