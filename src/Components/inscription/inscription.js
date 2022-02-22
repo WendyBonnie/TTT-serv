@@ -67,7 +67,7 @@ class Inscription extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/register", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/register", options)
       .then((response) => {
         return response.json();
       })
