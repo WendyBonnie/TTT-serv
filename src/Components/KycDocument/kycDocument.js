@@ -133,6 +133,7 @@ class kycDocument extends Component {
   };
 
   checkKyc = () => {
+    console.log("coucouuuu");
     const headers = new Headers({
       "Content-Type": "application/json",
       Authorization: "bearer " + localStorage.getItem("token"),
@@ -144,12 +145,14 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/kyc-statut", options)
+    fetch("http://localhost:8080/serveur/kyc-statut", options)
       .then((response) => {
         return response.json();
       })
 
-      .then((responseData) => {});
+      .then((responseData) => {
+        console.log("kyc", responseData);
+      });
   };
   getMonProfil = () => {
     const headers = new Headers({

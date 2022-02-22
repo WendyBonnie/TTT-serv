@@ -35,12 +35,13 @@ function Tuto() {
             <br />
             <br />
             Afin d'activer votre compte Tipourboire et permettre à vos clients
-            de vous remercier pour la qualité de votrz service
+            de vous remercier pour la qualité de votre service
             <br />
             C'est simple, il vous suffit :
             <br />
-            D'insérer votre photo dans votre espace personnel sécurisé De
-            renseigner vos coordonnées bancaires
+            D'insérer votre photo dans votre espace personnel sécurisé
+            <br />
+            De renseigner vos coordonnées bancaires
             <br />
             et de charger votre pièce d'identité
             <br />

@@ -43,22 +43,25 @@ class Connexion extends Component {
 
       .then((responseData) => {
         this.setState({ message: responseData.message });
+        console.log("data");
 
         if (responseData.token) {
           localStorage.setItem("token", responseData.token);
           localStorage.setItem("userID", responseData.userId);
+          localStorage.setItem("email", responseData.email);
+          localStorage.setItem("password", responseData.password);
+
           this.props.setLogin(true);
           this.props.history.push("/monprofil");
-
-          setTimeout(() => {
-            localStorage.clear();
-            this.props.setLogin(false);
-            this.props.history.push("/");
-          }, 3600000);
         }
       });
   };
 
+  componentDidMount() {
+    localStorage.clear();
+    this.props.setLogin(false);
+    this.props.history.push("/");
+  }
   render() {
     return (
       <Container className="connexion-container">
