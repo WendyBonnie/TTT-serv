@@ -65,7 +65,7 @@ class Connexion extends Component {
   render() {
     return (
       <Container className="connexion-container">
-        <CookieConsent
+        {/*<CookieConsent
           location="bottom"
           buttonText="J'accepte"
           declineButtonText="Je refuse"
@@ -96,6 +96,7 @@ class Connexion extends Component {
             fontSize: "10px",
             fontfamily: "Montserrat",
             fontWeight: "bold",
+            zIndex: 2000,
           }}>
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
@@ -112,7 +113,7 @@ class Connexion extends Component {
             }}>
             Politique de cookies
           </a>
-        </CookieConsent>
+        </CookieConsent>*/}
         <Row>
           <Col>
             <h1>Déja inscrit ? </h1>

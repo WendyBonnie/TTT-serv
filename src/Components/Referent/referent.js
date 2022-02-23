@@ -63,13 +63,14 @@ class referent extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/waiterList", options)
+    fetch("http://localhost:8080/serveur/waiterList", options)
       .then((response) => {
         return response.json();
       })
       .then(
         (responseObject) => {
           this.setState({ waiter: responseObject });
+          console.log("object", responseObject);
         },
 
         (error) => {
@@ -77,6 +78,12 @@ class referent extends Component {
         }
       );
   };
+
+  componentShouldUpdate() {
+    this.getWaiterList();
+    console.log("serveur", this.state.waiter.tabServeur, this.state.referent);
+  }
+
   renderMesServeurs = () => {
     return this.state.waiter.tabServeur.map((element) => {
       return (

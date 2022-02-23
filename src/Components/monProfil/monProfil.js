@@ -324,7 +324,7 @@ class Profil extends Component {
     if (!this.state.restaurant.length) {
       return (
         <h4 className="Nocoms">
-          Vous n'êtes pas encore affilié à un restaurant
+          Vous n'êtes pas encore affilié à un établissement
         </h4>
       );
     } else {
