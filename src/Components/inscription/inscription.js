@@ -67,7 +67,7 @@ class Inscription extends Component {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/register", options)
+    fetch("https://back-end.osc-fr1.scalingo.ioserveur/register", options)
       .then((response) => {
         return response.json();
       })
@@ -228,7 +228,8 @@ class Inscription extends Component {
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
-                    target="_blanck">
+                    target="_blanck"
+                  >
                     CGU & CGV
                   </a>
                 </Form.Group>
@@ -248,7 +249,8 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}>
+                      }}
+                    >
                       S'inscrire
                     </Button>
                   </Col>

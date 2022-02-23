@@ -32,7 +32,7 @@ function UploadPicture() {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/monProfil", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/monProfil", options)
       .then((response) => {
         return response.json();
       })
@@ -62,7 +62,7 @@ function UploadPicture() {
       headers: headers,
     };
 
-    fetch("http://localhost:8080/serveur/editlogo", options)
+    fetch("https://back-end.osc-fr1.scalingo.io/serveur/editlogo", options)
       .then((response) => {
         return response.json();
       })
@@ -89,7 +89,7 @@ function UploadPicture() {
               return response.json();
             })
             .then(
-              (responseObject) => {
+              async (responseObject) => {
                 console.log("coucou", responseObject);
                 setImageStorage(responseObject.picture);
               },
@@ -120,7 +120,8 @@ function UploadPicture() {
           className="serveurPicture"
           src={
             "https://s3.amazonaws.com/b.c.bucket.tipourboire/" + imageStorage
-          }></img>
+          }
+        ></img>
         <br />
         <br />
         <input
@@ -349,7 +350,8 @@ class modifierMonProfil extends Component {
               className="submitButton"
               variant="primary"
               type="submit"
-              onClick={this.editserveur}>
+              onClick={this.editserveur}
+            >
               Mettre à jour mon profil
             </Button>
             <p>{this.state.message}</p>
