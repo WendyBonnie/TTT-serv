@@ -96,6 +96,7 @@ class Connexion extends Component {
             fontSize: "10px",
             fontfamily: "Montserrat",
             fontWeight: "bold",
+            zIndex: 2000,
           }}>
           Le Site Tipourboire utilise différents cookies afin d’améliorer ses
           services et effectuer des suivis d’audience. Certains cookies sont
