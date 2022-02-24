@@ -8,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import { Button, Modal } from "react-bootstrap";
 import storage from "../firebase";
+import { findAllByTestId } from "@testing-library/react";
 
 function Tuto() {
   const [show, setShow] = useState(false);
@@ -77,8 +78,37 @@ class Profil extends Component {
       stripeUrl: "",
       restaurant: [],
       showModal: false,
+      show: false,
     };
   }
+
+  modalReferent = () => {
+    return (
+      <Modal
+        show={this.state.show}
+        onHide={() => {
+          this.setState({ show: false });
+        }}
+        animation={true}
+        backdrop={true}
+        keyboard={false}
+        style={{ overlay: { zIndex: 3 } }}>
+        <Modal.Header closeButton>
+          <Modal.Title>Vous êtes référent</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="affiPop">
+            <Col s={12} md={12}>
+              <p>
+                L'un de vos établissements vous a nommé référent. Accédez à
+                votre espace référent pour en savoir plus
+              </p>
+            </Col>
+          </Row>
+        </Modal.Body>
+      </Modal>
+    );
+  };
 
   abonnement = () => {
     let ID = this.state.profil.stripeId;
@@ -187,6 +217,15 @@ class Profil extends Component {
         (responseObject) => {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
+          if (!localStorage.getItem("popup")) {
+            console.log("laaaa");
+            if (responseObject.mangoWalletReferent) {
+              this.setState({ show: true });
+              localStorage.setItem("popup", true);
+            }
+          } else {
+            this.setState({ show: false });
+          }
         },
 
         (error) => {
@@ -379,6 +418,7 @@ class Profil extends Component {
       <Container className="contain parrainage">
         {/* {this.abonnement()}*/}
         {this.modalUnsubscribe()}
+        {this.modalReferent()}
         <Row className="mescartes">
           <Col className="mesdetails" sm={12} md={12}>
             <Row className="centerPic">
