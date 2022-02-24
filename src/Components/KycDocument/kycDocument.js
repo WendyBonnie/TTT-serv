@@ -279,8 +279,8 @@ class kycDocument extends Component {
                 type="text"
                 name="country"
                 onChange={this.handleInput}
-                value={this.state.country}
-              >
+                value={this.state.country}>
+                <option> - </option>
                 <option>FR</option>
                 <option>DE</option>
                 <option>LT</option>
@@ -313,8 +313,7 @@ class kycDocument extends Component {
             <Button
               className="butBankAcc"
               type="submit"
-              onClick={this.addBankAccount}
-            >
+              onClick={this.addBankAccount}>
               Envoyez vos informations bancaires
             </Button>
             <br />

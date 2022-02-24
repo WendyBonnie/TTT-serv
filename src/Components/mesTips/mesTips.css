@@ -1,18 +1,17 @@
-body{
-  font-family: "Montserrat", sans-serif!important;
+body {
+  font-family: "Montserrat", sans-serif !important;
 }
 
-
-.mesComs{
+.mesComs {
   background-color: white;
-    margin-top: -10%;
-    border-radius: 28px;
-    padding-top:7%
+  margin-top: -10%;
+  border-radius: 28px;
+  padding-top: 7%;
 }
 
-.titreComs{
-  margin-bottom:5%;
-  padding-left:2%;
+.titreComs {
+  margin-bottom: 5%;
+  padding-left: 2%;
   font-size: 2.2rem;
   text-align: center;
 }
@@ -33,41 +32,37 @@ body{
 }
 
 .divCom {
-  background-color:#ffffff ;
+  background-color: #ffffff;
   border-radius: 28px;
   padding: 4%;
-  margin-bottom:2%;
-  
+  margin-bottom: 2%;
 }
 
-.nomPrenom{
-  display:flex;
-   ;
-
+.nomPrenom {
+  display: flex;
 }
 
-.prenomCom{
-  color:#f4a521;
- 
+.prenomCom {
+  color: #f4a521;
 }
 
-.nomCom{
-  
+.nomCom {
   margin-left: 1%;
- 
 }
 
-.Nocoms{
-text-align: center;
+.Nocoms {
+  text-align: center;
 }
 
+.statut2 {
+  font-size: 20px;
+}
 
 @media only screen and (min-device-width: 1024px) {
-  .mesComs{
+  .mesComs {
     background-color: white;
-      margin-top:0%;
-      border-radius: 28px;
-      padding-top:7%
+    margin-top: 0%;
+    border-radius: 28px;
+    padding-top: 7%;
   }
-
 }
