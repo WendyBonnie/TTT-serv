@@ -142,16 +142,6 @@ class Inscription extends Component {
                     className="tailleInscr"
                   />
                 </Form.Group>
-                <Form.Group controlId="city">
-                  <Form.Control
-                    type="text"
-                    placeholder="Ville"
-                    name="city"
-                    onChange={this.handleInput}
-                    value={this.state.city}
-                    className="tailleInscr"
-                  />
-                </Form.Group>
                 <Form.Group controlId="code">
                   <Form.Control
                     type="text"
@@ -162,6 +152,17 @@ class Inscription extends Component {
                     className="tailleInscr"
                   />
                 </Form.Group>
+                <Form.Group controlId="city">
+                  <Form.Control
+                    type="text"
+                    placeholder="Ville"
+                    name="city"
+                    onChange={this.handleInput}
+                    value={this.state.city}
+                    className="tailleInscr"
+                  />
+                </Form.Group>
+
                 <Form.Group controlId="phone">
                   <Form.Control
                     type="text"
@@ -228,8 +229,7 @@ class Inscription extends Component {
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
-                    target="_blanck"
-                  >
+                    target="_blanck">
                     CGU & CGV
                   </a>
                 </Form.Group>
@@ -249,8 +249,7 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}
-                    >
+                      }}>
                       S'inscrire
                     </Button>
                   </Col>
