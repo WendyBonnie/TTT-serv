@@ -15,3 +15,10 @@
 .statutValid {
   background-color: green;
 }
+
+.kycStatut {
+  text-align: center;
+}
+.rowId {
+  justify-content: center;
+}

@@ -11,6 +11,7 @@ class kycDocument extends Component {
       profil: {},
       country: "FR",
       ribOrNot: false,
+      kycOrNot: false,
     };
   }
   addBankAccount = (e) => {
@@ -189,6 +190,12 @@ class kycDocument extends Component {
           } else {
             this.setState({ ribOrNot: false });
           }
+
+          if (monProfil.kycStatut == "VALIDATED") {
+            this.setState({ kycOrNot: true });
+          } else {
+            this.setState({ ribOrNot: false });
+          }
         },
 
         (error) => {
@@ -205,28 +212,31 @@ class kycDocument extends Component {
     return (
       <Container className="cagnotteCont">
         <Row className="rowId">
-          <Col>
-            <div className="kyc">
-              <form onSubmit={this.onSubmit}>
-                <p className="titleKyc">Confirmation d'identité </p>
-                <p>
-                  ( Vous pouvez mettre deux images/document PDf maximum 32 Kb
-                  taille maximum: 10Mb )
-                </p>
-                <input
-                  enctype="multipart/form-data"
-                  className="chargePic"
-                  type="file"
-                  name="file"
-                  multiple
-                  accept="image/png, image/jpeg, image/jpg, image/pdf , application/pdf"
-                />
+          {!this.state.kycOrNot ? (
+            <Col>
+              <div className="kyc">
+                <form onSubmit={this.onSubmit}>
+                  <p className="titleKyc">Confirmation d'identité </p>
+                  <p>
+                    ( Vous pouvez mettre deux images/document PDf maximum 32 Kb
+                    taille maximum: 10Mb )
+                  </p>
+                  <input
+                    enctype="multipart/form-data"
+                    className="chargePic"
+                    type="file"
+                    name="file"
+                    multiple
+                    accept="image/png, image/jpeg, image/jpg, image/pdf , application/pdf"
+                  />
 
-                <Button type="submit">Télécharger</Button>
-              </form>
-              {this.state.message}
-            </div>
-          </Col>
+                  <Button type="submit">Télécharger</Button>
+                </form>
+                {this.state.message}
+              </div>
+            </Col>
+          ) : null}
+
           <div className="kycStatut">
             <p className="kycTitleStatut">Statut de vos documents:</p>
             <div className="statut">
@@ -247,6 +257,7 @@ class kycDocument extends Component {
             </div>
           </div>
         </Row>
+
         <Row style={{ textAlign: "center", justifyContent: "center" }}>
           {
             // SI le state ribOrNot is true on affiche le formulaire sinon on affiche un bouton
