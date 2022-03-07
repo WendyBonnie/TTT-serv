@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import storage from "../firebase";
 
-function UploadPicture() {
+function UploadPicture(props) {
   const [imageStorage, setImageStorage] = useState("");
   const [message, setMessage] = useState("");
 
@@ -90,7 +90,7 @@ function UploadPicture() {
             })
             .then(
               async (responseObject) => {
-                console.log("coucou", responseObject);
+                console.log("coucou", responseObject.picture);
                 setImageStorage(responseObject.picture);
               },
 
@@ -116,12 +116,20 @@ function UploadPicture() {
   return (
     <div>
       <form onSubmit={modifProfilLogo} className="formLogo">
-        <img
-          className="serveurPicture"
-          src={
-            "https://s3.amazonaws.com/b.c.bucket.tipourboire/" + imageStorage
-          }
-        ></img>
+        {imageStorage === "" ? (
+          <img
+            className="serveurPicture"
+            src={
+              "https://s3.amazonaws.com/b.c.bucket.tipourboire/" + props.picture
+            }></img>
+        ) : (
+          <img
+            className="serveurPicture"
+            src={
+              "https://s3.amazonaws.com/b.c.bucket.tipourboire/" + imageStorage
+            }></img>
+        )}
+
         <br />
         <br />
         <input
@@ -344,14 +352,14 @@ class modifierMonProfil extends Component {
                </Form.Control>*/}
               </Form.Group>
             </Form>
-            <UploadPicture />
+            <label>Photo : </label>
+            <UploadPicture picture={this.state.serveur.picture} />
 
             <Button
               className="submitButton"
               variant="primary"
               type="submit"
-              onClick={this.editserveur}
-            >
+              onClick={this.editserveur}>
               Mettre à jour mon profil
             </Button>
             <p>{this.state.message}</p>

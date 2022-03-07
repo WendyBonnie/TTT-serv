@@ -5,6 +5,8 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
+import Moment from "react-moment";
+
 class mesComs extends Component {
   constructor(props) {
     super(props);
@@ -58,7 +60,9 @@ class mesComs extends Component {
           <div className="nomPrenom">
             <h2 className="prenomCom">{element.prenom}</h2>{" "}
             <h2 className="nomCom">{element.nom} </h2>
-            <h4 className="nomCom">{element.date} </h4>
+          </div>
+          <div>
+            <Moment format="DD/MM/YYYY, h:mm ">{element.date}</Moment>
           </div>
           <div>
             <p className="statut2">{element.texte}</p>
