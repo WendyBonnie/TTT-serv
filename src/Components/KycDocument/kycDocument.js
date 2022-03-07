@@ -9,10 +9,13 @@ class kycDocument extends Component {
     this.state = {
       document: {},
       profil: {},
+      country: "FR",
+      ribOrNot: false,
     };
   }
   addBankAccount = (e) => {
     e.preventDefault();
+
     const data = {
       adress: this.state.adress,
       password: this.state.password,
@@ -35,7 +38,7 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoBank", options)
+    fetch("http://localhost:8080/serveur/mangoBank", options)
       .then((response) => {
         return response.json();
       })
@@ -154,6 +157,12 @@ class kycDocument extends Component {
         console.log("kyc", responseData);
       });
   };
+
+  /**
+   * Render Formulaire RIB
+   */
+  renderFormulaireRib = () => {};
+
   getMonProfil = () => {
     const headers = new Headers({
       Authorization: "Bearer " + localStorage.getItem("token"),
@@ -175,6 +184,11 @@ class kycDocument extends Component {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
           console.log("KYC statut", this.state.profil.kycStatut);
+          if (monProfil.mangoBankAcc) {
+            this.setState({ ribOrNot: true });
+          } else {
+            this.setState({ ribOrNot: false });
+          }
         },
 
         (error) => {
@@ -213,7 +227,6 @@ class kycDocument extends Component {
               {this.state.message}
             </div>
           </Col>
-
           <div className="kycStatut">
             <p className="kycTitleStatut">Statut de vos documents:</p>
             <div className="statut">
@@ -234,93 +247,107 @@ class kycDocument extends Component {
             </div>
           </div>
         </Row>
-        <Row>
-          <Col>
-            <Form>
-              <Form.Control
-                type="text"
-                placeholder="Votre Adresse"
-                name="adress"
-                onChange={this.handleInput}
-                value={this.state.adress}
-              />
-              <Form.Control
-                type="text"
-                placeholder="Code Postal"
-                name="zip"
-                onChange={this.handleInput}
-                value={this.state.zip}
-              />
-              <Form.Control
-                type="text"
-                placeholder="Ville"
-                name="city"
-                onChange={this.handleInput}
-                value={this.state.city}
-              />
-              <Form.Control
-                type="text"
-                placeholder="Votre région, PACA, AQUITAINE, BRETAGNE... "
-                name="region"
-                onChange={this.handleInput}
-                value={this.state.region}
-              />
+        <Row style={{ textAlign: "center", justifyContent: "center" }}>
+          {
+            // SI le state ribOrNot is true on affiche le formulaire sinon on affiche un bouton
+            !this.state.ribOrNot ? (
+              <Col>
+                <Form>
+                  <Form.Control
+                    type="text"
+                    placeholder="Votre Adresse"
+                    name="adress"
+                    onChange={this.handleInput}
+                    value={this.state.adress}
+                  />
+                  <Form.Control
+                    type="text"
+                    placeholder="Code Postal"
+                    name="zip"
+                    onChange={this.handleInput}
+                    value={this.state.zip}
+                  />
+                  <Form.Control
+                    type="text"
+                    placeholder="Ville"
+                    name="city"
+                    onChange={this.handleInput}
+                    value={this.state.city}
+                  />
+                  <Form.Control
+                    type="text"
+                    placeholder="Votre région, PACA, AQUITAINE, BRETAGNE... "
+                    name="region"
+                    onChange={this.handleInput}
+                    value={this.state.region}
+                  />
 
-              <Form.Control
-                type="text"
-                placeholder="Votre IBAN, FRXXXXXXXXXXXXXXXXXX"
-                name="iban"
-                onChange={this.handleInput}
-                value={this.state.iban}
-              />
+                  <Form.Control
+                    type="text"
+                    placeholder="Votre IBAN, FRXXXXXXXXXXXXXXXXXX"
+                    name="iban"
+                    onChange={this.handleInput}
+                    value={this.state.iban}
+                  />
 
-              <Form.Control
-                as="select"
-                type="text"
-                name="country"
-                onChange={this.handleInput}
-                value={this.state.country}
+                  <Form.Control
+                    as="select"
+                    type="text"
+                    name="country"
+                    onChange={this.handleInput}
+                    value={this.state.country}
+                  >
+                    <option>FR</option>
+                    <option>DE</option>
+                    <option>LT</option>
+                    <option>GB</option>
+                    <option>AT</option>
+                    <option>BE</option>
+                    <option>BG</option>
+                    <option>CY</option>
+                    <option>DK</option>
+                    <option>ES</option>
+                    <option>EE</option>
+                    <option>FI</option>
+                    <option>GR</option>
+                    <option>HU</option>
+                    <option>IE</option>
+                    <option>IT</option>
+                    <option>LV</option>
+                    <option>LU</option>
+                    <option>MT</option>
+                    <option>NL</option>
+                    <option>PL</option>
+                    <option>PT</option>
+                    <option>CZ</option>
+                    <option>RO</option>
+                    <option>SK</option>
+                    <option>SI</option>
+                    <option>SE</option>
+                  </Form.Control>
+                </Form>
+
+                <Button
+                  className="butBankAcc"
+                  type="submit"
+                  onClick={this.addBankAccount}
+                >
+                  Envoyez vos informations bancaires
+                </Button>
+                <br />
+                <br />
+                {this.state.messageBA}
+              </Col>
+            ) : (
+              <Button
+                onClick={() => {
+                  this.setState({ ribOrNot: false });
+                }}
               >
-                <option>FR</option>
-                <option>DE</option>
-                <option>LT</option>
-                <option>GB</option>
-                <option>AT</option>
-                <option>BE</option>
-                <option>BG</option>
-                <option>CY</option>
-                <option>DK</option>
-                <option>ES</option>
-                <option>EE</option>
-                <option>FI</option>
-                <option>GR</option>
-                <option>HU</option>
-                <option>IE</option>
-                <option>IT</option>
-                <option>LV</option>
-                <option>LU</option>
-                <option>MT</option>
-                <option>NL</option>
-                <option>PL</option>
-                <option>PT</option>
-                <option>CZ</option>
-                <option>RO</option>
-                <option>SK</option>
-                <option>SI</option>
-                <option>SE</option>
-              </Form.Control>
-            </Form>
-            <Button
-              className="butBankAcc"
-              type="submit"
-              onClick={this.addBankAccount}
-            >
-              Envoyez vos informations bancaires
-            </Button>
-            <br />
-            <br />
-            {this.state.messageBA}
-          </Col>
+                Changer votre RIB
+              </Button>
+            )
+          }
         </Row>
       </Container>
     );

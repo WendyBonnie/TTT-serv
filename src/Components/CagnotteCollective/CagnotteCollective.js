@@ -19,10 +19,10 @@ class CagnotteCollective extends Component {
       adress: this.state.adress,
       password: this.state.password,
       city: this.state.city,
-      region: this.state.region,
+      region: this.state.region.country.toUpperCase(),
       zip: this.state.zip,
       iban: this.state.iban,
-      country: this.state.country,
+      country: this.state.country.toUpperCase(),
     };
 
     const headers = new Headers({
@@ -76,7 +76,7 @@ class CagnotteCollective extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/payoutMango", options)
+    fetch("http://localhost:8080/serveur/payoutMango", options)
       .then((response) => {
         return response.json();
       })

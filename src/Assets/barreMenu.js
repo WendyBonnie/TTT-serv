@@ -17,7 +17,7 @@ class Barremenu extends Component {
           <Row className="partie1">
             <Dropdown className="nav justify-content-right">
               <Dropdown.Toggle alignRight variant="success" id="dropdown-basic">
-                <a href="https://tipourboire.com">
+                <a>
                   <img src="/images/user.png" />
                 </a>
               </Dropdown.Toggle>
@@ -30,7 +30,8 @@ class Barremenu extends Component {
                     this.props.setLogin(false);
                     this.props.history.push("/");
                   }}
-                  href="/">
+                  href="/"
+                >
                   Déconnexion
                 </Dropdown.Item>
               </Dropdown.Menu>
