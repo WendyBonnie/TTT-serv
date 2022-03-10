@@ -229,8 +229,9 @@ class Inscription extends Component {
                   <a
                     className="cgvLink"
                     href="/CGV_TIPTOTHANK.pdf"
-                    target="_blanck">
-                    CGU & CGV
+                    target="_blanck"
+                  >
+                    CGU & CGA
                   </a>
                 </Form.Group>
                 <Row className="centerInscr">
@@ -249,7 +250,8 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}>
+                      }}
+                    >
                       S'inscrire
                     </Button>
                   </Col>
