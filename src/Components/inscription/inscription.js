@@ -226,11 +226,7 @@ class Inscription extends Component {
                     required
                   />
 
-                  <a
-                    className="cgvLink"
-                    href="/CGV_TIPTOTHANK.pdf"
-                    target="_blanck"
-                  >
+                  <a className="cgvLink" href="/CGU/CGA.pdf" target="_blanck">
                     CGU & CGA
                   </a>
                 </Form.Group>
