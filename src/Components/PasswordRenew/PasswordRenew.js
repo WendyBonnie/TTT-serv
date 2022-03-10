@@ -86,12 +86,12 @@ class PasswordRenew extends Component {
                 placeholder="Nouveau mot de passe"
               />
               <br />
+              <span>{this.state.message}</span>
+              <br />
               <Button onClick={this.passwordRenew} className="renewButton">
                 Valider
               </Button>
             </form>
-
-            <p>{this.state.message}</p>
           </Col>
         </Row>
       </Container>
