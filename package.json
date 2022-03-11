@@ -16,8 +16,6 @@
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
-    "popper": "^1.0.1",
-    "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
     "react-cookie-consent": "^6.2.4",
