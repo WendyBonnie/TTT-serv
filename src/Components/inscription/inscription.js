@@ -1,4 +1,4 @@
-import React, { Component, useReducer } from "react";
+import React, { Component, useReducer, useRef } from "react";
 import "./inscription.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -123,9 +123,14 @@ class Inscription extends Component {
                 </Form.Group>
                 <Form.Group controlId="date">
                   <Form.Control
-                    type="date"
-                    placeholder="jj/mm/aaaa"
-                    name="date"
+                    id="dateOfBirth"
+                    type="text"
+                    placeholder="Date de naissance"
+                    onfocus={() => (this.type = "date")}
+                    onClick={() => {
+                      let input = document.querySelector("#dateOfBirth");
+                      input.type = "date";
+                    }}
                     onChange={this.handleInput}
                     value={this.state.date}
                     className="tailleInscr"
@@ -227,7 +232,7 @@ class Inscription extends Component {
                   />
 
                   <a className="cgvLink" href="/CGU/CGA.pdf" target="_blanck">
-                    CGU & CGA
+                    CGU
                   </a>
                 </Form.Group>
                 <Row className="centerInscr">
