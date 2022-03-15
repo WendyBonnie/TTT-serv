@@ -45,7 +45,7 @@ class footer extends Component {
       })
       .then(
         () => {
-          let link = "https://serveur.tipourboire.com/";
+          let link = "https://beneficiaire.tipourboire.com/";
           window.location.href = link;
         },
 
