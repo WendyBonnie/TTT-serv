@@ -225,13 +225,13 @@ class Inscription extends Component {
                     className="checkboxCGU"
                     type="checkbox"
                     name="acceptControl"
-                    label="J'ai lu et j'accepte les CGU et CGV"
+                    label="J'ai lu et j'accepte les CGU"
                     onChange={this.handleInput}
                     value={this.state.acceptControl}
                     required
                   />
 
-                  <a className="cgvLink" href="/CGU/CGA.pdf" target="_blanck">
+                  <a className="cgvLink" href="/CGU/CGU.pdf" target="_blanck">
                     CGU
                   </a>
                 </Form.Group>
@@ -251,8 +251,7 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}
-                    >
+                      }}>
                       S'inscrire
                     </Button>
                   </Col>
