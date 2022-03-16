@@ -231,7 +231,7 @@ class Inscription extends Component {
                     required
                   />
 
-                  <a className="cgvLink" href="/CGU/CGU.pdf" target="_blanck">
+                  <a className="cgvLink" href="/CGV/CGU.pdf" target="_blanck">
                     CGU
                   </a>
                 </Form.Group>
