@@ -40,7 +40,7 @@ body {
 }
 .cgvLink {
   color: #f5a624 !important;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .inscr .Bloc-principal .form-group .form-control {
