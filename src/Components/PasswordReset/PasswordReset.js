@@ -49,6 +49,7 @@ class PasswordReset extends Component {
       .then(
         (responseObject) => {
           this.setState({ message: responseObject.message });
+          alert(this.state.message);
           this.props.history.push("/");
         },
         (error) => {
