@@ -79,6 +79,7 @@ class Profil extends Component {
       restaurant: [],
       showModal: false,
       show: false,
+      referent: "",
     };
   }
 
@@ -307,6 +308,8 @@ class Profil extends Component {
       .then(
         (data) => {
           this.setState({ restaurant: data });
+          this.setState({ referent: data[0].referent.email });
+          console.log("data", this.state.referent);
         },
         (err) => {
           console.log(err);
@@ -351,7 +354,7 @@ class Profil extends Component {
     this.getRestaurantList();
   }
   renderCompteReferent = () => {
-    if (this.state.profil.mangoWalletReferent) {
+    if (this.state.profil.email === this.state.referent) {
       return (
         <Button className=" referentButton" href="/referent">
           Mon compte Référent
