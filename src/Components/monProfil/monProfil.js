@@ -220,7 +220,7 @@ class Profil extends Component {
           this.setState({ profil: monProfil });
           if (!localStorage.getItem("popup")) {
             console.log("laaaa");
-            if (responseObject.mangoWalletReferent) {
+            if (responseObject.email === this.state.referent) {
               this.setState({ show: true });
               localStorage.setItem("popup", true);
             }

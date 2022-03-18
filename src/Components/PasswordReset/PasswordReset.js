@@ -54,10 +54,7 @@ class PasswordReset extends Component {
         (error) => {
           console.log(error);
         }
-      )
-      .then(() => {
-        this.props.history.push("/");
-      });
+      );
   };
 
   render() {
