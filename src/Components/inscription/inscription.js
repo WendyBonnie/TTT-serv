@@ -15,6 +15,7 @@ class Inscription extends Component {
       inscrit: "",
       gestioName: "",
       gestioID: "",
+      isRevealPwd: false,
     };
   }
 
@@ -209,16 +210,30 @@ class Inscription extends Component {
                     className="tailleInscr"
                   />
                 </Form.Group>
-                <Form.Group controlId="password">
+                <div className="pwd-container">
                   <Form.Control
-                    type="password"
-                    placeholder="Password"
+                    type={this.state.isRevealPwd ? "text" : "password"}
+                    placeholder="Mot de passe"
                     name="password"
                     onChange={this.handleInput}
-                    value={this.state.password}
                     className="tailleInscr"
                   />
-                </Form.Group>
+                  {this.state.isRevealPwd ? (
+                    <a
+                      onClick={() => {
+                        this.setState({ isRevealPwd: false });
+                      }}>
+                      <img src="/image/oeil.png" />
+                    </a>
+                  ) : (
+                    <a
+                      onClick={() => {
+                        this.setState({ isRevealPwd: true });
+                      }}>
+                      <img src="/image/invisible.png" />
+                    </a>
+                  )}
+                </div>
 
                 <Form.Group controlId="formBasicCheckbox">
                   <Form.Check
