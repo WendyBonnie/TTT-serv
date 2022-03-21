@@ -130,12 +130,8 @@ class Inscription extends Component {
                   <Form.Control
                     id="dateOfBirth"
                     type="text"
-                    placeholder="Date de naissance"
-                    onfocus={() => (this.type = "date")}
-                    onClick={() => {
-                      let input = document.querySelector("#dateOfBirth");
-                      input.type = "date";
-                    }}
+                    name="date"
+                    placeholder="Date de naissance (JJ/MM/AAAA)"
                     onChange={this.handleInput}
                     value={this.state.date}
                     className="tailleInscr"
