@@ -23,6 +23,18 @@
   margin-top: 5% !important;
 }
 
+.connexion-container .pwd-container {
+  position: relative;
+  width: 100%;
+}
+.connexion-container .pwd-container img {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  right: 31px;
+  top: 10px;
+}
+
 .forgetpwd {
   font-size: 18px !important;
   color: #e05858 !important;
