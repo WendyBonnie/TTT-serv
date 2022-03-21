@@ -29,7 +29,8 @@ function Tuto() {
         onHide={handleClose}
         animation={true}
         backdrop="static"
-        keyboard={false}>
+        keyboard={false}
+      >
         <Modal.Body>
           <p className="paraTuto">
             <Modal.Title>Comment bénéficier de mes pourboires ?</Modal.Title>
@@ -60,7 +61,8 @@ function Tuto() {
           <Button
             className="modalButton"
             variant="secondary"
-            onClick={handleClose}>
+            onClick={handleClose}
+          >
             Fermer
           </Button>
         </Modal.Footer>
@@ -93,7 +95,8 @@ class Profil extends Component {
         animation={true}
         backdrop={true}
         keyboard={false}
-        style={{ overlay: { zIndex: 3 } }}>
+        style={{ overlay: { zIndex: 3 } }}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Vous êtes référent</Modal.Title>
         </Modal.Header>
@@ -219,8 +222,9 @@ class Profil extends Component {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
           if (!localStorage.getItem("popup")) {
-            console.log("laaaa");
-            if (responseObject.email === this.state.referent) {
+            console.log("lalaalal", responseObject.email, this.state.referent);
+            if (responseObject.email == this.state.referent) {
+              console.log("icicicic");
               this.setState({ show: true });
               localStorage.setItem("popup", true);
             }
@@ -309,7 +313,19 @@ class Profil extends Component {
         (data) => {
           this.setState({ restaurant: data });
           this.setState({ referent: data[0].referent.email });
-          console.log("data", this.state.referent);
+          if (!localStorage.getItem("popup")) {
+            console.log(
+              "lalaalal",
+              this.state.profil.email,
+              this.state.referent
+            );
+            if (this.state.profil.email === this.state.referent) {
+              this.setState({ show: true });
+              localStorage.setItem("popup", true);
+            }
+          } else {
+            this.setState({ show: false });
+          }
         },
         (err) => {
           console.log(err);
@@ -350,8 +366,8 @@ class Profil extends Component {
       });
   };
   componentDidMount() {
-    this.getMonProfil();
     this.getRestaurantList();
+    this.getMonProfil();
   }
   renderCompteReferent = () => {
     if (this.state.profil.email === this.state.referent) {
@@ -385,7 +401,8 @@ class Profil extends Component {
         show={this.state.showModal}
         onHide={() => {
           this.setState({ showModal: false });
-        }}>
+        }}
+      >
         <Modal.Header closeButton>
           <Modal.Title className="modalTitle">
             Résiliation abonnement
@@ -400,7 +417,8 @@ class Profil extends Component {
             variant="secondary"
             onClick={() => {
               this.unSubscribe();
-            }}>
+            }}
+          >
             Résilier
           </Button>
           <Button
@@ -408,7 +426,8 @@ class Profil extends Component {
             variant="primary"
             onClick={() => {
               this.setState({ showModal: false });
-            }}>
+            }}
+          >
             Annuler
           </Button>
         </Modal.Footer>
@@ -499,7 +518,8 @@ class Profil extends Component {
           <Col xs={12} s={12} md={6} lg={6}>
             <Button
               className="buttonModifier marginPhone  "
-              href="/mesHistoriques">
+              href="/mesHistoriques"
+            >
               Mon historique de pourboire
             </Button>
           </Col>
