@@ -45,12 +45,17 @@ class PasswordRenew extends Component {
     };
 
     fetch(
-      "https://back-end.osc-fr1.scalingo.io/serveur/password-renew",
+      "http://localhost:8080/serveur/password-renew",
       options
     )
       .then((response) => response.json())
       .then(
         (responseObject) => {
+          if(responseObject.message == "Votre mot de passe a bien été modifié.") {
+            alert(responseObject.message)
+            window.location.replace("http://beneficiaire.tipourboire.com")
+          }
+
           this.setState({ message: responseObject.message });
         },
         (error) => {
@@ -83,7 +88,7 @@ class PasswordRenew extends Component {
                 id="password"
                 name="password"
                 onChange={this.handleInput}
-                placeholder="Nouveau mot de passe"
+                placeholder="Nouveau mot "
               />
               <br />
               <span>{this.state.message}</span>
