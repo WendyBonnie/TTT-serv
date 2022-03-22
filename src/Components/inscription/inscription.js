@@ -16,6 +16,7 @@ class Inscription extends Component {
       gestioName: "",
       gestioID: "",
       isRevealPwd: false,
+      referent: "",
     };
   }
 
@@ -27,12 +28,14 @@ class Inscription extends Component {
     let gestioID = new URLSearchParams(window.location.search).get(
       "gestionnaireID"
     );
+    let referent = new URLSearchParams(window.location.search).get("referent");
 
     this.setState({ inscrit: inscrit });
     this.setState({ gestioName: gestioName });
     this.setState({ gestioID: gestioID }, () => {
       console.log(this.state, gestioID);
     });
+    this.setState({ referent: referent });
   }
 
   handleInput = (e) => {
@@ -55,6 +58,7 @@ class Inscription extends Component {
       subscribe: this.state.inscrit,
       gestioName: this.state.gestioName,
       gestioID: this.state.gestioID,
+      referent: this.state.referent,
     };
 
     const headers = new Headers({
@@ -126,12 +130,8 @@ class Inscription extends Component {
                   <Form.Control
                     id="dateOfBirth"
                     type="text"
-                    placeholder="Date de naissance"
-                    onfocus={() => (this.type = "date")}
-                    onClick={() => {
-                      let input = document.querySelector("#dateOfBirth");
-                      input.type = "date";
-                    }}
+                    name="date"
+                    placeholder="Date de naissance (JJ/MM/AAAA)"
                     onChange={this.handleInput}
                     value={this.state.date}
                     className="tailleInscr"
@@ -222,14 +222,16 @@ class Inscription extends Component {
                     <a
                       onClick={() => {
                         this.setState({ isRevealPwd: false });
-                      }}>
+                      }}
+                    >
                       <img src="/image/oeil.png" />
                     </a>
                   ) : (
                     <a
                       onClick={() => {
                         this.setState({ isRevealPwd: true });
-                      }}>
+                      }}
+                    >
                       <img src="/image/invisible.png" />
                     </a>
                   )}
@@ -266,7 +268,8 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}>
+                      }}
+                    >
                       S'inscrire
                     </Button>
                   </Col>
