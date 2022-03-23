@@ -45,7 +45,10 @@ class PasswordRenew extends Component {
       body: JSON.stringify(data),
     };
 
-    fetch("http://localhost:8080/serveur/password-renew", options)
+    fetch(
+      "https://back-end.osc-fr1.scalingo.io/serveur/password-renew",
+      options
+    )
       .then((response) => response.json())
       .then(
         (responseObject) => {
@@ -95,16 +98,14 @@ class PasswordRenew extends Component {
                   <a
                     onClick={() => {
                       this.setState({ isRevealPwd: false });
-                    }}
-                  >
+                    }}>
                     <img src="/image/oeil.png" />
                   </a>
                 ) : (
                   <a
                     onClick={() => {
                       this.setState({ isRevealPwd: true });
-                    }}
-                  >
+                    }}>
                     <img src="/image/invisible.png" />
                   </a>
                 )}
