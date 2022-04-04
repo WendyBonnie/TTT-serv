@@ -62,7 +62,7 @@ class mesComs extends Component {
             <h2 className="nomCom">{element.nom} </h2>
           </div>
           <div>
-            <Moment format="DD/MM/YYYY, h:mm ">{element.date}</Moment>
+            <Moment format="DD/MM/YYYY, HH:mm ">{element.date}</Moment>
           </div>
           <div>
             <p className="statut2">{element.texte}</p>

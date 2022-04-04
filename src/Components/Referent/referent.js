@@ -160,7 +160,9 @@ class referent extends Component {
           <Col xs={12} s={12} md={12}>
             <h1>Montant du pot commun :</h1>
             <h2 className="montantCo">
-              <strong>{this.state.amount / 100} euros</strong>
+              <strong>
+                {this.state.amount ? this.state.amount / 100 : 0} euros
+              </strong>
             </h2>
             <p>
               Les frais de gestion seront automatiquement prélevés de la part

@@ -39,14 +39,19 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/mangoBank", options)
+    fetch("https://back-end.osc-fr1.scalingo.io//serveur/mangoBank", options)
       .then((response) => {
         return response.json();
       })
 
       .then((responseData) => {
+        console.log("RSData", responseData);
         if (responseData.Type === "param_error") {
           window.alert("Une erreur s'est produite, veuillez réessayer.");
+        } else if (responseData.Type == "iban") {
+          window.alert("Veuillez vérifier votre IBAN.");
+        } else if (responseData.Type == "postal") {
+          window.alert("Veuillez vérifier votre code postal.");
         } else {
           window.alert(
             "Votre compte bancaire à bien été enregistré vous pouvez maintenant retirer votre argent."
