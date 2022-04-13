@@ -245,6 +245,9 @@ class kycDocument extends Component {
           <div className="kycStatut">
             <p className="kycTitleStatut">Statut de vos documents:</p>
             <div className="statut">
+              <p className="statutIn">
+                {!this.state.profil.kycStatut ? "Pas de document" : ""}
+              </p>
               <p className="statutValid">
                 {this.state.profil.kycStatut === "VALIDATED" ? "Validé" : ""}
               </p>
@@ -254,7 +257,9 @@ class kycDocument extends Component {
                   : ""}
               </p>
               <p className="statutIn">
-                {this.state.profil.kycStatut !== "REFUSED" &&
+                {this.state.profil.kycStatut &&
+                this.state.profil.kycStatut !== "REFUSED" &&
+                this.state.profil.kycStatut == "EN COURS" &&
                 this.state.profil.kycStatut !== "VALIDATED"
                   ? "En Cours"
                   : ""}
