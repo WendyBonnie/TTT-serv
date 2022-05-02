@@ -135,7 +135,7 @@ class kycDocument extends Component {
         } else {
           console.log(responseData);
           window.alert(
-            "Vos documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
+            "Vos documents ont bien été envoyés. Une réponse vous sera fournie dans les 24 heures."
           );
         }
       });
@@ -253,7 +253,7 @@ class kycDocument extends Component {
               </p>
               <p className="statutRefused">
                 {this.state.profil.kycStatut === "REFUSED"
-                  ? " Document refusé veuillez vous assurer que la carte d'identité n'ai pas été retouché et que le recto et le verso soit bien visible sur la même page."
+                  ? " Document refusé veuillez vous assurer que la carte d'identité ou le passeport n'ai pas été retouchées et que le recto et le verso soient bien visibles sur la/les page(s)."
                   : ""}
               </p>
               <p className="statutIn">
