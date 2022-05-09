@@ -189,7 +189,7 @@ class modifierMonProfil extends Component {
         (responseObject) => {
           const serveurInfo = responseObject;
           this.setState({ serveur: serveurInfo, object: serveurInfo });
-          console.log(this.state);
+          console.log("info", serveurInfo);
         },
 
         (error) => {

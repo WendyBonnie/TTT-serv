@@ -49,7 +49,7 @@ class Inscription extends Component {
       lastname: this.state.lastname,
       city: this.state.city,
       adress: this.state.adress,
-      postalCode: this.state.code,
+      postalCode: this.state.postalCode,
       date: this.state.date,
       email: this.state.email,
       phone: this.state.phone,
@@ -60,7 +60,7 @@ class Inscription extends Component {
       gestioID: this.state.gestioID,
       referent: this.state.referent,
     };
-
+    console.log("data", data);
     const headers = new Headers({
       "Content-Type": "application/json",
       "X-Requested-With": "XMLHttpRequest",
@@ -152,9 +152,9 @@ class Inscription extends Component {
                   <Form.Control
                     type="text"
                     placeholder="Code Postal"
-                    name="code"
+                    name="postalCode"
                     onChange={this.handleInput}
-                    value={this.state.code}
+                    value={this.state.postalCode}
                     className="tailleInscr"
                   />
                 </Form.Group>
@@ -222,16 +222,14 @@ class Inscription extends Component {
                     <a
                       onClick={() => {
                         this.setState({ isRevealPwd: false });
-                      }}
-                    >
+                      }}>
                       <img src="/image/oeil.png" />
                     </a>
                   ) : (
                     <a
                       onClick={() => {
                         this.setState({ isRevealPwd: true });
-                      }}
-                    >
+                      }}>
                       <img src="/image/invisible.png" />
                     </a>
                   )}
@@ -268,8 +266,7 @@ class Inscription extends Component {
                         } else {
                           this.addNewRegister();
                         }
-                      }}
-                    >
+                      }}>
                       S'inscrire
                     </Button>
                   </Col>

@@ -137,7 +137,7 @@ class kycDocument extends Component {
           this.checkKyc();
           this.getMonProfil();
           window.alert(
-            "Vos documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
+            "Vos documents ont bien été envoyés. Une réponse vous sera fournie dans les 24 heures."
           );
         }
       });
@@ -255,7 +255,7 @@ class kycDocument extends Component {
               </p>
               <p className="statutRefused">
                 {this.state.profil.kycStatut === "REFUSED"
-                  ? " Document refusé veuillez vous assurer que la carte d'identité n'ai pas été retouché et que le recto et le verso soit bien visible sur la même page."
+                  ? " Document refusé veuillez vous assurer que la carte d'identité ou le passeport n'ai pas été retouchées et que le recto et le verso soient bien visibles sur la/les page(s)."
                   : ""}
               </p>
               <p className="statutIn">
@@ -316,8 +316,7 @@ class kycDocument extends Component {
                     type="text"
                     name="country"
                     onChange={this.handleInput}
-                    value={this.state.country}
-                  >
+                    value={this.state.country}>
                     <option>FR</option>
                     <option>DE</option>
                     <option>LT</option>
@@ -351,8 +350,7 @@ class kycDocument extends Component {
                 <Button
                   className="butBankAcc"
                   type="submit"
-                  onClick={this.addBankAccount}
-                >
+                  onClick={this.addBankAccount}>
                   Envoyez vos informations bancaires
                 </Button>
                 <br />
@@ -363,8 +361,7 @@ class kycDocument extends Component {
               <Button
                 onClick={() => {
                   this.setState({ ribOrNot: false });
-                }}
-              >
+                }}>
                 Changer votre RIB
               </Button>
             )

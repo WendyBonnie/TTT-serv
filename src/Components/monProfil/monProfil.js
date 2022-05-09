@@ -218,6 +218,17 @@ class Profil extends Component {
         (responseObject) => {
           const monProfil = responseObject;
           this.setState({ profil: monProfil });
+
+          // condition si documents KYC refusés
+
+          if (monProfil.kycStatut === "REFUSED") {
+            alert(
+              `Vos documents d'identités n'ont pas été validés. Veuillez retourner sur la sections "mes documents" pour réessayer.`
+            );
+          } else {
+            return null;
+          }
+
           if (!localStorage.getItem("popup")) {
             console.log("lalaalal", responseObject.email, this.state.referent);
             if (responseObject.email == this.state.referent) {
