@@ -134,6 +134,8 @@ class kycDocument extends Component {
           );
         } else {
           console.log(responseData);
+          this.checkKyc();
+          this.getMonProfil();
           window.alert(
             "Vos documents ont bien été envoyés une réponse vous sera fourni dans les 24 heures."
           );
@@ -154,7 +156,7 @@ class kycDocument extends Component {
       headers: headers,
     };
 
-    fetch("https://back-end.osc-fr1.scalingo.io/serveur/kyc-statut", options)
+    fetch("http://localhost:8080/serveur/kyc-statut", options)
       .then((response) => {
         return response.json();
       })
@@ -257,10 +259,8 @@ class kycDocument extends Component {
                   : ""}
               </p>
               <p className="statutIn">
-                {this.state.profil.kycStatut &&
-                this.state.profil.kycStatut !== "REFUSED" &&
-                this.state.profil.kycStatut == "EN COURS" &&
-                this.state.profil.kycStatut !== "VALIDATED"
+                {this.state.profil.kycStatut === "VALIDATION_ASKED" ||
+                this.state.profil.kycStatut === "EN COURS"
                   ? "En Cours"
                   : ""}
               </p>
