@@ -189,7 +189,11 @@ class kycDocument extends Component {
       })
       .then(
         (responseObject) => {
+          console.log("Response", responseObject);
           const monProfil = responseObject;
+          this.setState({ adress: responseObject.adress });
+          this.setState({ zip: responseObject.postalCode });
+          this.setState({ city: responseObject.city });
           this.setState({ profil: monProfil });
           console.log("KYC statut", this.state.profil.kycStatut);
           if (monProfil.mangoBankAcc) {
@@ -275,6 +279,7 @@ class kycDocument extends Component {
               <Col>
                 <Form>
                   <Form.Control
+                    defaultValue={this.state.profil.adress}
                     type="text"
                     placeholder="Votre Adresse"
                     name="adress"
@@ -282,6 +287,7 @@ class kycDocument extends Component {
                     value={this.state.adress}
                   />
                   <Form.Control
+                    defaultValue={this.state.profil.postalCode}
                     type="text"
                     placeholder="Code Postal"
                     name="zip"
@@ -316,7 +322,8 @@ class kycDocument extends Component {
                     type="text"
                     name="country"
                     onChange={this.handleInput}
-                    value={this.state.country}>
+                    value={this.state.country}
+                  >
                     <option>FR</option>
                     <option>DE</option>
                     <option>LT</option>
@@ -350,7 +357,8 @@ class kycDocument extends Component {
                 <Button
                   className="butBankAcc"
                   type="submit"
-                  onClick={this.addBankAccount}>
+                  onClick={this.addBankAccount}
+                >
                   Envoyez vos informations bancaires
                 </Button>
                 <br />
@@ -361,7 +369,8 @@ class kycDocument extends Component {
               <Button
                 onClick={() => {
                   this.setState({ ribOrNot: false });
-                }}>
+                }}
+              >
                 Changer votre RIB
               </Button>
             )
